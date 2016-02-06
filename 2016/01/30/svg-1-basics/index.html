@@ -1,0 +1,958 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="SVG," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="xiaoyu2er's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="table:nth-of-type(2) td:nth-of-type(1) { width:30%; }
+    img { width: 80%; }
+
+
+近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2nd Edition,以及它的中译版 SVG精髓（第2版）.这本书深入浅出, 例子很多, 非常不错. 因为 sv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SVG (一) 基础知识总结">
+<meta property="og:url" content="http://xiaoyu2er.github.io/2016/01/30/svg-1-basics/index.html">
+<meta property="og:site_name" content="xiaoyu2er's blog">
+<meta property="og:description" content="table:nth-of-type(2) td:nth-of-type(1) { width:30%; }
+    img { width: 80%; }
+
+
+近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2nd Edition,以及它的中译版 SVG精髓（第2版）.这本书深入浅出, 例子很多, 非常不错. 因为 sv">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/svg/arcs02.svg">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/svg/quad01.svg">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/svg/cubic01.svg">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/svg/cubic02.svg">
+<meta property="og:updated_time" content="2016-02-06T04:10:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SVG (一) 基础知识总结">
+<meta name="twitter:description" content="table:nth-of-type(2) td:nth-of-type(1) { width:30%; }
+    img { width: 80%; }
+
+
+近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2nd Edition,以及它的中译版 SVG精髓（第2版）.这本书深入浅出, 例子很多, 非常不错. 因为 sv">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> SVG (一) 基础知识总结 | xiaoyu2er's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-73406233-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7ccfad252ad09f00c805318abe1c3047";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">xiaoyu2er's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">2016, 成长</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                SVG (一) 基础知识总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-30T00:00:00+08:00" content="2016-01-30">
+              2016-01-30
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/30/svg-1-basics/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/30/svg-1-basics/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <style>
+
+   table:nth-of-type(2) td:nth-of-type(1) { width:30%; }
+    img { width: 80%; }
+</style>
+
+<p>近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.<br>我看的是这本书 <a href="http://book.douban.com/subject/25941192/" target="_blank" rel="external">SVG Essentials, 2nd Edition</a>,以及它的中译版 <a href="http://book.douban.com/subject/26640057/" target="_blank" rel="external">SVG精髓（第2版）</a>.<br>这本书深入浅出, 例子很多, 非常不错. 因为 svg 涉及到很多关于颜色的内容, 所以还是建议大家看电子版.</p>
+<p>工作中的任务是实现一个相框功能, 当中涉及到了诸如 use, image, clip-path 的内容, 学习了一段时间后总算解决了, 所以希望记录一下学习内容和解决方案.<br>内容比较多, 所以准备开一个系列, 这是 SVG 系列的第一篇, 基础知识总结. 后续将会有更多关于 SVG 的内容. 敬请期待!</p>
+<h1 id="SVG_basics"><a href="#SVG_basics" class="headerlink" title="SVG basics"></a>SVG basics</h1><h2 id="Shape_Reference_Summary"><a href="#Shape_Reference_Summary" class="headerlink" title="Shape Reference Summary"></a>Shape Reference Summary</h2><table>
+<thead>
+<tr>
+<th>形状</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;line x1=&quot;start-x&quot; y1=&quot;start-y&quot; x2=&quot;end-x&quot; y2=&quot;end-y&quot;/&gt;</code></td>
+<td><strong>直线</strong>: 起点(start-x, start-y) 终点(end-x, end-y);</td>
+</tr>
+<tr>
+<td><code>&lt;rect x=&quot;left-x&quot; y=&quot;top-y&quot; width=&quot;width&quot; height=&quot;height&quot; /&gt;</code></td>
+<td><strong>矩形</strong>: 左上角(left-x, top-y), 宽高 width, height</td>
+</tr>
+<tr>
+<td><code>&lt;circle cx=&quot;center-x&quot; cy=&quot;center-y&quot; r=&quot;radius&quot;/&gt;</code></td>
+<td><strong>圆</strong>: 圆心(center-x, center-y) 半径 r</td>
+</tr>
+<tr>
+<td><code>&lt;ellipse cx=&quot;center-x&quot; cy=&quot;center-y&quot; rx=&quot;x-radius&quot; ry=&quot;y-radius&quot;/&gt;</code></td>
+<td><strong>椭圆</strong>: 圆心(center-x, center-y) xy轴半径 rx, ry</td>
+</tr>
+<tr>
+<td><code>&lt;polygon points=&quot;points-list&quot;/&gt;</code></td>
+<td><strong>多边形</strong>: 由一系列坐标组成, points-list: x1 y1 x2 y2 x3 y3 ….</td>
+</tr>
+<tr>
+<td><code>&lt;polyline points=&quot;points-list&quot;/&gt;</code></td>
+<td><strong>折线</strong>: 由一系列坐标组成, points-list: x1 y1 x2 y2 x3 y3 ….</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Path_Reference_Summary"><a href="#Path_Reference_Summary" class="headerlink" title="Path Reference Summary"></a>Path Reference Summary</h2><p>本质上, 上述基本形状都是路径(path)的简写. 简写可以使得 svg 文档更具有可读性. 但是当碰到复杂路径时, 就需要 path 来描述. 以下总结中, 凡是出现大写字母表示后续坐标为绝对坐标, 凡是小写字母都代表相对于上一个坐标的相对位移. Z 同 z 无差别. 因为表示闭合, 其后不用跟坐标</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M(m) x y</code></td>
+<td>移动到(x, y) (小写表示相对于上个坐标的位移, 下同)</td>
+</tr>
+<tr>
+<td><code>L(l) x y</code></td>
+<td>画一条直线到(x, y)</td>
+</tr>
+<tr>
+<td><code>H(h) x</code></td>
+<td>水平画一条直线到 x</td>
+</tr>
+<tr>
+<td><code>V(v) y</code></td>
+<td>竖直画一条直线到 y</td>
+</tr>
+<tr>
+<td><code>A(a) rx ry x-axis-rotation large-arc sweep x y</code></td>
+<td>画一段到(x,y)的椭圆弧. 椭圆弧的 x, y 轴半径分别为 rx,ry. 椭圆相对于 x 轴旋转 x-axis-rotation 度. large-arc=0表明弧线小于180读, large-arc=1表示弧线大于180度. sweep=0表明弧线逆时针旋转, sweep=1表明弧线顺时间旋转. 具体解释看<a href="/#arc">如何绘制椭圆弧</a></td>
+</tr>
+<tr>
+<td><code>Q(q) cx cy x y</code></td>
+<td>从当前点画一条到(x, y)的二次<a href="http://www.wikiwand.com/zh-hans/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A" target="_blank" rel="external">贝塞尔曲线</a>, 曲线的控制点为(cx, cy). 关于二次贝塞尔曲线请看<a href="/#quadratic-bezier">二次贝塞尔曲线详解</a></td>
+</tr>
+<tr>
+<td><code>T(t) x y</code></td>
+<td>此命令只能跟在一个 Q 命令使用, 假设 Q 命令生成曲线 s,  T 命令的作用是从 s 的终点再画一条到(x y)的二次贝塞尔曲线, 曲线的控制点为 s 控制点关于 s 终点的对称点. T 命令生成的曲线会非常平滑</td>
+</tr>
+<tr>
+<td><code>C(c) cx1 cy1 cx2 cy2 x y</code></td>
+<td>从当前点画一条到(x, y)的三次贝塞尔曲线, 曲线的开始控制点和终点控制点为别为 (cx1, cy1), (cx2, cy2). 关于三次贝塞尔曲线请看<a href="/#cubic-bezier">三次贝塞尔曲线详解</a></td>
+</tr>
+<tr>
+<td><code>S(s) cx2 cy2 x y</code></td>
+<td>此命令只能跟在 C 命令后使用, 假设 C 命令生成曲线 s, S 命令的作用是再画一条到 (x, y)的三次贝塞尔曲线, 曲线的终点控制点是 (cx2, cy2), 曲线的开始控制点是 s 的终点控制点关于 s 终点的对称点.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Transformation_Reference_Summary"><a href="#Transformation_Reference_Summary" class="headerlink" title="Transformation Reference Summary"></a>Transformation Reference Summary</h2><table>
+<thead>
+<tr>
+<th>transform</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>translate(x, y)</code></td>
+<td><strong>平移</strong>: 将用户坐标系统的坐标原点移动到(x, y)</td>
+</tr>
+<tr>
+<td><code>scale(xFactor, yFactor)</code></td>
+<td><strong>缩放</strong>: 将用户坐标系统的xy轴单位长度分别乘(xFactor, yFactor)倍</td>
+</tr>
+<tr>
+<td><code>scale(factor)</code></td>
+<td><strong>缩放</strong>: 同 <code>scale(factor, factor)</code></td>
+</tr>
+<tr>
+<td><code>rotate(angle, centerX, centerY)</code></td>
+<td><strong>旋转</strong>: 将用户坐标系统以(centerX, centerY)为旋转中心顺时针旋转 angle 度</td>
+</tr>
+<tr>
+<td><code>rotate(angle)</code></td>
+<td><strong>旋转</strong>: 同 <code>rotate(angle, 0, 0)</code></td>
+</tr>
+<tr>
+<td><code>skewX(angle)</code></td>
+<td><strong>倾斜</strong>: 根据 angle 倾斜所有 x 轴坐标, 视觉上会看到 y 轴倾斜…</td>
+</tr>
+<tr>
+<td><code>skewY(angle)</code></td>
+<td><strong>倾斜</strong>: 根据 angle 倾斜所有 y 轴坐标, 视觉上会看到 x 轴倾斜…</td>
+</tr>
+<tr>
+<td><code>matrix(a b c d e f)</code></td>
+<td><strong>矩阵变换</strong>: 将坐标系统进行矩阵变换, 详细内容请参考后续文章</td>
+</tr>
+</tbody>
+</table>
+<h1 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h1><h2 id="Ellipse"><a href="#Ellipse" class="headerlink" title="Ellipse"></a>Ellipse</h2><p>一种直观的表示椭圆弧线的方式是, 根据椭圆中心 (x, y), x 轴半径 rx, y 轴半径 ry, 开始角度 startAngle, 结束角度 endAngle.<br>但是为什么 SVG 会采用 <code>A(a) rx ry x-axis-rotation large-arc sweep x y</code> 这样的形式呢,<br>主要是因为在 SVG 中, 弧线并不是孤立的存在, 他要成为整体的一部分. 所以 SVG 采用了起始点这样的方式.<br>那么其他的 x-axis-rotation, large-arc, sweep 又是什么意思呢? 我们现在来看下面这张图.</p>
+<p><img src="/img/svg/arcs02.svg" alt="ellipse"></p>
+<p>当确定了两个点已经椭圆的 rx, ry 后并不能唯一确定一条椭圆弧, 实际上根据是否是大圆, 路径是否是逆时针可以产生四条 (b, c, d, e)<br>其中, large-arc-flag=0 表示小圆, sweep-flag=0 表示逆时针.</p>
+<p>那么 x-axis-rotation 又是什么意思呢? b, c, d, e 产生的前提是 椭圆的 x 轴与用户坐标系的 x 轴是平行的.<br>f 图表示椭圆 x 轴相对于用户坐标系的 x 轴旋转30度所产生的椭圆弧. 灰色的部分表示原来产生的椭圆弧.</p>
+<h2 id="Quadratic_Bezier"><a href="#Quadratic_Bezier" class="headerlink" title="Quadratic Bezier"></a>Quadratic Bezier</h2><p>关于贝塞尔曲线的数学含义请看<a href="http://www.wikiwand.com/en/B%C3%A9zier_curve" target="_blank" rel="external">Bézier curve</a><br>这里直观的讲一下</p>
+<p><img src="/img/svg/quad01.svg" alt="quadratic bezier 01"></p>
+<p>以上曲线的路径表示是: <code>&lt;path d=&quot;M200,300 Q400,50 600,300 T1000,300&quot;/&gt;</code><br>我们可以看出:<br>A 是起点, B 是终点, C 就是控制点.<br>找出 AC 的重点 D, BC 的重点 E, 连接 DE, 找出其中点 F, F 即这条曲线前半段的一个切点.</p>
+<p>这里不谈数学含义, 这样的几何意义更加直观.</p>
+<p>再来看 T 命令, 其实 T 命令是 Q 的一个简写.<br>其控制点 H 就是上个 Q 命令的控制点 C 关于终点 B 的对称点.<br>使用 T 命令产生的曲线往往比较顺滑 :)</p>
+<h2 id="Cubic_Bezier"><a href="#Cubic_Bezier" class="headerlink" title="Cubic Bezier"></a>Cubic Bezier</h2><p>再来看一下三次贝塞尔曲线</p>
+<p><img src="/img/svg/cubic01.svg" alt="cubic bezier 01"></p>
+<p><code>&lt;path d=&quot;M100,200 C100,100 250,100 250,200 S400,300 400,200&quot;/&gt;</code></p>
+<p>前半段曲线(C 命令) s1:<br>起点 A, 终点 B, 起点控制点 C, 终点控制点 D, 连接 AC, BD, CD;<br>找到 CD 中点 F, 连接 AC 中点 E 与 F, 连接 BD 中点 G 与 F;<br>连接 EF, FG, 连接 EF 中点 H 与 FG 中点 I;<br>I 即为前半段曲线的切点;</p>
+<p>后半段曲线(S 命令) s2:<br>S 只能跟在 C 命令后使用;<br>s2 的起点 B, 终点 L, 终点控制点 K;<br>s2 的起点控制点是 s1 的终点控制点 D 关于 s1终点 B 的对称点</p>
+<p>下图是更多关于三次贝塞尔曲线的例子:</p>
+<p><img src="/img/svg/cubic02.svg" alt="cubic bezier 01"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a href="http://book.douban.com/subject/25941192/" target="_blank" rel="external">SVG Essentials, 2nd Edition</a></li>
+<li><a href="http://book.douban.com/subject/26640057/" target="_blank" rel="external">SVG精髓（第2版）</a></li>
+<li><a href="https://www.w3.org/TR/SVG/paths.html" target="_blank" rel="external">以上图片均改编自W3C SVG规范</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths" target="_blank" rel="external">MDN SVG Tutorial - Path</a></li>
+</ul>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SVG/" rel="tag">#SVG</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/23/angular-scope-in-depth/" rel="next" title="深入理解 Angular Scope 的继承关系">
+                <i class="fa fa-chevron-left"></i> 深入理解 Angular Scope 的继承关系
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/31/mac-default-app-for-spec-file-type/" rel="prev" title="设置 Mac 下文件的默认打开程序 — duti 详解">
+                设置 Mac 下文件的默认打开程序 — duti 详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar-xy2.jpg"
+               alt="xiaoyu2er" />
+          <p class="site-author-name" itemprop="name">xiaoyu2er</p>
+          <p class="site-description motion-element" itemprop="description">关于前端的一切, 记录自己的成长 | 这里是 @xiaoyu2er 的个人博客，与你一起发现更大的世界。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xiaoyu2er" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/xiaoyu2er" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> ZhiHu
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1047856932" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/xiaoyu2er" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> SegmentFault
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Others
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Friends</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://yoncise.com" target="_blank">Yoncise</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhouhaibing.com/" target="_blank">江海城</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://caohenghu.github.io" target="_blank">曹恒虎</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SVG_basics"><span class="nav-number">1.</span> <span class="nav-text">SVG basics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shape_Reference_Summary"><span class="nav-number">1.1.</span> <span class="nav-text">Shape Reference Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Path_Reference_Summary"><span class="nav-number">1.2.</span> <span class="nav-text">Path Reference Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformation_Reference_Summary"><span class="nav-number">1.3.</span> <span class="nav-text">Transformation Reference Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Details"><span class="nav-number">2.</span> <span class="nav-text">Details</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ellipse"><span class="nav-number">2.1.</span> <span class="nav-text">Ellipse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quadratic_Bezier"><span class="nav-number">2.2.</span> <span class="nav-text">Quadratic Bezier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cubic_Bezier"><span class="nav-number">2.3.</span> <span class="nav-text">Cubic Bezier</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaoyu2er</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'xy2er';
+      var disqus_identifier = '2016/01/30/svg-1-basics/';
+      var disqus_title = 'SVG (一) 基础知识总结';
+      var disqus_url = 'http://xiaoyu2er.github.io/2016/01/30/svg-1-basics/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

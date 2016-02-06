@@ -1,0 +1,56 @@
+<svg viewBox="0 0 1200 600"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <title>Example quad01 - quadratic Bézier commands in path data</title>
+    <desc>Picture showing a "Q" a "T" command,
+        along with annotations showing the control points
+        and end points
+    </desc>
+    <rect x="1" y="1" width="1198" height="598"
+          fill="none" stroke="blue" stroke-width="1"/>
+
+    <path d="M200,300 Q400,50 600,300 T1000,300"
+          fill="none" stroke="red" stroke-width="5"/>
+    <!-- End points -->
+    <g fill="black">
+        <!--A-->
+        <circle cx="200" cy="300" r="10"/>
+        <!--B-->
+        <circle cx="600" cy="300" r="10"/>
+
+        <!--G-->
+        <circle cx="1000" cy="300" r="10"/>
+    </g>
+
+    <!-- text tag-->
+    <g style="stroke: red; stroke-width=2; fill: red; font-size: 50;">
+        <text x="160" y="300">A</text>
+        <text x="560" y="300">B</text>
+        <text x="360" y="50">C</text>
+        <text x="260" y="175">D</text>
+        <text x="460" y="175">E</text>
+        <text x="360" y="175">F</text>
+        <text x="960" y="300">G</text>
+        <text x="760" y="550">H</text>
+
+    </g>
+    <!-- Control points and lines from end points to control points -->
+    <g fill="#888888">
+        <!--C-->
+        <circle cx="400" cy="50" r="10"/>
+        <!--D-->
+        <circle cx="300" cy="175" r="10"/>
+        <!--E-->
+        <circle cx="500" cy="175" r="10"/>
+        <!--F-->
+        <circle cx="400" cy="175" r="10"/>
+
+        <!--H-->
+        <circle cx="800" cy="550" r="10"/>
+    </g>
+
+    <path d="M200,300 L400,50 L600,300
+           L800,550 L1000,300
+           M300,175 L500,175"
+          fill="none" stroke="#888888" stroke-width="2"/>
+</svg>
+

@@ -1,0 +1,78 @@
+<svg viewBox="0 0 500 400"
+     xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <title>Example cubic01- cubic Bézier commands in path data</title>
+    <desc>Picture showing a simple example of path data
+        using both a "C" and an "S" command,
+        along with annotations showing the control points
+        and end points
+    </desc>
+    <style type="text/css"><![CDATA[
+    .Border { fill:none; stroke:blue; stroke-width:1 }
+    .Connect { fill:none; stroke:#888888; stroke-width:2 }
+    .SamplePath { fill:none; stroke:red; stroke-width:5 }
+    .EndPoint { fill:none; stroke:#888888; stroke-width:2 }
+    .CtlPoint { fill:#888888; stroke:none }
+    .AutoCtlPoint { fill:none; stroke:blue; stroke-width:4 }
+    .Label { font-size:22; font-family:Verdana }
+  ]]></style>
+
+    <rect class="Border" x="1" y="1" width="498" height="398"/>
+
+    <!-- text tag-->
+    <g style="stroke: red; stroke-width=2; fill: red; font-size: 20;">
+        <text x="75" y="210">A</text>
+        <text x="260" y="200">B</text>
+
+        <text x="80" y="90">C</text>
+        <text x="260" y="90">D</text>
+        <text x="80" y="150">E</text>
+        <text x="175" y="90">F</text>
+        <text x="260" y="150">G</text>
+        <text x="120" y="130">H</text>
+        <text x="220" y="130">I</text>
+
+
+        <text x="260" y="300">J</text>
+        <text x="410" y="300">K</text>
+        <text x="410" y="200">L</text>
+
+    </g>
+
+    <!--AC-->
+    <polyline class="Connect" points="100,200 100,100"/>
+    <!--DB-->
+    <polyline class="Connect" points="250,100 250,200"/>
+    <!--CD-->
+    <polyline class="Connect" points="100,100 250,100"/>
+    <!--EF-->
+    <polyline class="Connect" points="100,150 175,100"/>
+    <!--FG-->
+    <polyline class="Connect" points="175,100 250,150"/>
+    <!--HI-->
+    <polyline class="Connect" points="137.5,125 212.5,125"/>
+
+    <!--BJ-->
+    <polyline class="Connect" points="250,200 250,300"/>
+    <!--KL-->
+    <polyline class="Connect" points="400,300 400,200"/>
+
+    <path class="SamplePath" d="M100,200 C100,100 250,100 250,200
+                                       S400,300 400,200"/>
+    <!--A-->
+    <circle class="EndPoint" cx="100" cy="200" r="10"/>
+    <!--B-->
+    <circle class="EndPoint" cx="250" cy="200" r="10"/>
+    <!--C-->
+    <circle class="CtlPoint" cx="100" cy="100" r="10"/>
+    <!--D-->
+    <circle class="CtlPoint" cx="250" cy="100" r="10"/>
+
+
+    <circle class="EndPoint" cx="400" cy="200" r="10"/>
+    <circle class="CtlPoint" cx="400" cy="300" r="10"/>
+    <circle class="AutoCtlPoint" cx="250" cy="300" r="9"/>
+    <text class="Label" x="25" y="70">M100,200 C100,100 250,100 250,200</text>
+    <text class="Label" x="325" y="350"
+          style="text-anchor:middle">S400,300 400,200
+    </text>
+</svg>

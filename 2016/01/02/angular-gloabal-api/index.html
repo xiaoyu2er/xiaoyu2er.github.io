@@ -1,0 +1,916 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Angular," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="xiaoyu2er's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="AngularJS API Docs - Global APIs
+此文章的 API 参考 Version 1.4.7.
+angular.forEach: 迭代函数
+用法: angular.forEach(obj, iterator, [context])
+解释: obj 为迭代对象, 可以是一个 object, 也可以是 array, 根据 obj 的类型, 迭代函数iterator的参数理解稍微">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular 全局函数">
+<meta property="og:url" content="http://xiaoyu2er.github.io/2016/01/02/angular-gloabal-api/index.html">
+<meta property="og:site_name" content="xiaoyu2er's blog">
+<meta property="og:description" content="AngularJS API Docs - Global APIs
+此文章的 API 参考 Version 1.4.7.
+angular.forEach: 迭代函数
+用法: angular.forEach(obj, iterator, [context])
+解释: obj 为迭代对象, 可以是一个 object, 也可以是 array, 根据 obj 的类型, 迭代函数iterator的参数理解稍微">
+<meta property="og:updated_time" content="2016-01-31T03:55:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Angular 全局函数">
+<meta name="twitter:description" content="AngularJS API Docs - Global APIs
+此文章的 API 参考 Version 1.4.7.
+angular.forEach: 迭代函数
+用法: angular.forEach(obj, iterator, [context])
+解释: obj 为迭代对象, 可以是一个 object, 也可以是 array, 根据 obj 的类型, 迭代函数iterator的参数理解稍微">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> Angular 全局函数 | xiaoyu2er's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-73406233-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7ccfad252ad09f00c805318abe1c3047";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">xiaoyu2er's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">2016, 成长</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Angular 全局函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-02T00:00:00+08:00" content="2016-01-02">
+              2016-01-02
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/02/angular-gloabal-api/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/02/angular-gloabal-api/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>AngularJS API Docs - Global APIs</p>
+<p>此文章的 API 参考 <a href="https://code.angularjs.org/1.4.7/docs/api" target="_blank" rel="external">Version 1.4.7</a>.</p>
+<h3 id="angular-forEach_3A__u8FED_u4EE3_u51FD_u6570"><a href="#angular-forEach_3A__u8FED_u4EE3_u51FD_u6570" class="headerlink" title="angular.forEach: 迭代函数"></a>angular.forEach: 迭代函数</h3><ul>
+<li>用法: <code>angular.forEach(obj, iterator, [context])</code></li>
+<li>解释: obj 为迭代对象, 可以是一个 object, 也可以是 array, 根据 obj 的类型, 迭代函数iterator的参数理解稍微不同(详见示例), contenxt 可选参数, 是iterator<br>执行的上下文.</li>
+<li>注意:<ul>
+<li><code>angular.forEach</code>不迭代继承的属性, 因为内部使用了<code>hasOwnProperty</code>方法来过滤</li>
+<li>与<code>Array.prototype.forEach</code>不同, 当 obj 为不可迭代对象时, 比如 undefined, null, number, <code>angular.forEach</code>返回 obj 本身, iterator并不会执行</li>
+</ul>
+</li>
+<li>示例:</li>
+</ul>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;name: <span class="string">"Jerry"</span>, gender: <span class="string">"male"</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> <span class="literal">result</span> = [];</span><br><span class="line">angular.forEach(person, function (value, key, obj) &#123;</span><br><span class="line">    this.push(key + <span class="string">": "</span> + value);</span><br><span class="line">&#125;, <span class="literal">result</span>);</span><br><span class="line">$log.debug(<span class="literal">result</span>); // [<span class="string">"name: Jerry"</span>, <span class="string">"gender: male"</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> friends = [<span class="string">"Tom"</span>, <span class="string">"Jerry"</span>, <span class="string">"Donald"</span>];</span><br><span class="line">angular.forEach(friends, function (value, index, arr) &#123;</span><br><span class="line">    this.push(index + <span class="string">": "</span> + value);</span><br><span class="line">&#125;, <span class="literal">result</span>);</span><br><span class="line">$log.debug(<span class="literal">result</span>); // [<span class="string">"name: Jerry"</span>, <span class="string">"gender: male"</span>, <span class="string">"0: Tom"</span>, <span class="string">"1: Jerry"</span>, <span class="string">"2: Donald"</span>]</span><br><span class="line"></span><br><span class="line">$log.debug(angular.forEach(undefined)); // undefined</span><br><span class="line">$log.debug(angular.forEach(null)); // null</span><br><span class="line">$log.debug(angular.forEach(<span class="number">1</span>, function ()&#123; $log.debug(<span class="string">"in iterator"</span>)&#125;)); // <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="angular-extend"><a href="#angular-extend" class="headerlink" title="angular.extend"></a>angular.extend</h3><ul>
+<li>功能: 扩展函数, 将src(s)的可枚举属性复制到dst中;</li>
+<li>用法: <code>angular.extend(dst, src...);</code></li>
+<li>注意<ul>
+<li>如果不想保留原有的 obj 不被改变, 可以使用<code>{}</code>作为第一个参数: <code>var obj = angular.extend({}, obj1, obj2)</code></li>
+<li><code>angular.extend</code>不支持递归merge(deep copy), 如果需要需要使用<code>angular.merge</code></li>
+</ul>
+</li>
+<li>示例</li>
+</ul>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj1 = &#123;name: <span class="string">"Jerry"</span>&#125;;</span><br><span class="line">var obj2 = &#123;gender: <span class="string">"male"</span>&#125;;</span><br><span class="line">var obj3 = &#123;phone: <span class="string">"13312345678"</span>&#125;;</span><br><span class="line">angular.extend(obj1, obj2, obj3);</span><br><span class="line"></span><br><span class="line"><span class="variable">$log</span>.debug(obj1); // &#123;gender: <span class="string">"male"</span>, name: <span class="string">"Jerry"</span>, phone:<span class="string">"13312345678"</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="angular-merge"><a href="#angular-merge" class="headerlink" title="angular.merge"></a>angular.merge</h3><ul>
+<li>功能: 扩展函数, 深度拷贝</li>
+<li>用法: <code>angular.extend(dst, src...);</code> 与<code>angular.extend</code>使用方法一致</li>
+<li>注意: 在1.3.0版本中无此功能</li>
+</ul>
+<h3 id="angular-noop"><a href="#angular-noop" class="headerlink" title="angular.noop"></a>angular.noop</h3><ul>
+<li>功能: 啥都不干的函数</li>
+<li>用法:</li>
+</ul>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function foo(callback) &#123;</span><br><span class="line">  <span class="keyword">var</span> <span class="literal">result</span> = calculateResult();</span><br><span class="line">  (callback || angular.noop)(<span class="literal">result</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="angular-identity"><a href="#angular-identity" class="headerlink" title="angular.identity"></a>angular.identity</h3><ul>
+<li>功能: 返回第一个参数</li>
+<li>用法:</li>
+</ul>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span></span> transformer(transformationFn, <span class="keyword">value</span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (transformationFn || angular.identity)(<span class="keyword">value</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="angular-copy"><a href="#angular-copy" class="headerlink" title="angular.copy"></a>angular.copy</h3><ul>
+<li>用法: <code>angular.copy(source, [dest])</code></li>
+<li>详解: !!此 API 的实践效果与官方的有效出入.<ul>
+<li>首先清空 dest(如果dest是一个object, array, 否则不修改),</li>
+<li>然后生成 <code>source</code> 的一个深拷贝, 并将深拷贝复制到 dest 中(如果 dest 是一个object, array且 source 与 dest 数据结构相同, 否则 dest 不做修改)</li>
+<li>返回 dest</li>
+</ul>
+</li>
+<li>注意<ul>
+<li>如果没有<code>destination</code>参数, 那么source的深拷贝将被创建, 且返回</li>
+<li>如果 source 和 destination 相同, 那么抛出一个错误</li>
+</ul>
+</li>
+</ul>
+<h3 id="angular-equals_28o1_2C_o2_29"><a href="#angular-equals_28o1_2C_o2_29" class="headerlink" title="angular.equals(o1, o2)"></a>angular.equals(o1, o2)</h3><ul>
+<li>功能: 比较o1, o2是否相等, 包括: obj, arr, primitives, regExp,</li>
+<li>详解:<ul>
+<li>满足以下条件 angular.equals 返回 true</li>
+<li>满足 ===</li>
+<li>obj 属性或者 array 的元素递归满足 angular.equals == true</li>
+<li>angular.equals(NaN, NaN) === true</li>
+<li>字面量相等的 regExp 相等</li>
+<li>带 $ 的属性和 function 将会被忽略, 但是只比较两个匿名函数会返回 false</li>
+<li>scope, DOM 只能按照 === 去判断</li>
+</ul>
+</li>
+</ul>
+<h3 id="angular-bind_28self_2C_fn_2C_args_29"><a href="#angular-bind_28self_2C_fn_2C_args_29" class="headerlink" title="angular.bind(self, fn, args)"></a>angular.bind(self, fn, args)</h3><ul>
+<li>功能: function.bind 与 偏函数的结合</li>
+<li>示例: <a href="http://stackoverflow.com/questions/30529933/what-is-the-use-of-angular-bind-in-angularjs-where-to-use-it" target="_blank" rel="external">what is the use of angular.bind in angularjs? Where to use it?</a></li>
+</ul>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> greet = <span class="function"><span class="keyword">function</span> <span class="params">(greeting, punctuation)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> greeting + <span class="string">' '</span> + <span class="keyword">this</span>.user + punctuation;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> object = &#123; <span class="string">'user'</span>: <span class="string">'fred'</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> bound = angular.bind(greet, object, <span class="string">'hi'</span>);</span><br><span class="line">bound(<span class="string">'!'</span>); <span class="comment">// → 'hi fred!'</span></span><br></pre></td></tr></table></figure>
+<h3 id="angular-toJson"><a href="#angular-toJson" class="headerlink" title="angular.toJson"></a>angular.toJson</h3><ul>
+<li>用法: angular.toJson(obj, [pretty])</li>
+<li>功能: 将 obj 按照 json 的格式输出</li>
+<li>解释: 如果 pretty 设置, pretty=true &lt;=&gt; pretty=2, 即缩进的空格个数</li>
+</ul>
+<h3 id="angular-bootstrap"><a href="#angular-bootstrap" class="headerlink" title="angular.bootstrap"></a>angular.bootstrap</h3><ul>
+<li>功能: 手动启动一个 angular 的应用, 此乃高级内容, 暂做简要记录, 还须深入理解</li>
+<li>用法: <code>angular.bootstrap(element, [modules], [config])</code></li>
+<li>示例:</li>
+</ul>
+<figure class="highlight handlebars"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"> <span class="doctype">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"WelcomeController"</span>&gt;</span></span><br><span class="line">    </span><span class="expression">&#123;&#123;<span class="variable">greeting</span>&#125;&#125;</span><span class="xml"></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"angular.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span><br><span class="line">    <span class="keyword">var</span> app = angular.module(<span class="string">'demo'</span>, [])</span><br><span class="line">            .controller(<span class="string">'WelcomeController'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">                $scope.greeting = <span class="string">'Welcome!'</span>;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">    setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        angular.bootstrap(<span class="built_in">document</span>, [<span class="string">'demo'</span>]);</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="angular-element_3A__u5305_u88F9_DOM__u5143_u7D20_u4F5C_u4E3A_u4E00_u4E2A_jQuery_28jqLite_29__u7684_u5143_u7D20"><a href="#angular-element_3A__u5305_u88F9_DOM__u5143_u7D20_u4F5C_u4E3A_u4E00_u4E2A_jQuery_28jqLite_29__u7684_u5143_u7D20" class="headerlink" title="angular.element: 包裹 DOM 元素作为一个 jQuery(jqLite) 的元素"></a>angular.element: 包裹 DOM 元素作为一个 jQuery(jqLite) 的元素</h3><ul>
+<li>详解: angular 中的 element 都是 jQuery(jqLite)元素; jqLite 的使用将会在另外的文章中给出介绍</li>
+</ul>
+<h3 id="angular-module"><a href="#angular-module" class="headerlink" title="angular.module"></a>angular.module</h3><ul>
+<li>用法: <code>angular.module(name, [requires], [configFn])</code></li>
+<li>功能: 用来创建, 注册, 获得 angular 的 module</li>
+<li>注意:<ul>
+<li>传入一个参数为获取, 传入多个参数为创建</li>
+</ul>
+</li>
+</ul>
+<h3 id="u5176_u4ED6"><a href="#u5176_u4ED6" class="headerlink" title="其他"></a>其他</h3><ul>
+<li>angular.lowercase: 字符串转小写</li>
+<li>angular.uppercase: 字符串转大写</li>
+<li>angular.isUndefined</li>
+<li>angular.isDefined</li>
+<li>angular.isObject<ul>
+<li>功能: 判断参数是否是一个 object 但是不是 null, 注意 array 是 object</li>
+</ul>
+</li>
+<li>angular.isString</li>
+<li>angular.isNumber</li>
+<li>angular.isDate</li>
+<li>angular.isArray</li>
+<li>angular.isFunction</li>
+<li>angular.isElement<ul>
+<li>功能: 判断参数是否是一个 DOM 元素或者一个 jQuery 包裹的元素</li>
+</ul>
+</li>
+<li>angular.reloadWithDebugInfo: 重启应用, 打开 debug</li>
+<li>angular.injector, 高级内容, 未来深入理解</li>
+<li>angular.fromJson</li>
+</ul>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Angular/" rel="tag">#Angular</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/01/hello-2016/" rel="next" title="Hello 2016">
+                <i class="fa fa-chevron-left"></i> Hello 2016
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/08/angular-q-complete-guide/" rel="prev" title="Angular $q 完全指南">
+                Angular $q 完全指南 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar-xy2.jpg"
+               alt="xiaoyu2er" />
+          <p class="site-author-name" itemprop="name">xiaoyu2er</p>
+          <p class="site-description motion-element" itemprop="description">关于前端的一切, 记录自己的成长 | 这里是 @xiaoyu2er 的个人博客，与你一起发现更大的世界。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xiaoyu2er" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/xiaoyu2er" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> ZhiHu
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1047856932" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/xiaoyu2er" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> SegmentFault
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Others
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Friends</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://yoncise.com" target="_blank">Yoncise</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhouhaibing.com/" target="_blank">江海城</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://caohenghu.github.io" target="_blank">曹恒虎</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-forEach_3A__u8FED_u4EE3_u51FD_u6570"><span class="nav-number">1.</span> <span class="nav-text">angular.forEach: 迭代函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-extend"><span class="nav-number">2.</span> <span class="nav-text">angular.extend</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-merge"><span class="nav-number">3.</span> <span class="nav-text">angular.merge</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-noop"><span class="nav-number">4.</span> <span class="nav-text">angular.noop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-identity"><span class="nav-number">5.</span> <span class="nav-text">angular.identity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-copy"><span class="nav-number">6.</span> <span class="nav-text">angular.copy</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-equals_28o1_2C_o2_29"><span class="nav-number">7.</span> <span class="nav-text">angular.equals(o1, o2)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-bind_28self_2C_fn_2C_args_29"><span class="nav-number">8.</span> <span class="nav-text">angular.bind(self, fn, args)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-toJson"><span class="nav-number">9.</span> <span class="nav-text">angular.toJson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-bootstrap"><span class="nav-number">10.</span> <span class="nav-text">angular.bootstrap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-element_3A__u5305_u88F9_DOM__u5143_u7D20_u4F5C_u4E3A_u4E00_u4E2A_jQuery_28jqLite_29__u7684_u5143_u7D20"><span class="nav-number">11.</span> <span class="nav-text">angular.element: 包裹 DOM 元素作为一个 jQuery(jqLite) 的元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-module"><span class="nav-number">12.</span> <span class="nav-text">angular.module</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5176_u4ED6"><span class="nav-number">13.</span> <span class="nav-text">其他</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaoyu2er</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'xy2er';
+      var disqus_identifier = '2016/01/02/angular-gloabal-api/';
+      var disqus_title = 'Angular 全局函数';
+      var disqus_url = 'http://xiaoyu2er.github.io/2016/01/02/angular-gloabal-api/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

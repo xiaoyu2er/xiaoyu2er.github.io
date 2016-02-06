@@ -1,0 +1,905 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="javascript, angular, prototype-chain, inheritance, 原型链, 原型继承, $scope, scope, $parent" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="xiaoyu2er's blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="JavaScript Prototypal Inheritance首先我们先来回顾以下 javascript 中出现的原型继承:
+12345678910111213141516171819function ParentScope()&amp;#123;    this.aString = &quot;parent string&quot;;    this.aNumber = 100;    this.anArray = [">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解 Angular Scope 的继承关系">
+<meta property="og:url" content="http://xiaoyu2er.github.io/2016/01/23/angular-scope-in-depth/index.html">
+<meta property="og:site_name" content="xiaoyu2er's blog">
+<meta property="og:description" content="JavaScript Prototypal Inheritance首先我们先来回顾以下 javascript 中出现的原型继承:
+12345678910111213141516171819function ParentScope()&amp;#123;    this.aString = &quot;parent string&quot;;    this.aNumber = 100;    this.anArray = [">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/B2FE24340A82C7B6FF9BF1CBDA5BA818.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/220573C69F0581E93828B5670F52C415.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/6AB968DED1A16F35C0B07ABE855F1DE1.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/E2B99E360766E387E06F30DE655F6883.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/BD6A16127625E60B805FC02B117C754C.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/4FF01866A53AFF5A86061140DB783455.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/3EDC9636029502E51C1E5C3F3CFF281A.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/DF9CE2689AC84645D641B8EE1EA8EDF4.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/7083CECC79990759E33B8992C5A886CA.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/5461BD4DFDF60DA34B9E91AE8DA8A6A6.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/091471A0D7D49CDDF1632FF25096118B.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/931892730C42AB06340A91FDFE61E2BA.png">
+<meta property="og:image" content="http://xiaoyu2er.github.io/img/angular-scope/C6ADE4397FA38424C889CDB6C068B319.png">
+<meta property="og:updated_time" content="2016-02-06T04:12:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深入理解 Angular Scope 的继承关系">
+<meta name="twitter:description" content="JavaScript Prototypal Inheritance首先我们先来回顾以下 javascript 中出现的原型继承:
+12345678910111213141516171819function ParentScope()&amp;#123;    this.aString = &quot;parent string&quot;;    this.aNumber = 100;    this.anArray = [">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 深入理解 Angular Scope 的继承关系 | xiaoyu2er's blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-73406233-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7ccfad252ad09f00c805318abe1c3047";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">xiaoyu2er's blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">2016, 成长</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                深入理解 Angular Scope 的继承关系
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-01-23T00:00:00+08:00" content="2016-01-23">
+              2016-01-23
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/23/angular-scope-in-depth/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/23/angular-scope-in-depth/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JavaScript_Prototypal_Inheritance"><a href="#JavaScript_Prototypal_Inheritance" class="headerlink" title="JavaScript Prototypal Inheritance"></a>JavaScript Prototypal Inheritance</h1><p>首先我们先来回顾以下 javascript 中出现的原型继承:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ParentScope</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.aString = <span class="string">"parent string"</span>;</span><br><span class="line">    <span class="keyword">this</span>.aNumber = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">this</span>.anArray = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>];</span><br><span class="line">    <span class="keyword">this</span>.anObject = &#123;</span><br><span class="line">    <span class="string">'property1'</span>: <span class="string">'parent prop1'</span>,</span><br><span class="line">    <span class="string">'property2'</span>: <span class="string">'parent prop2'</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.aFunction = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">'parent output'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ChildScope</span><span class="params">()</span></span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ChildScope.prototype = <span class="keyword">new</span> ParentScope();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> childScope = <span class="keyword">new</span> ChildScope();</span><br></pre></td></tr></table></figure>
+<p>ChildScope 原型继承自 ParentScope</p>
+<p><img src="/img/angular-scope/B2FE24340A82C7B6FF9BF1CBDA5BA818.png" alt="normal prototypal inheritance"></p>
+<p>如果我们要在 childScope 上查询一个定义在 parentScope 的属性, JavaScript 会先在 childScope 上查找, 如果没有查到, 那么会顺着原型链去查找. 所以以下判别式均为 <code>true</code></p>
+<figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">childScope.aString === <span class="symbol">'parent</span> string'</span><br><span class="line">childScope.anArray[<span class="number">1</span>] === <span class="number">20</span></span><br><span class="line">childScope.anObject.property1 === <span class="symbol">'parent</span> prop1'</span><br><span class="line">childScope.aFunction<span class="literal">()</span> === <span class="symbol">'parent</span> output'</span><br></pre></td></tr></table></figure>
+<p>如果我们做如下操作:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">childScope<span class="class">.aString</span> = <span class="string">'child string'</span></span><br></pre></td></tr></table></figure>
+<p>原型链并没有被访问, 一个新的 <code>aString</code> 会被加入到 childScope 的属性中去, 新的属性会隐藏 parentScope 中的同名属性.</p>
+<p><img src="/img/angular-scope/220573C69F0581E93828B5670F52C415.png" alt="shadowing"></p>
+<p>假设我们做出如下操作:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">childScope<span class="class">.anArray</span>[<span class="number">1</span>] = <span class="number">22</span></span><br><span class="line">childScope<span class="class">.anObject</span><span class="class">.property1</span> = <span class="string">'child prop1'</span></span><br></pre></td></tr></table></figure>
+<p>原型链被访问了. 因为 <code>anArray</code>, <code>anObject</code> 没有在 childScope 中找到.<br>新的赋值操作均在 parentScope 上进行. childScope 上没有添加任何新的属性.</p>
+<p><img src="/img/angular-scope/6AB968DED1A16F35C0B07ABE855F1DE1.png" alt="follow the chain"></p>
+<p>如果我们做出如下操作</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">childScope.anArray = [<span class="number">100</span>, <span class="number">555</span>]</span><br><span class="line">childScope.anObject = &#123; <span class="string">name:</span> <span class="string">'Mark'</span>, <span class="string">country:</span> <span class="string">'USA'</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>原型链没有被访问, childScope 会获得两个新的属性, 并且会隐藏 parentScope 上的同名属性.</p>
+<p><img src="/img/angular-scope/E2B99E360766E387E06F30DE655F6883.png" alt="not following the chain"></p>
+<p>仔细体会上面的三次操作. 第一第三次均是对某个属性进行赋值, 原型链并不会被访问, 由于属性并不存在, 所以新的属性将会被添加. 而第二次其实是先访问, <code>childScope.anArray</code>, <code>childScope.anObject</code>, 再对其访问的对象的某个属性进行复制.</p>
+<p>总结:</p>
+<ul>
+<li>如果我们读取 childScope.propertyX, 而 childScope 拥有 propertyX, 那么原型链不会被访问</li>
+<li>如果我们读取 childScope.propertyX, 而 childScope 并没有 propertyX, 那么原型链会被访问.</li>
+<li>如果对 childScope.propertyX 进行赋值, 那么原型链并不会被访问.</li>
+</ul>
+<p>最后我们再来看一种情况:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">delete</span> childScope.anArray</span><br><span class="line">childScope.anArray[<span class="number">1</span>] === <span class="number">22</span>  <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>我们显示删除了 childScope 的一个属性, 接着试图读取这个属性, 由于 childScope 并没有了这个属性, 所以原型链会被访问.</p>
+<p><img src="/img/angular-scope/BD6A16127625E60B805FC02B117C754C.png" alt="after deleting a property"></p>
+<h1 id="Angular_Scope_Inheritance"><a href="#Angular_Scope_Inheritance" class="headerlink" title="Angular Scope Inheritance"></a>Angular Scope Inheritance</h1><p>接着我们来看看 Angular 中的 scope 继承</p>
+<p>以下指令会创建新的 scope, 并且会在原型上继承 父scope (即$scope.$parent, 下文两个词互为同义词):</p>
+<ul>
+<li>ng-repeat</li>
+<li>ng-switch</li>
+<li>ng-view</li>
+<li>ng-controller</li>
+<li>带有 <code>scope: true</code> 的指令</li>
+<li>带有 <code>transclude: true</code> 的指令</li>
+</ul>
+<p>以下指令创建新的指令, 且在原型上 <strong>不继承</strong> 父scope:</p>
+<ul>
+<li>带有 <code>scope: { ... }</code> 的指令, 这会创建一个 独立的scope (isolate scope)</li>
+</ul>
+<p><strong>注意</strong>: 默认指令并不会创建 scope, 默认是 <code>scope: false</code>, 通常称之为 共享scope.</p>
+<p>让我们来看几个例子:</p>
+<h2 id="ng-include"><a href="#ng-include" class="headerlink" title="ng-include"></a>ng-include</h2><p>JS:</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$scope</span>.myPrimitive = <span class="number">50</span>;</span><br><span class="line"><span class="variable">$scope</span>.myObject    = &#123;aNumber: <span class="number">11</span>&#125;;</span><br></pre></td></tr></table></figure>
+<p>HTML:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>&#123; myPrimitive &#125;<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">p</span>&gt;</span>&#123; myObject.aNumber &#125;<span class="tag">&lt;/<span class="title">p</span>&gt;</span> // cannot use double curly brackets in jekyll</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/ng-template"</span> <span class="attribute">id</span>=<span class="value">"/tpl1.html"</span>&gt;</span><span class="handlebars"><span class="xml"></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"number"</span> <span class="attribute">ng-model</span>=<span class="value">"myPrimitive"</span>&gt;</span></span><br><span class="line"></span></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span> <span class="attribute">src</span>=<span class="value">"'/tpl1.html'"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/ng-template"</span> <span class="attribute">id</span>=<span class="value">"/tpl2.html"</span>&gt;</span><span class="handlebars"><span class="xml"></span><br><span class="line">    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"number"</span> <span class="attribute">ng-model</span>=<span class="value">"myObject.aNumber"</span>&gt;</span></span><br><span class="line"></span></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-include</span> <span class="attribute">src</span>=<span class="value">"'/tpl2.html'"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>每一个 ng-include 都会创建一个 子scope, 并在原型上继承 父 scope</p>
+<p><img src="/img/angular-scope/4FF01866A53AFF5A86061140DB783455.png" alt="ng-include"></p>
+<p>向第一个 input 输入数字, 一个新的属性 <code>myPrimitive</code> 将会被创建, 同时隐藏 父 scope 的 <code>myPrimitive</code>;</p>
+<p><img src="/img/angular-scope/3EDC9636029502E51C1E5C3F3CFF281A.png" alt="ng-include primitive"></p>
+<p>向第二个 input 输入数字, 子 scope 并不会创建一个新的属性, 这时候原型继承发挥了作用.</p>
+<p><img src="/img/angular-scope/DF9CE2689AC84645D641B8EE1EA8EDF4.png" alt="ng-include object"></p>
+<p>第一种情况很可能不是我们期待的结果, 所以可以显式的调用 <code>$parent</code> 来解决这个问题.</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="tag">input</span> ng-model=<span class="string">"$parent.myPrimitive"</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>向第一个 input 键入数字, 这时候就不会产生新的属性了. $parent 指向了 父scope. 但是 $parent 和 原型上的继承并不一定相等. 稍后我们会看到一个例子.</p>
+<p><img src="/img/angular-scope/7083CECC79990759E33B8992C5A886CA.png" alt="ng-include $parent"></p>
+<p>对于所有的 scope, 无论是共享的(<code>scope: false</code>), 继承的(<code>scope: true</code>), 还是孤立的(<code>scope: { ... }</code>), Angular 都会建立一个 父-子 的层级关系, 这个层级关系是根据 dom 结构的层级关系决定的, 可以通过 <code>$parent</code>, <code>$$childHead</code>, <code>$$childTail</code> 来访问.</p>
+<p>为了避免刚才的例子出现的子 scope 创建新属性情况的发声, 除了使用 <code>$scope</code>, 还可以使用调用原型链上的方法.</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// <span class="keyword">in</span> the parent scope</span><br><span class="line"><span class="variable">$scope</span>.setMyPrimitive = <span class="keyword">function</span>(<span class="keyword">value</span>) &#123;</span><br><span class="line">    <span class="variable">$scope</span>.myPrimitive = value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ng-switch_ng-view"><a href="#ng-switch_ng-view" class="headerlink" title="ng-switch ng-view"></a>ng-switch ng-view</h2><p>ng-switch, ng-view 与 ng-include 情况类似, 不赘述.</p>
+<h2 id="ng-repeat"><a href="#ng-repeat" class="headerlink" title="ng-repeat"></a>ng-repeat</h2><p>ng-repeat 有一点特殊.</p>
+<p>JS:</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$scope</span>.myArrayOfPrimitives = [ <span class="number">11</span>, <span class="number">22</span> ];</span><br><span class="line"><span class="variable">$scope</span>.myArrayOfObjects    = [&#123;num: <span class="number">101</span>&#125;, &#123;num: <span class="number">202</span>&#125;]</span><br></pre></td></tr></table></figure>
+<p>HTML:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span><span class="tag">&lt;<span class="title">li</span> <span class="attribute">ng-repeat</span>=<span class="value">"num in myArrayOfPrimitives"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="title">input</span> <span class="attribute">ng-model</span>=<span class="value">"num"</span>&gt;</span><span class="tag">&lt;/<span class="title">input</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">ul</span>&gt;</span><span class="tag">&lt;<span class="title">li</span> <span class="attribute">ng-repeat</span>=<span class="value">"obj in myArrayOfObjects"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="title">input</span> <span class="attribute">ng-model</span>=<span class="value">"obj.num"</span>&gt;</span><span class="tag">&lt;/<span class="title">input</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>对于每一次迭代, ng-repeat 都会创建一个 子scope, 并在原型上继承 父scope, <strong>但是他还会将 父scope 上的属性赋值到 子scope 上</strong>. 新的属性名就是 <code>ng-repeat=&quot;** in parentScope.property&quot;</code> 中的 **.<br>源码中的 ng-repeat 是这样的:</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">childScope = scope.<span class="variable">$new</span>(); // child scope prototypically inherits from parent scope ...</span><br><span class="line">childScope[valueIdent] = <span class="keyword">value</span>; // creates a new childScope property</span><br></pre></td></tr></table></figure>
+<p>如果 ** 是 primitive, 那么一份 copy 会被赋值到新的属性上. 修改 子scope 上的新属性自然不会修改 父 scope 上的属性.</p>
+<p><img src="/img/angular-scope/5461BD4DFDF60DA34B9E91AE8DA8A6A6.png" alt="ng-repeat primitive"></p>
+<p>如果 ** 是个 object, 那么一个 reference 会被赋值到新的 子scope 属性上. 修改这个属性, 就是修改 父scope 对应的属性.</p>
+<p><img src="/img/angular-scope/091471A0D7D49CDDF1632FF25096118B.png" alt="ng-repeat object"></p>
+<h2 id="ng-controller"><a href="#ng-controller" class="headerlink" title="ng-controller"></a>ng-controller</h2><p>ng-controller 也是会创建新的 子scope, 同时原型继承 父scope. 如同 ng-include, ng-switch, ng-view.<br>但是, 使用 $scope 来共享数据被认为是一种不好的操作. 因为原型链可是会一直向上追溯的.<br>如果想要共享数据, 最好使用 service.</p>
+<h1 id="Angular_Directives"><a href="#Angular_Directives" class="headerlink" title="Angular Directives"></a>Angular Directives</h1><p>我们来总结以下指令中的 scope:</p>
+<ol>
+<li><code>scope: false</code>(默认的), 指令不会创建新的 scope, 没有继承关系. 与 $parent 共享 $scope.</li>
+<li><code>scope: true</code>, 指令会创建一个 子scope, 并在原型上继承 $parent. 如果在一个 DOM 上有多个指令想要创建新的 scope, 会报错.</li>
+<li><code>scope: { ... }</code>, 指令会创建一个 孤立的scope. 这在创建可重用的组件时是最好的选择. 但是, 即使如此, 指令还是希望读取 $parent 的数据. 这个时候可以使用如下符号获得:<ul>
+<li><code>scope: { **: &quot;=&quot;}</code> 与 $parent 建立双向绑定.</li>
+<li><code>scope: { **: &quot;@&quot;}</code> 与 $parent 建立单向绑定.</li>
+<li><code>scope: { **: &quot;&amp;&quot;}</code> 绑定 $parent 的表达式.<br>想要获得相应的属性, 必须通过指令上的属性获得</li>
+<li>HTML: <code>&lt;div my-directive the-Parent-Prop=parentProp&gt;</code></li>
+<li>JS: <code>scope: { localProp: &#39;@theParentProp&#39; }</code><br>假设:</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>HTML: <code>&lt;my-directive interpolated=&quot;&quot; twowayBinding=&quot;parentProp2&quot;&gt;</code></li>
+<li>JS: <code>scope: { interpolatedProp: &#39;@interpolated&#39;, twowayBindingProp: &#39;=twowayBinding&#39; }</code></li>
+<li>指令在 link 期间: <code>scope.someIsolateProp = &quot;I&#39;m isolated&quot;</code><br>其中的关系如图:<br><img src="/img/angular-scope/931892730C42AB06340A91FDFE61E2BA.png" alt="isolate scope"></li>
+</ul>
+<ol>
+<li><code>transclude: true</code>, 指令创建了一个 “transcluded” 的子scope, 在原型上继承其 父scope. 如果上述例子同时具有<code>transclude: true</code>. 那么这个 “transcluded” scope, 和 “islolated” scope 是姊妹关系. 他们的 $parent 指向同一个 scope. 且 isolate scope 的 $$nextSibling 就是这个 “transcluded scope”. 下图反应了他们之间的关系:</li>
+</ol>
+<p><img src="/img/angular-scope/C6ADE4397FA38424C889CDB6C068B319.png" alt="transcluded scope"></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a href="https://github.com/angular/angular.js/wiki/Understanding-Scopes" target="_blank" rel="external">Angular Wiki: Understanding Scopes</a></li>
+</ul>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Angular/" rel="tag">#Angular</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/01/14/cool-software-collection/" rel="next" title="工欲善其事 必先利其器">
+                <i class="fa fa-chevron-left"></i> 工欲善其事 必先利其器
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/30/svg-1-basics/" rel="prev" title="SVG (一) 基础知识总结">
+                SVG (一) 基础知识总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar-xy2.jpg"
+               alt="xiaoyu2er" />
+          <p class="site-author-name" itemprop="name">xiaoyu2er</p>
+          <p class="site-description motion-element" itemprop="description">关于前端的一切, 记录自己的成长 | 这里是 @xiaoyu2er 的个人博客，与你一起发现更大的世界。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/xiaoyu2er" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/xiaoyu2er" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> ZhiHu
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1047856932" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://segmentfault.com/u/xiaoyu2er" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> SegmentFault
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> Others
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Friends</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://yoncise.com" target="_blank">Yoncise</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhouhaibing.com/" target="_blank">江海城</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://caohenghu.github.io" target="_blank">曹恒虎</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript_Prototypal_Inheritance"><span class="nav-number">1.</span> <span class="nav-text">JavaScript Prototypal Inheritance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Angular_Scope_Inheritance"><span class="nav-number">2.</span> <span class="nav-text">Angular Scope Inheritance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ng-include"><span class="nav-number">2.1.</span> <span class="nav-text">ng-include</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ng-switch_ng-view"><span class="nav-number">2.2.</span> <span class="nav-text">ng-switch ng-view</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ng-repeat"><span class="nav-number">2.3.</span> <span class="nav-text">ng-repeat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ng-controller"><span class="nav-number">2.4.</span> <span class="nav-text">ng-controller</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Angular_Directives"><span class="nav-number">3.</span> <span class="nav-text">Angular Directives</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">4.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xiaoyu2er</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'xy2er';
+      var disqus_identifier = '2016/01/23/angular-scope-in-depth/';
+      var disqus_title = '深入理解 Angular Scope 的继承关系';
+      var disqus_url = 'http://xiaoyu2er.github.io/2016/01/23/angular-scope-in-depth/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>
