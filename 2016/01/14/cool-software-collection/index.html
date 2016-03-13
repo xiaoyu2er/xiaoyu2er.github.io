@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion">
+<html class="theme-next pisces use-motion">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -79,7 +79,7 @@ Flashlight: Alfred 的替代品, 一键控制你的 Mac
 F.lux: 护眼工具
 iTerm2: Mac 下最好的 terminal
 oh-my-zsh: Oh My Zsh is a way of">
-<meta property="og:updated_time" content="2016-02-06T04:07:40.000Z">
+<meta property="og:updated_time" content="2016-03-13T09:26:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="工欲善其事 必先利其器">
 <meta name="twitter:description" content="Mac 软件
@@ -96,7 +96,7 @@ oh-my-zsh: Oh My Zsh is a way of">
 <script type="text/javascript" id="hexo.configuration">
   var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -140,6 +140,8 @@ oh-my-zsh: Oh My Zsh is a way of">
 
 
 
+
+
   
   
     
@@ -174,7 +176,7 @@ oh-my-zsh: Oh My Zsh is a way of">
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
@@ -216,19 +218,7 @@ oh-my-zsh: Oh My Zsh is a way of">
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-commonweal">
-          <a href="/404.html" rel="section">
-            
-              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
-            
-            公益404
-          </a>
-        </li>
-      
 
-      
-      
       
     </ul>
   
@@ -300,6 +290,7 @@ oh-my-zsh: Oh My Zsh is a way of">
 
           
           
+
         </div>
       </header>
     
@@ -372,6 +363,12 @@ oh-my-zsh: Oh My Zsh is a way of">
 <li><a href="https://www.zhihu.com/question/35050387" target="_blank" rel="external">Mac（OS X）有哪些冷门但是一但发现就无法自拔的软件？</a></li>
 </ul>
 
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -472,7 +469,7 @@ oh-my-zsh: Oh My Zsh is a way of">
                src="/uploads/avatar-xy2.jpg"
                alt="xiaoyu2er" />
           <p class="site-author-name" itemprop="name">xiaoyu2er</p>
-          <p class="site-description motion-element" itemprop="description">关于前端的一切, 记录自己的成长 | 这里是 @xiaoyu2er 的个人博客，与你一起发现更大的世界。</p>
+          <p class="site-description motion-element" itemprop="description">大丈夫当读万卷书, 行万里路, 乘风破浪, 以观沧海.</p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
@@ -534,15 +531,7 @@ oh-my-zsh: Oh My Zsh is a way of">
               <span class="links-of-author-item">
                 <a href="https://segmentfault.com/u/xiaoyu2er" target="_blank">
                   
-                    <i class="fa fa-globe"></i> SegmentFault
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="" target="_blank">
-                  
-                    <i class="fa fa-globe"></i> Others
+                    <i class="fa fa-globe"></i> SF
                   
                 </a>
               </span>
@@ -620,7 +609,7 @@ oh-my-zsh: Oh My Zsh is a way of">
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -629,7 +618,9 @@ oh-my-zsh: Oh My Zsh is a way of">
       </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
   
@@ -637,6 +628,14 @@ oh-my-zsh: Oh My Zsh is a way of">
 
   
 
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
 
 
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
@@ -663,6 +662,13 @@ oh-my-zsh: Oh My Zsh is a way of">
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
+
+
 
   
   
@@ -816,7 +822,7 @@ oh-my-zsh: Oh My Zsh is a way of">
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar === 'post') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -865,8 +871,8 @@ oh-my-zsh: Oh My Zsh is a way of">
 
   
   
-
   
+
   
 
 
