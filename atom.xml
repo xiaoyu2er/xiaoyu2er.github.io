@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiaoyu2er.github.io/"/>
-  <updated>2016-03-18T05:25:27.000Z</updated>
+  <updated>2016-03-21T02:28:17.000Z</updated>
   <id>http://xiaoyu2er.github.io/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webpack 资料整理 (持续更新)</title>
+    <link href="http://xiaoyu2er.github.io/2016/03/21/awesome-webpack/"/>
+    <id>http://xiaoyu2er.github.io/2016/03/21/awesome-webpack/</id>
+    <published>2016-03-20T16:00:00.000Z</published>
+    <updated>2016-03-21T02:28:17.000Z</updated>
+    
+    <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://gold.xitu.io/entry/5630280260b27cc2b9e85406&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何使用 Webpack - webpack-howto (翻译)(Instagram)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=VkTCL6Nqm6Y&amp;amp;feature=youtu.be&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;配套视频, Instagram团队Peter-Hunt的分享&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=MzVFrIAwwS8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;视频: Advanced Webpack (Lonely Planet的前端) 很多实用的技巧&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000002551952&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Webpack 入门指迷&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://code.oneapm.com/javascript/2015/07/07/webpack_performance_1/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Webpack 性能优化 （一）(使用别名做重定向)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/chemdemo/chemdemo.github.io/issues/10&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;基于webpack搭建前端工程解决方案探索 (评论更精彩)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/chemdemo/webpack-seed&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;webpack-seed (一个基于webpack搭建的工程例子 很有借鉴意义 可以做到同时支持SPA和多页面型的项目) &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000003499526&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;基于webpack搭建前端工程解决方案探索&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000004577578&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;【前端构建】WebPack实例与前端性能优化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000003969465&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gulp + webpack 构建多页面前端项目&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;请关注 &lt;a href=&quot;https://github.com/xiaoyu2er/awesome-webpack&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;xiaoyu2er/awesome-webpack&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://gold.xitu.io/entry/5630280260b27cc2b9e85406&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何使用 Webpack - webpack-howto (翻译)(Insta
+    
+    </summary>
+    
+    
+      <category term="Webpack" scheme="http://xiaoyu2er.github.io/tags/Webpack/"/>
+    
+      <category term="前端工程化" scheme="http://xiaoyu2er.github.io/tags/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>Google 镜像站搜集(2016年03月18日更新)</title>
