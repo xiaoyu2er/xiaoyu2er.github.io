@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiaoyu2er.github.io/"/>
-  <updated>2016-03-21T02:28:17.000Z</updated>
+  <updated>2016-03-21T02:42:42.000Z</updated>
   <id>http://xiaoyu2er.github.io/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://xiaoyu2er.github.io/2016/03/21/awesome-webpack/"/>
     <id>http://xiaoyu2er.github.io/2016/03/21/awesome-webpack/</id>
     <published>2016-03-20T16:00:00.000Z</published>
-    <updated>2016-03-21T02:28:17.000Z</updated>
+    <updated>2016-03-21T02:42:42.000Z</updated>
     
     <content type="html">&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://pan.baidu.com/s/1nug9U9j&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Webpack Fundamentals(视频系列教程)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;http://gold.xitu.io/entry/5630280260b27cc2b9e85406&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何使用 Webpack - webpack-howto (翻译)(Instagram)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=VkTCL6Nqm6Y&amp;amp;feature=youtu.be&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;配套视频, Instagram团队Peter-Hunt的分享&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=MzVFrIAwwS8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;视频: Advanced Webpack (Lonely Planet的前端) 很多实用的技巧&lt;/a&gt;&lt;/li&gt;
@@ -40,7 +41,8 @@
     <summary type="html">
     
       &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://gold.xitu.io/entry/5630280260b27cc2b9e85406&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;如何使用 Webpack - webpack-howto (翻译)(Insta
+&lt;li&gt;&lt;a href=&quot;http://pan.baidu.com/s/1nug9U9j&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Webpack Fundamentals(视频系列教程)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://
     
     </summary>
     
