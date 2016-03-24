@@ -63,7 +63,7 @@
     img { width: 80%; }
 
 
-近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2nd Edition,以及它的中译版 SVG精髓（第2版）.这本书深入浅出, 例子很多, 非常不错. 因为 sv">
+近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2nd Edition,以及它的中译版 SVG精髓（第2版）.这本书深入浅出, 例子很多, 非常不错.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SVG (一) 基础知识总结">
 <meta property="og:url" content="http://xiaoyu2er.github.io/2016/01/30/svg-1-basics/index.html">
@@ -72,7 +72,7 @@
     img { width: 80%; }
 
 
-近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2nd Edition,以及它的中译版 SVG精髓（第2版）.这本书深入浅出, 例子很多, 非常不错. 因为 sv">
+近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2nd Edition,以及它的中译版 SVG精髓（第2版）.这本书深入浅出, 例子很多, 非常不错.">
 <meta property="og:image" content="http://xiaoyu2er.github.io/img/svg/arcs02.svg">
 <meta property="og:image" content="http://xiaoyu2er.github.io/img/svg/quad01.svg">
 <meta property="og:image" content="http://xiaoyu2er.github.io/img/svg/cubic01.svg">
@@ -84,7 +84,8 @@
     img { width: 80%; }
 
 
-近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2nd Edition,以及它的中译版 SVG精髓（第2版）.这本书深入浅出, 例子很多, 非常不错. 因为 sv">
+近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2nd Edition,以及它的中译版 SVG精髓（第2版）.这本书深入浅出, 例子很多, 非常不错.">
+<meta name="twitter:image" content="http://xiaoyu2er.github.io/img/svg/arcs02.svg">
 
 
 
@@ -305,7 +306,7 @@
 
 <p>近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.<br>我看的是这本书 <a href="http://book.douban.com/subject/25941192/" target="_blank" rel="external">SVG Essentials, 2nd Edition</a>,以及它的中译版 <a href="http://book.douban.com/subject/26640057/" target="_blank" rel="external">SVG精髓（第2版）</a>.<br>这本书深入浅出, 例子很多, 非常不错. 因为 svg 涉及到很多关于颜色的内容, 所以还是建议大家看电子版.</p>
 <p>工作中的任务是实现一个相框功能, 当中涉及到了诸如 use, image, clip-path 的内容, 学习了一段时间后总算解决了, 所以希望记录一下学习内容和解决方案.<br>内容比较多, 所以准备开一个系列, 这是 SVG 系列的第一篇, 基础知识总结. 后续将会有更多关于 SVG 的内容. 敬请期待!</p>
-<h1 id="SVG_basics"><a href="#SVG_basics" class="headerlink" title="SVG basics"></a>SVG basics</h1><h2 id="Shape_Reference_Summary"><a href="#Shape_Reference_Summary" class="headerlink" title="Shape Reference Summary"></a>Shape Reference Summary</h2><table>
+<h1 id="SVG-basics"><a href="#SVG-basics" class="headerlink" title="SVG basics"></a>SVG basics</h1><h2 id="Shape-Reference-Summary"><a href="#Shape-Reference-Summary" class="headerlink" title="Shape Reference Summary"></a>Shape Reference Summary</h2><table>
 <thead>
 <tr>
 <th>形状</th>
@@ -339,7 +340,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="Path_Reference_Summary"><a href="#Path_Reference_Summary" class="headerlink" title="Path Reference Summary"></a>Path Reference Summary</h2><p>本质上, 上述基本形状都是路径(path)的简写. 简写可以使得 svg 文档更具有可读性. 但是当碰到复杂路径时, 就需要 path 来描述. 以下总结中, 凡是出现大写字母表示后续坐标为绝对坐标, 凡是小写字母都代表相对于上一个坐标的相对位移. Z 同 z 无差别. 因为表示闭合, 其后不用跟坐标</p>
+<h2 id="Path-Reference-Summary"><a href="#Path-Reference-Summary" class="headerlink" title="Path Reference Summary"></a>Path Reference Summary</h2><p>本质上, 上述基本形状都是路径(path)的简写. 简写可以使得 svg 文档更具有可读性. 但是当碰到复杂路径时, 就需要 path 来描述. 以下总结中, 凡是出现大写字母表示后续坐标为绝对坐标, 凡是小写字母都代表相对于上一个坐标的相对位移. Z 同 z 无差别. 因为表示闭合, 其后不用跟坐标</p>
 <table>
 <thead>
 <tr>
@@ -366,11 +367,11 @@
 </tr>
 <tr>
 <td><code>A(a) rx ry x-axis-rotation large-arc sweep x y</code></td>
-<td>画一段到(x,y)的椭圆弧. 椭圆弧的 x, y 轴半径分别为 rx,ry. 椭圆相对于 x 轴旋转 x-axis-rotation 度. large-arc=0表明弧线小于180读, large-arc=1表示弧线大于180度. sweep=0表明弧线逆时针旋转, sweep=1表明弧线顺时间旋转. 具体解释看<a href="/#arc">如何绘制椭圆弧</a></td>
+<td>画一段到(x,y)的椭圆弧. 椭圆弧的 x, y 轴半径分别为 rx,ry. 椭圆相对于 x 轴旋转 x-axis-rotation 度. large-arc=0表明弧线小于180读, large-arc=1表示弧线大于180度. sweep=0表明弧线逆时针旋转, sweep=1表明弧线顺时间旋转. 具体解释看<a href="#arc">如何绘制椭圆弧</a></td>
 </tr>
 <tr>
 <td><code>Q(q) cx cy x y</code></td>
-<td>从当前点画一条到(x, y)的二次<a href="http://www.wikiwand.com/zh-hans/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A" target="_blank" rel="external">贝塞尔曲线</a>, 曲线的控制点为(cx, cy). 关于二次贝塞尔曲线请看<a href="/#quadratic-bezier">二次贝塞尔曲线详解</a></td>
+<td>从当前点画一条到(x, y)的二次<a href="http://www.wikiwand.com/zh-hans/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A" target="_blank" rel="external">贝塞尔曲线</a>, 曲线的控制点为(cx, cy). 关于二次贝塞尔曲线请看<a href="#quadratic-bezier">二次贝塞尔曲线详解</a></td>
 </tr>
 <tr>
 <td><code>T(t) x y</code></td>
@@ -378,7 +379,7 @@
 </tr>
 <tr>
 <td><code>C(c) cx1 cy1 cx2 cy2 x y</code></td>
-<td>从当前点画一条到(x, y)的三次贝塞尔曲线, 曲线的开始控制点和终点控制点为别为 (cx1, cy1), (cx2, cy2). 关于三次贝塞尔曲线请看<a href="/#cubic-bezier">三次贝塞尔曲线详解</a></td>
+<td>从当前点画一条到(x, y)的三次贝塞尔曲线, 曲线的开始控制点和终点控制点为别为 (cx1, cy1), (cx2, cy2). 关于三次贝塞尔曲线请看<a href="#cubic-bezier">三次贝塞尔曲线详解</a></td>
 </tr>
 <tr>
 <td><code>S(s) cx2 cy2 x y</code></td>
@@ -386,7 +387,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="Transformation_Reference_Summary"><a href="#Transformation_Reference_Summary" class="headerlink" title="Transformation Reference Summary"></a>Transformation Reference Summary</h2><table>
+<h2 id="Transformation-Reference-Summary"><a href="#Transformation-Reference-Summary" class="headerlink" title="Transformation Reference Summary"></a>Transformation Reference Summary</h2><table>
 <thead>
 <tr>
 <th>transform</th>
@@ -432,12 +433,12 @@
 <p><img src="/img/svg/arcs02.svg" alt="ellipse"></p>
 <p>当确定了两个点已经椭圆的 rx, ry 后并不能唯一确定一条椭圆弧, 实际上根据是否是大圆, 路径是否是逆时针可以产生四条 (b, c, d, e)<br>其中, large-arc-flag=0 表示小圆, sweep-flag=0 表示逆时针.</p>
 <p>那么 x-axis-rotation 又是什么意思呢? b, c, d, e 产生的前提是 椭圆的 x 轴与用户坐标系的 x 轴是平行的.<br>f 图表示椭圆 x 轴相对于用户坐标系的 x 轴旋转30度所产生的椭圆弧. 灰色的部分表示原来产生的椭圆弧.</p>
-<h2 id="Quadratic_Bezier"><a href="#Quadratic_Bezier" class="headerlink" title="Quadratic Bezier"></a>Quadratic Bezier</h2><p>关于贝塞尔曲线的数学含义请看<a href="http://www.wikiwand.com/en/B%C3%A9zier_curve" target="_blank" rel="external">Bézier curve</a><br>这里直观的讲一下</p>
+<h2 id="Quadratic-Bezier"><a href="#Quadratic-Bezier" class="headerlink" title="Quadratic Bezier"></a>Quadratic Bezier</h2><p>关于贝塞尔曲线的数学含义请看<a href="http://www.wikiwand.com/en/B%C3%A9zier_curve" target="_blank" rel="external">Bézier curve</a><br>这里直观的讲一下</p>
 <p><img src="/img/svg/quad01.svg" alt="quadratic bezier 01"></p>
 <p>以上曲线的路径表示是: <code>&lt;path d=&quot;M200,300 Q400,50 600,300 T1000,300&quot;/&gt;</code><br>我们可以看出:<br>A 是起点, B 是终点, C 就是控制点.<br>找出 AC 的重点 D, BC 的重点 E, 连接 DE, 找出其中点 F, F 即这条曲线前半段的一个切点.</p>
 <p>这里不谈数学含义, 这样的几何意义更加直观.</p>
 <p>再来看 T 命令, 其实 T 命令是 Q 的一个简写.<br>其控制点 H 就是上个 Q 命令的控制点 C 关于终点 B 的对称点.<br>使用 T 命令产生的曲线往往比较顺滑 :)</p>
-<h2 id="Cubic_Bezier"><a href="#Cubic_Bezier" class="headerlink" title="Cubic Bezier"></a>Cubic Bezier</h2><p>再来看一下三次贝塞尔曲线</p>
+<h2 id="Cubic-Bezier"><a href="#Cubic-Bezier" class="headerlink" title="Cubic Bezier"></a>Cubic Bezier</h2><p>再来看一下三次贝塞尔曲线</p>
 <p><img src="/img/svg/cubic01.svg" alt="cubic bezier 01"></p>
 <p><code>&lt;path d=&quot;M100,200 C100,100 250,100 250,200 S400,300 400,200&quot;/&gt;</code></p>
 <p>前半段曲线(C 命令) s1:<br>起点 A, 终点 B, 起点控制点 C, 终点控制点 D, 连接 AC, BD, CD;<br>找到 CD 中点 F, 连接 AC 中点 E 与 F, 连接 BD 中点 G 与 F;<br>连接 EF, FG, 连接 EF 中点 H 与 FG 中点 I;<br>I 即为前半段曲线的切点;</p>
@@ -657,7 +658,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SVG_basics"><span class="nav-number">1.</span> <span class="nav-text">SVG basics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shape_Reference_Summary"><span class="nav-number">1.1.</span> <span class="nav-text">Shape Reference Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Path_Reference_Summary"><span class="nav-number">1.2.</span> <span class="nav-text">Path Reference Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformation_Reference_Summary"><span class="nav-number">1.3.</span> <span class="nav-text">Transformation Reference Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Details"><span class="nav-number">2.</span> <span class="nav-text">Details</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ellipse"><span class="nav-number">2.1.</span> <span class="nav-text">Ellipse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quadratic_Bezier"><span class="nav-number">2.2.</span> <span class="nav-text">Quadratic Bezier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cubic_Bezier"><span class="nav-number">2.3.</span> <span class="nav-text">Cubic Bezier</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SVG-basics"><span class="nav-number">1.</span> <span class="nav-text">SVG basics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Shape-Reference-Summary"><span class="nav-number">1.1.</span> <span class="nav-text">Shape Reference Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Path-Reference-Summary"><span class="nav-number">1.2.</span> <span class="nav-text">Path Reference Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transformation-Reference-Summary"><span class="nav-number">1.3.</span> <span class="nav-text">Transformation Reference Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Details"><span class="nav-number">2.</span> <span class="nav-text">Details</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ellipse"><span class="nav-number">2.1.</span> <span class="nav-text">Ellipse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quadratic-Bezier"><span class="nav-number">2.2.</span> <span class="nav-text">Quadratic Bezier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cubic-Bezier"><span class="nav-number">2.3.</span> <span class="nav-text">Cubic Bezier</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
