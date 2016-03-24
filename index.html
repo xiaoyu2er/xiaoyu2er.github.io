@@ -271,6 +271,15 @@
 
           
           
+             <span id="/2016/03/21/awesome-webpack/" class="leancloud_visitors" data-flag-title="webpack 资料整理 (持续更新)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
         </div>
       </header>
@@ -376,6 +385,15 @@ Webpack Fundamentals(视频系列教程)
 
           
           
+             <span id="/2016/03/16/google-mirror/" class="leancloud_visitors" data-flag-title="Google 镜像站搜集(2016年3月24日更新)">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
         </div>
       </header>
@@ -389,16 +407,8 @@ Webpack Fundamentals(视频系列教程)
 
       
         
-          
-          自由的接触信息应该是每个人不可剥夺的基本人权.
-持续更新! 敬请关注!
-如果您是以下镜像的作者, 且不希望出现在以下列表中，可以联系我移除链接。
-
-https://ggg.eeload.com/ (365ms)
-https://gg.kfd.me/ (556ms)
-http://google.cas
-          ...
-
+          <p>自由的接触信息应该是每个人不可剥夺的基本人权.</p>
+<p>持续更新! 敬请关注!</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/03/16/google-mirror/#more" rel="contents">
               阅读全文 &raquo;
@@ -482,6 +492,15 @@ http://google.cas
           
 
           
+          
+             <span id="/2016/03/15/baidu-do-evil/" class="leancloud_visitors" data-flag-title="[转载]再谈百度：KPI、无人机，以及一个必须给父母看的案例">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
           
 
         </div>
@@ -591,6 +610,15 @@ http://google.cas
 
           
           
+             <span id="/2016/01/31/mac-default-app-for-spec-file-type/" class="leancloud_visitors" data-flag-title="设置 Mac 下文件的默认打开程序 — duti 详解">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
         </div>
       </header>
@@ -692,6 +720,15 @@ http://google.cas
 
           
           
+             <span id="/2016/01/30/svg-1-basics/" class="leancloud_visitors" data-flag-title="SVG (一) 基础知识总结">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
         </div>
       </header>
@@ -705,16 +742,13 @@ http://google.cas
 
       
         
-          
-          
+          <style>
 
    table:nth-of-type(2) td:nth-of-type(1) { width:30%; }
     img { width: 80%; }
+</style>
 
-
-近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2n
-          ...
-
+<p>近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.<br>我看的是这本书 <a href="http://book.douban.com/subject/25941192/">SVG Essentials, 2nd Edition</a>,以及它的中译版 <a href="http://book.douban.com/subject/26640057/">SVG精髓（第2版）</a>.<br>这本书深入浅出, 例子很多, 非常不错. 因为 svg 涉及到很多关于颜色的内容, 所以还是建议大家看电子版.</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/01/30/svg-1-basics/#more" rel="contents">
               阅读全文 &raquo;
@@ -1007,6 +1041,99 @@ http://google.cas
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Wbc0HI1gU9zXOQKs1NEihskx-gzGzoHsz", "FBrzI628IRrYoM95BCzgtzWv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
 
 </body>

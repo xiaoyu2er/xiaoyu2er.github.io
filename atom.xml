@@ -58,10 +58,11 @@
     <link href="http://xiaoyu2er.github.io/2016/03/16/google-mirror/"/>
     <id>http://xiaoyu2er.github.io/2016/03/16/google-mirror/</id>
     <published>2016-03-15T16:00:00.000Z</published>
-    <updated>2016-03-24T01:30:35.000Z</updated>
+    <updated>2016-03-24T14:16:16.000Z</updated>
     
     <content type="html">&lt;p&gt;自由的接触信息应该是每个人不可剥夺的基本人权.&lt;/p&gt;
 &lt;p&gt;持续更新! 敬请关注!&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;如果您是以下镜像的作者, 且不希望出现在以下列表中，可以联系&lt;a href=&quot;mailto:zongyanqi@foxmail.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我&lt;/a&gt;移除链接。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://ggg.eeload.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://ggg.eeload.com/&lt;/a&gt; (365ms)&lt;/li&gt;
@@ -84,7 +85,6 @@
     
       &lt;p&gt;自由的接触信息应该是每个人不可剥夺的基本人权.&lt;/p&gt;
 &lt;p&gt;持续更新! 敬请关注!&lt;/p&gt;
-&lt;p&gt;如果您是以下镜像的作者, 且不希望出现在以下列表中，可以联系&lt;a href=&quot;mailto:zongyanqi@foxmail.com&quot; target=&quot;_blank&quot; re
     
     </summary>
     
@@ -256,7 +256,7 @@
     <link href="http://xiaoyu2er.github.io/2016/01/30/svg-1-basics/"/>
     <id>http://xiaoyu2er.github.io/2016/01/30/svg-1-basics/</id>
     <published>2016-01-29T16:00:00.000Z</published>
-    <updated>2016-03-13T09:26:36.000Z</updated>
+    <updated>2016-03-24T14:26:38.000Z</updated>
     
     <content type="html">&lt;style&gt;
 
@@ -265,6 +265,7 @@
 &lt;/style&gt;
 
 &lt;p&gt;近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.&lt;br&gt;我看的是这本书 &lt;a href=&quot;http://book.douban.com/subject/25941192/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SVG Essentials, 2nd Edition&lt;/a&gt;,以及它的中译版 &lt;a href=&quot;http://book.douban.com/subject/26640057/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SVG精髓（第2版）&lt;/a&gt;.&lt;br&gt;这本书深入浅出, 例子很多, 非常不错. 因为 svg 涉及到很多关于颜色的内容, 所以还是建议大家看电子版.&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;工作中的任务是实现一个相框功能, 当中涉及到了诸如 use, image, clip-path 的内容, 学习了一段时间后总算解决了, 所以希望记录一下学习内容和解决方案.&lt;br&gt;内容比较多, 所以准备开一个系列, 这是 SVG 系列的第一篇, 基础知识总结. 后续将会有更多关于 SVG 的内容. 敬请期待!&lt;/p&gt;
 &lt;h1 id=&quot;SVG-basics&quot;&gt;&lt;a href=&quot;#SVG-basics&quot; class=&quot;headerlink&quot; title=&quot;SVG basics&quot;&gt;&lt;/a&gt;SVG basics&lt;/h1&gt;&lt;h2 id=&quot;Shape-Reference-Summary&quot;&gt;&lt;a href=&quot;#Shape-Reference-Summary&quot; class=&quot;headerlink&quot; title=&quot;Shape Reference Summary&quot;&gt;&lt;/a&gt;Shape Reference Summary&lt;/h2&gt;&lt;table&gt;
 &lt;thead&gt;
@@ -421,7 +422,7 @@
     img { width: 80%; }
 &lt;/style&gt;
 
-&lt;p&gt;近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内
+&lt;p&gt;近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.&lt;br&gt;我看的是这本书 &lt;a href=&quot;http://book.douban.com/subject/25941192/&quot;&gt;SVG Essentials, 2nd Edition&lt;/a&gt;,以及它的中译版 &lt;a href=&quot;http://book.douban.com/subject/26640057/&quot;&gt;SVG精髓（第2版）&lt;/a&gt;.&lt;br&gt;这本书深入浅出, 例子很多, 非常不错. 因为 svg 涉及到很多关于颜色的内容, 所以还是建议大家看电子版.&lt;/p&gt;
     
     </summary>
     
@@ -555,7 +556,7 @@
     <link href="http://xiaoyu2er.github.io/2016/01/14/cool-software-collection/"/>
     <id>http://xiaoyu2er.github.io/2016/01/14/cool-software-collection/</id>
     <published>2016-01-13T16:00:00.000Z</published>
-    <updated>2016-03-13T09:26:36.000Z</updated>
+    <updated>2016-03-24T14:16:51.000Z</updated>
     
     <content type="html">&lt;h2 id=&quot;Mac-软件&quot;&gt;&lt;a href=&quot;#Mac-软件&quot; class=&quot;headerlink&quot; title=&quot;Mac 软件&quot;&gt;&lt;/a&gt;Mac 软件&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;http://archiverapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Archiever: Mac下最好的解压缩工具&lt;/a&gt;&lt;/li&gt;
@@ -621,8 +622,7 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Mac-软件&quot;&gt;&lt;a href=&quot;#Mac-软件&quot; class=&quot;headerlink&quot; title=&quot;Mac 软件&quot;&gt;&lt;/a&gt;Mac 软件&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://archiverapp.com/&quot; target=&quot;_blank
+      提升工作效率的超酷工具集合, 持续更新 (Mac, Chrome, Websites)
     
     </summary>
     
@@ -640,9 +640,10 @@
     <link href="http://xiaoyu2er.github.io/2016/01/08/angular-q-complete-guide/"/>
     <id>http://xiaoyu2er.github.io/2016/01/08/angular-q-complete-guide/</id>
     <published>2016-01-07T16:00:00.000Z</published>
-    <updated>2016-02-06T04:07:25.000Z</updated>
+    <updated>2016-03-24T14:16:51.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;Angular-q-完全指南&quot;&gt;&lt;a href=&quot;#Angular-q-完全指南&quot; class=&quot;headerlink&quot; title=&quot;Angular $q 完全指南&quot;&gt;&lt;/a&gt;Angular $q 完全指南&lt;/h1&gt;&lt;p&gt;如果想使用 $http 或者其他异步操作, 那 $q 是必须要掌握的概念啦. Let’s get started!&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;如何理解-q-deferred-object&quot;&gt;&lt;a href=&quot;#如何理解-q-deferred-object&quot; class=&quot;headerlink&quot; title=&quot;如何理解$q, deferred object ?&quot;&gt;&lt;/a&gt;如何理解$q, deferred object ?&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/asnowwolf/p/3689300.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;形象的讲解angular中的$q与promise&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;假设有一个家具厂，而它有一个VIP客户张先生。&lt;/p&gt;
@@ -703,7 +704,7 @@
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Angular-q-完全指南&quot;&gt;&lt;a href=&quot;#Angular-q-完全指南&quot; class=&quot;headerlink&quot; title=&quot;Angular $q 完全指南&quot;&gt;&lt;/a&gt;Angular $q 完全指南&lt;/h1&gt;&lt;p&gt;如果想使用 $http 或者其他异步操作
+      &lt;h1 id=&quot;Angular-q-完全指南&quot;&gt;&lt;a href=&quot;#Angular-q-完全指南&quot; class=&quot;headerlink&quot; title=&quot;Angular $q 完全指南&quot;&gt;&lt;/a&gt;Angular $q 完全指南&lt;/h1&gt;&lt;p&gt;如果想使用 $http 或者其他异步操作, 那 $q 是必须要掌握的概念啦. Let’s get started!&lt;/p&gt;
     
     </summary>
     

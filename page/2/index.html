@@ -271,6 +271,15 @@
 
           
           
+             <span id="/2016/01/23/angular-scope-in-depth/" class="leancloud_visitors" data-flag-title="深入理解 Angular Scope 的继承关系">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
         </div>
       </header>
@@ -373,6 +382,15 @@
 
           
           
+             <span id="/2016/01/14/cool-software-collection/" class="leancloud_visitors" data-flag-title="工欲善其事 必先利其器">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
         </div>
       </header>
@@ -386,18 +404,9 @@
 
       
         
-          
-          Mac 软件
-Archiever: Mac下最好的解压缩工具
-Default Folder X: 玩转打开/保存窗口，提高文件操作效率
-Dash: Mac下最好的 API 离线查询工具
-Flashlight: Alfred 的替代品, 一键控制你的 Mac
-F.lux: 护眼工具
-iTerm2: M
-          ...
-
+          提升工作效率的超酷工具集合, 持续更新 (Mac, Chrome, Websites)
           <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/14/cool-software-collection/#more" rel="contents">
+            <a class="btn" href="/2016/01/14/cool-software-collection/">
               阅读全文 &raquo;
             </a>
           </div>
@@ -480,6 +489,15 @@ iTerm2: M
 
           
           
+             <span id="/2016/01/08/angular-q-complete-guide/" class="leancloud_visitors" data-flag-title="Angular $q 完全指南">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
         </div>
       </header>
@@ -493,14 +511,7 @@ iTerm2: M
 
       
         
-          
-          Angular $q 完全指南如果想使用 $http 或者其他异步操作, 那 $q 是必须要掌握的概念啦. Let’s get started!
-如何理解$q, deferred object ?形象的讲解angular中的$q与promise
-
-假设有一个家具厂，而它有一个VIP客户张先生。
-有一
-          ...
-
+          <h1 id="Angular-q-完全指南"><a href="#Angular-q-完全指南" class="headerlink" title="Angular $q 完全指南"></a>Angular $q 完全指南</h1><p>如果想使用 $http 或者其他异步操作, 那 $q 是必须要掌握的概念啦. Let’s get started!</p>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/01/08/angular-q-complete-guide/#more" rel="contents">
               阅读全文 &raquo;
@@ -793,6 +804,99 @@ iTerm2: M
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Wbc0HI1gU9zXOQKs1NEihskx-gzGzoHsz", "FBrzI628IRrYoM95BCzgtzWv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
 
 </body>

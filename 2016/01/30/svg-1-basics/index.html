@@ -77,7 +77,7 @@
 <meta property="og:image" content="http://xiaoyu2er.github.io/img/svg/quad01.svg">
 <meta property="og:image" content="http://xiaoyu2er.github.io/img/svg/cubic01.svg">
 <meta property="og:image" content="http://xiaoyu2er.github.io/img/svg/cubic02.svg">
-<meta property="og:updated_time" content="2016-03-13T09:26:36.000Z">
+<meta property="og:updated_time" content="2016-03-24T14:26:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SVG (一) 基础知识总结">
 <meta name="twitter:description" content="table:nth-of-type(2) td:nth-of-type(1) { width:30%; }
@@ -286,6 +286,15 @@
 
           
           
+             <span id="/2016/01/30/svg-1-basics/" class="leancloud_visitors" data-flag-title="SVG (一) 基础知识总结">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
 
         </div>
       </header>
@@ -305,6 +314,7 @@
 </style>
 
 <p>近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.<br>我看的是这本书 <a href="http://book.douban.com/subject/25941192/" target="_blank" rel="external">SVG Essentials, 2nd Edition</a>,以及它的中译版 <a href="http://book.douban.com/subject/26640057/" target="_blank" rel="external">SVG精髓（第2版）</a>.<br>这本书深入浅出, 例子很多, 非常不错. 因为 svg 涉及到很多关于颜色的内容, 所以还是建议大家看电子版.</p>
+<a id="more"></a>
 <p>工作中的任务是实现一个相框功能, 当中涉及到了诸如 use, image, clip-path 的内容, 学习了一段时间后总算解决了, 所以希望记录一下学习内容和解决方案.<br>内容比较多, 所以准备开一个系列, 这是 SVG 系列的第一篇, 基础知识总结. 后续将会有更多关于 SVG 的内容. 敬请期待!</p>
 <h1 id="SVG-basics"><a href="#SVG-basics" class="headerlink" title="SVG basics"></a>SVG basics</h1><h2 id="Shape-Reference-Summary"><a href="#Shape-Reference-Summary" class="headerlink" title="Shape Reference Summary"></a>Shape Reference Summary</h2><table>
 <thead>
@@ -959,6 +969,99 @@
   
 
   
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("Wbc0HI1gU9zXOQKs1NEihskx-gzGzoHsz", "FBrzI628IRrYoM95BCzgtzWv");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
 
 
 </body>
