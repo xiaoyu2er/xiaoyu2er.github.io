@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiaoyu2er.github.io/"/>
-  <updated>2016-03-21T02:42:42.000Z</updated>
+  <updated>2016-04-01T01:15:14.000Z</updated>
   <id>http://xiaoyu2er.github.io/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Gulp 监听文件删除事件</title>
+    <link href="http://xiaoyu2er.github.io/2016/03/31/gulp-watch-delete-files/"/>
+    <id>http://xiaoyu2er.github.io/2016/03/31/gulp-watch-delete-files/</id>
+    <published>2016-03-30T16:00:00.000Z</published>
+    <updated>2016-04-01T01:15:14.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Gulp是前端自动化的一个非常有用的工具, 如何使用Gulp甚至可以单开一个系列(一定会的!).&lt;/p&gt;
+&lt;p&gt;在使用Gulp的过程中, 有一个非常讨厌的问题, 就是监听文件删除事件.&lt;/p&gt;
+&lt;p&gt;设想这样一个场景, 我们在&lt;code&gt;src/&lt;/code&gt;写ES6, 通过&lt;code&gt;gulp-babel&lt;/code&gt;转化为ES5文件, 输出到&lt;code&gt;build/&lt;/code&gt;下, 同时, 使用&lt;code&gt;gulp-inject&lt;/code&gt;将&lt;code&gt;build/&lt;/code&gt;下的js文件通过&lt;code&gt;script&lt;/code&gt;标签的方式添加到&lt;code&gt;index.html&lt;/code&gt;中;&lt;/p&gt;
+&lt;p&gt;增改文件都是极好的, 但是如果删除了&lt;code&gt;src/&lt;/code&gt;下的某个文件, &lt;code&gt;build/&lt;/code&gt; 下的文件并不会自动删除, 所以&lt;code&gt;index.html&lt;/code&gt;还是会引用.&lt;/p&gt;
+&lt;p&gt;怎么解决呢? Show Me the CODE!&lt;/p&gt;
+&lt;figure class=&quot;highlight http&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;javascript&quot;&gt;gulp.task(&lt;span class=&quot;string&quot;&gt;&#39;watch&#39;&lt;/span&gt;, [&lt;span class=&quot;string&quot;&gt;&#39;clean&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;build&#39;&lt;/span&gt;], &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    gulp.watch(&lt;span class=&quot;string&quot;&gt;&#39;src/index.html&#39;&lt;/span&gt;, [&lt;span class=&quot;string&quot;&gt;&#39;inject&#39;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; watcher = gulp.watch([&lt;span class=&quot;string&quot;&gt;&#39;src/**/*&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;!src/index.html&#39;&lt;/span&gt;], [&lt;span class=&quot;string&quot;&gt;&#39;babel&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;inject&#39;&lt;/span&gt;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    watcher.on(&lt;span class=&quot;string&quot;&gt;&#39;change&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; (&lt;span class=&quot;params&quot;&gt;event&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (event.type === &lt;span class=&quot;string&quot;&gt;&#39;deleted&#39;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; src = path.relative(path.resolve(&lt;span class=&quot;string&quot;&gt;&#39;src&#39;&lt;/span&gt;), event.path);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            src = src.replace(&lt;span class=&quot;regexp&quot;&gt;/.es6$/&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;.js&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; dest = path.resolve(buildDir, src);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            del.sync(dest);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/22391527/gulps-gulp-watch-not-triggered-for-new-or-deleted-files&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gulps gulp.watch not triggered for new or deleted files?&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/gulpjs/gulp/blob/master/docs/recipes/handling-the-delete-event-on-watch.md&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Handling the Delete Event on Watch&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Gulp是前端自动化的一个非常有用的工具, 如何使用Gulp甚至可以单开一个系列(一定会的!).&lt;/p&gt;
+&lt;p&gt;在使用Gulp的过程中, 有一个非常讨厌的问题, 就是监听文件删除事件.&lt;/p&gt;
+&lt;p&gt;设想这样一个场景, 我们在&lt;code&gt;src/&lt;/code&gt;写ES6, 通
+    
+    </summary>
+    
+    
+      <category term="Gulp" scheme="http://xiaoyu2er.github.io/tags/Gulp/"/>
+    
+  </entry>
   
   <entry>
     <title>webpack 资料整理 (持续更新)</title>
@@ -54,23 +88,24 @@
   </entry>
   
   <entry>
-    <title>Google 镜像站搜集(2016年3月31日更新)</title>
+    <title>Google 镜像站搜集(2016年4月1日更新)</title>
     <link href="http://xiaoyu2er.github.io/2016/03/16/google-mirror/"/>
     <id>http://xiaoyu2er.github.io/2016/03/16/google-mirror/</id>
     <published>2016-03-15T16:00:00.000Z</published>
-    <updated>2016-03-31T07:18:54.000Z</updated>
+    <updated>2016-04-01T01:57:35.000Z</updated>
     
     <content type="html">&lt;p&gt;自由的接触信息应该是每个人不可剥夺的基本人权.&lt;/p&gt;
 &lt;p&gt;持续更新! 敬请关注! &lt;a href=&quot;https://github.com/xiaoyu2er/google-mirror-check&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;google-mirror-check npm包已发布&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;如果您是以下镜像的作者, 且不希望出现在以下列表中，可以联系&lt;a href=&quot;mailto:zongyanqi@foxmail.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我&lt;/a&gt;移除链接。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://gc.ihuan.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://gc.ihuan.me/&lt;/a&gt; (1504ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://hao.cytbj.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://hao.cytbj.com/&lt;/a&gt; (1620ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://gg.kfd.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gg.kfd.me/&lt;/a&gt; (2059ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://soguge.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://soguge.com/&lt;/a&gt; (2207ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://s.8090st.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://s.8090st.com/&lt;/a&gt; (2945ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://ggss.cf/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ggss.cf/&lt;/a&gt; (4137ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.wen.lu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.wen.lu/&lt;/a&gt; (4502ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gc.ihuan.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://gc.ihuan.me/&lt;/a&gt; (1416ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://hao.cytbj.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://hao.cytbj.com/&lt;/a&gt; (2077ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://soguge.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://soguge.com/&lt;/a&gt; (2721ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://s.8090st.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://s.8090st.com/&lt;/a&gt; (2914ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gg.kfd.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gg.kfd.me/&lt;/a&gt; (3890ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.wen.lu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.wen.lu/&lt;/a&gt; (4940ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://rose.jgoproxy.tk/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://rose.jgoproxy.tk/&lt;/a&gt; (4977ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ggss.cf/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ggss.cf/&lt;/a&gt; (5113ms)&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     

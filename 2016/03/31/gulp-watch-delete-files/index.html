@@ -41,6 +41,8 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="Gulp," />
+
 
 
 
@@ -57,15 +59,22 @@
 
 
 
-<meta name="description" content="大丈夫当读万卷书, 行万里路, 乘风破浪, 以观沧海.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xiaoyu2er's blog">
-<meta property="og:url" content="http://xiaoyu2er.github.io/index.html">
+<meta name="description" content="Gulp是前端自动化的一个非常有用的工具, 如何使用Gulp甚至可以单开一个系列(一定会的!).
+在使用Gulp的过程中, 有一个非常讨厌的问题, 就是监听文件删除事件.
+设想这样一个场景, 我们在src/写ES6, 通过gulp-babel转化为ES5文件, 输出到build/下, 同时, 使用gulp-inject将build/下的js文件通过script标签的方式添加到index.html中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gulp 监听文件删除事件">
+<meta property="og:url" content="http://xiaoyu2er.github.io/2016/03/31/gulp-watch-delete-files/index.html">
 <meta property="og:site_name" content="xiaoyu2er's blog">
-<meta property="og:description" content="大丈夫当读万卷书, 行万里路, 乘风破浪, 以观沧海.">
+<meta property="og:description" content="Gulp是前端自动化的一个非常有用的工具, 如何使用Gulp甚至可以单开一个系列(一定会的!).
+在使用Gulp的过程中, 有一个非常讨厌的问题, 就是监听文件删除事件.
+设想这样一个场景, 我们在src/写ES6, 通过gulp-babel转化为ES5文件, 输出到build/下, 同时, 使用gulp-inject将build/下的js文件通过script标签的方式添加到index.html中">
+<meta property="og:updated_time" content="2016-04-01T01:15:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xiaoyu2er's blog">
-<meta name="twitter:description" content="大丈夫当读万卷书, 行万里路, 乘风破浪, 以观沧海.">
+<meta name="twitter:title" content="Gulp 监听文件删除事件">
+<meta name="twitter:description" content="Gulp是前端自动化的一个非常有用的工具, 如何使用Gulp甚至可以单开一个系列(一定会的!).
+在使用Gulp的过程中, 有一个非常讨厌的问题, 就是监听文件删除事件.
+设想这样一个场景, 我们在src/写ES6, 通过gulp-babel转化为ES5文件, 输出到build/下, 同时, 使用gulp-inject将build/下的js文件通过script标签的方式添加到index.html中">
 
 
 
@@ -83,7 +92,7 @@
   };
 </script>
 
-  <title> xiaoyu2er's blog </title>
+  <title> Gulp 监听文件删除事件 | xiaoyu2er's blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -123,9 +132,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -212,9 +219,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -234,10 +241,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/03/31/gulp-watch-delete-files/" itemprop="url">
-                  Gulp 监听文件删除事件
-                </a>
+                Gulp 监听文件删除事件
               
             
           </h1>
@@ -292,511 +296,64 @@
       
 
       
-        
-          
-          Gulp是前端自动化的一个非常有用的工具, 如何使用Gulp甚至可以单开一个系列(一定会的!).
-在使用Gulp的过程中, 有一个非常讨厌的问题, 就是监听文件删除事件.
-设想这样一个场景, 我们在src/写ES6, 通过gulp-babel转化为ES5文件, 输出到build/下, 同时, 使用gulp-inject将build/下的js文件通过script标签的方式添加到index.html中
-          ...
+        <p>Gulp是前端自动化的一个非常有用的工具, 如何使用Gulp甚至可以单开一个系列(一定会的!).</p>
+<p>在使用Gulp的过程中, 有一个非常讨厌的问题, 就是监听文件删除事件.</p>
+<p>设想这样一个场景, 我们在<code>src/</code>写ES6, 通过<code>gulp-babel</code>转化为ES5文件, 输出到<code>build/</code>下, 同时, 使用<code>gulp-inject</code>将<code>build/</code>下的js文件通过<code>script</code>标签的方式添加到<code>index.html</code>中;</p>
+<p>增改文件都是极好的, 但是如果删除了<code>src/</code>下的某个文件, <code>build/</code> 下的文件并不会自动删除, 所以<code>index.html</code>还是会引用.</p>
+<p>怎么解决呢? Show Me the CODE!</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">gulp.task(<span class="string">'watch'</span>, [<span class="string">'clean'</span>, <span class="string">'build'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.watch(<span class="string">'src/index.html'</span>, [<span class="string">'inject'</span>]);</span><br><span class="line">    <span class="keyword">var</span> watcher = gulp.watch([<span class="string">'src/**/*'</span>, <span class="string">'!src/index.html'</span>], [<span class="string">'babel'</span>, <span class="string">'inject'</span>]);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    watcher.on(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (event.type === <span class="string">'deleted'</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> src = path.relative(path.resolve(<span class="string">'src'</span>), event.path);</span><br><span class="line">            src = src.replace(<span class="regexp">/.es6$/</span>, <span class="string">'.js'</span>);</span><br><span class="line">            <span class="keyword">var</span> dest = path.resolve(buildDir, src);</span><br><span class="line">            del.sync(dest);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><a href="http://stackoverflow.com/questions/22391527/gulps-gulp-watch-not-triggered-for-new-or-deleted-files" target="_blank" rel="external">Gulps gulp.watch not triggered for new or deleted files?</a></p>
+</li>
+<li><p><a href="https://github.com/gulpjs/gulp/blob/master/docs/recipes/handling-the-delete-event-on-watch.md" target="_blank" rel="external">Handling the Delete Event on Watch</a></p>
+</li>
+</ul>
 
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/31/gulp-watch-delete-files/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
       
     </div>
 
     <div>
       
+        
+      
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/21/awesome-webpack/" itemprop="url">
-                  webpack 资料整理 (持续更新)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-21T00:00:00+08:00" content="2016-03-21">
-              2016-03-21
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Gulp/" rel="tag">#Gulp</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/21/awesome-webpack/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/21/awesome-webpack/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/03/21/awesome-webpack/" class="leancloud_visitors" data-flag-title="webpack 资料整理 (持续更新)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          
-Webpack Fundamentals(视频系列教程)
-如何使用 Webpack - webpack-howto (翻译)(Instagram)
-配套视频, Instagram团队Peter-Hunt的分享
-视频: Advanced Webpack (Lonely Planet的前端) 很多实用的技巧
-Webpack 入门指迷
-Webpack 性能优化 （一）(使用别名做重定向)
-基于webp
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/21/awesome-webpack/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/21/awesome-webpack/" rel="next" title="webpack 资料整理 (持续更新)">
+                <i class="fa fa-chevron-left"></i> webpack 资料整理 (持续更新)
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/16/google-mirror/" itemprop="url">
-                  Google 镜像站搜集(2016年4月1日更新)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-16T00:00:00+08:00" content="2016-03-16">
-              2016-03-16
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/16/google-mirror/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/16/google-mirror/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/03/16/google-mirror/" class="leancloud_visitors" data-flag-title="Google 镜像站搜集(2016年4月1日更新)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          自由的接触信息应该是每个人不可剥夺的基本人权.
-持续更新! 敬请关注! google-mirror-check npm包已发布
-如果您是以下镜像的作者, 且不希望出现在以下列表中，可以联系我移除链接。
-
-http://gc.ihuan.me/ (1416ms)
-http://hao.cytbj.com/ (2077ms)
-http://soguge.com/ (2721ms)
-http://s.8
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/16/google-mirror/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/15/baidu-do-evil/" itemprop="url">
-                  [转载]再谈百度：KPI、无人机，以及一个必须给父母看的案例
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-15T00:00:00+08:00" content="2016-03-15">
-              2016-03-15
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/15/baidu-do-evil/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/15/baidu-do-evil/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/03/15/baidu-do-evil/" class="leancloud_visitors" data-flag-title="[转载]再谈百度：KPI、无人机，以及一个必须给父母看的案例">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          原文: 再谈百度：KPI、无人机，以及一个必须给父母看的案例
-2016年03月15日下午歪理邪说公众号发送如下消息:
-
-果不其然到晚上7点之前, 文章已经被人举报, 本想截取微信公众号的各种评论现在也不行了. 好在已经有很多网站转载了这篇文章.
-拒绝百度, 从我做起.
-
-下面原文转载:
-再谈百度：KPI、无人机，以及一个必须给父母看的案例
-没想到我之前的一篇关于百度的文章引起了这么大的反馈。很多朋
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/15/baidu-do-evil/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    <div class="post-spread">
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/01/31/mac-default-app-for-spec-file-type/" itemprop="url">
-                  设置 Mac 下文件的默认打开程序 — duti 详解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-31T00:00:00+08:00" content="2016-01-31">
-              2016-01-31
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/01/31/mac-default-app-for-spec-file-type/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/01/31/mac-default-app-for-spec-file-type/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/01/31/mac-default-app-for-spec-file-type/" class="leancloud_visitors" data-flag-title="设置 Mac 下文件的默认打开程序 — duti 详解">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          在 mac 中打开一个文件会有一个默认的应用. 但是这个应用往往不是我们希望的那个. 比如我想打开一个 .c, Mac 会启动 XCode来打开这个文件, 这往往不是我希望的.再比如我想打开一个 .md 文件, 这货居然没有默认打开方式, 这个时候我们可能会右击然后找到那个打开方式, 设置成为 sublime 或者 mou.
-
-但是碰到一个 .markdown的文件, 系统又蒙圈了, 还是不知道用
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/01/31/mac-default-app-for-spec-file-type/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>
@@ -804,6 +361,17 @@ http://s.8
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -823,8 +391,17 @@ http://s.8
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar-xy2.jpg"
@@ -925,6 +502,23 @@ http://s.8
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -1015,6 +609,167 @@ http://s.8
 
 
   
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   
 
@@ -1031,9 +786,9 @@ http://s.8
 
     <script type="text/javascript">
       var disqus_shortname = 'xy2er';
-      var disqus_identifier = 'index.html';
-      var disqus_title = '';
-      var disqus_url = '';
+      var disqus_identifier = '2016/03/31/gulp-watch-delete-files/';
+      var disqus_title = 'Gulp 监听文件删除事件';
+      var disqus_url = 'http://xiaoyu2er.github.io/2016/03/31/gulp-watch-delete-files/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -1044,6 +799,8 @@ http://s.8
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
