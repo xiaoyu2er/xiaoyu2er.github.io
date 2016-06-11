@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiaoyu2er.github.io/"/>
-  <updated>2016-06-09T11:49:19.000Z</updated>
+  <updated>2016-06-09T10:18:16.000Z</updated>
   <id>http://xiaoyu2er.github.io/</id>
   
   <author>
@@ -14,26 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>博客停更通知</title>
-    <link href="http://xiaoyu2er.github.io/2016/06/06/follow-me-on-github/"/>
-    <id>http://xiaoyu2er.github.io/2016/06/06/follow-me-on-github/</id>
-    <published>2016-06-05T16:00:00.000Z</published>
-    <updated>2016-06-09T11:49:19.000Z</updated>
-    
-    <content type="html">&lt;p&gt;以后博客都将在 &lt;a href=&quot;https://github.com/xiaoyu2er/blog/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github&lt;/a&gt; 上更新.&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;以后博客都将在 &lt;a href=&quot;https://github.com/xiaoyu2er/blog/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;github&lt;/a&gt; 上更新.&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>44个 Javascript 变态题解析 (上)</title>
@@ -337,25 +317,35 @@
     <link href="http://xiaoyu2er.github.io/2016/03/16/google-mirror/"/>
     <id>http://xiaoyu2er.github.io/2016/03/16/google-mirror/</id>
     <published>2016-03-15T16:00:00.000Z</published>
-    <updated>2016-06-11T15:18:51.000Z</updated>
+    <updated>2016-06-11T15:26:34.000Z</updated>
     
     <content type="html">&lt;p&gt;自由的接触信息应该是每个人不可剥夺的基本人权.&lt;/p&gt;
 &lt;p&gt;持续更新! 敬请关注! &lt;a href=&quot;https://github.com/xiaoyu2er/google-mirror-check&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;google-mirror-check npm包已发布&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;如果您是以下镜像的作者, 且不希望出现在以下列表中，可以联系&lt;a href=&quot;mailto:zongyanqi@foxmail.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我&lt;/a&gt;移除链接。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://gc.ihuan.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://gc.ihuan.me/&lt;/a&gt; (2486ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://g.jikewenku.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://g.jikewenku.cn/&lt;/a&gt; (3130ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://g.libnull.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://g.libnull.com/&lt;/a&gt; (3477ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://global.gogfw.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://global.gogfw.com/&lt;/a&gt; (3867ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.bjgong.tk/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.bjgong.tk/&lt;/a&gt; (3947ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://g.alexyang.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://g.alexyang.me/&lt;/a&gt; (3981ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.wen.lu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.wen.lu/&lt;/a&gt; (4398ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.onk6.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.onk6.com/&lt;/a&gt; (4791ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.wacao.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.wacao.org/&lt;/a&gt; (5069ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://hao.cytbj.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://hao.cytbj.com/&lt;/a&gt; (5266ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.zzq2.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.zzq2.com/&lt;/a&gt; (5286ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://ggss.cf/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ggss.cf/&lt;/a&gt; (5495ms)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://ggss.cf/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://ggss.cf/&lt;/a&gt; (5581ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://google.hcs.world/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://google.hcs.world/&lt;/a&gt; (145ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://g.helloit.info/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://g.helloit.info/&lt;/a&gt; (534ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://g.jikewenku.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://g.jikewenku.cn/&lt;/a&gt; (1264ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://g.libnull.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://g.libnull.com/&lt;/a&gt; (1649ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.guge.xxx/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.guge.xxx/&lt;/a&gt; (1681ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ssdao.cdjltz.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ssdao.cdjltz.com/&lt;/a&gt; (1705ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://global.gogfw.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://global.gogfw.com/&lt;/a&gt; (1845ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.zzq2.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.zzq2.com/&lt;/a&gt; (2368ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.onk6.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.onk6.com/&lt;/a&gt; (2470ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.wacao.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.wacao.org/&lt;/a&gt; (2527ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://g.alexyang.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://g.alexyang.me/&lt;/a&gt; (2603ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://g.zrj766.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://g.zrj766.com/&lt;/a&gt; (2636ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://hao.cytbj.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://hao.cytbj.com/&lt;/a&gt; (2671ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.bjgong.tk/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.bjgong.tk/&lt;/a&gt; (2771ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://g2.wen.lu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://g2.wen.lu/&lt;/a&gt; (2785ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ggso.in/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://ggso.in/&lt;/a&gt; (2796ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.google.com.hk/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.google.com.hk/&lt;/a&gt; (2885ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://ggss.cf/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://ggss.cf/&lt;/a&gt; (3178ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://ggss.cf/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://ggss.cf/&lt;/a&gt; (3505ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gc.ihuan.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://gc.ihuan.me/&lt;/a&gt; (3826ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.wen.lu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://www.wen.lu/&lt;/a&gt; (4052ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://gg.kfd.me/webhp?newwindow=1&amp;amp;safe=active&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://gg.kfd.me/webhp?newwindow=1&amp;amp;safe=active&lt;/a&gt; (5885ms)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://s.8090st.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://s.8090st.com/&lt;/a&gt; (6197ms)&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     
