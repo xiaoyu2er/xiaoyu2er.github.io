@@ -1,1159 +1,1048 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
-
-
-
-
-  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-  <link rel="alternate" href="/atom.xml" title="xiaoyu2er's blog" type="application/atom+xml" />
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
-
-
-
-
-
-
-<meta name="description" content="大丈夫当读万卷书, 行万里路, 乘风破浪, 以观沧海.">
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://xiaoyu2er.github.io">
+  <title>xiaoyu2er&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="小鱼二 | HTML | javascript | 前端 | xiaoyu2er | angular">
 <meta property="og:type" content="website">
 <meta property="og:title" content="xiaoyu2er's blog">
 <meta property="og:url" content="http://xiaoyu2er.github.io/index.html">
 <meta property="og:site_name" content="xiaoyu2er's blog">
-<meta property="og:description" content="大丈夫当读万卷书, 行万里路, 乘风破浪, 以观沧海.">
+<meta property="og:description" content="小鱼二 | HTML | javascript | 前端 | xiaoyu2er | angular">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xiaoyu2er's blog">
-<meta name="twitter:description" content="大丈夫当读万卷书, 行万里路, 乘风破浪, 以观沧海.">
-
-
-
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Pisces',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: '博主'
+<meta name="twitter:description" content="小鱼二 | HTML | javascript | 前端 | xiaoyu2er | angular">
+  
+    <link rel="alternative" href="/atom.xml" title="xiaoyu2er&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" type="text/css" href="/./main.608e4a.css">
+  <style type="text/css">
+  
+    #container.show {
+      background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
-  };
+  </style>
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-73406233-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?7ccfad252ad09f00c805318abe1c3047";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
 </script>
 
-  <title> xiaoyu2er's blog </title>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body>
+  <div id="container" q-class="show:isCtnShow">
+    <canvas id="anm-canvas" class="anm-canvas"></canvas>
+    <div class="left-col" q-class="show:isShow">
+      
+<div class="overlay" style="background: #4d4d4d"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			<img src="/img/me/head.png" class="js-avatar">
+		</a>
+		<hgroup>
+		  <h1 class="header-author"><a href="/">xiaoyu2er</a></h1>
+		</hgroup>
+		
+		<p class="header-subtitle">行万里路, 读万卷书</p>
+		
 
-  
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-73406233-1', 'auto');
-  ga('send', 'pageview');
-</script>
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?7ccfad252ad09f00c805318abe1c3047";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-  
-  
-    
-  
-
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
-
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">xiaoyu2er's blog</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
-  </div>
-  <p class="site-subtitle">2016, 成长</p>
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+    		
+    			
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			
+            
+    			
+    			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+					<a class="github" target="_blank" href="https://github.com/xiaoyu2er" title="github"><i class="icon-github"></i></a>
+		        
+					<a class="weibo" target="_blank" href="http://weibo.com/u/1047856932" title="weibo"><i class="icon-weibo"></i></a>
+		        
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xiaoyu2er" title="zhihu"><i class="icon-zhihu"></i></a>
+		        
+					<a class="mail" target="_blank" href="mailto:zongyanqi@foxmail.com" title="mail"><i class="icon-mail"></i></a>
+		        
+			</div>
+		</nav>
+	</header>		
 </div>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
+    </div>
+    <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
+      
+<nav id="mobile-nav">
+  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+	<div class="btnctn js-mobile-btnctn">
+  		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
+	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="/img/me/head.png" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author js-header-author">xiaoyu2er</h1>
+			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>行万里路, 读万卷书<i class="icon icon-quo-right"></i></p>
+			
+			
+			
+				
+			
+			
+			
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xiaoyu2er" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/1047856932" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/xiaoyu2er" title="zhihu"><i class="icon-zhihu"></i></a>
+			        
+						<a class="mail" target="_blank" href="mailto:zongyanqi@foxmail.com" title="mail"><i class="icon-mail"></i></a>
+			        
+				</div>
+			</nav>
 
-<nav class="site-nav">
-  
-
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
-            
-            关于
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
+			<nav class="header-menu js-header-menu">
+				<ul style="width: 50%">
+				
+				
+					<li style="width: 100%"><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+		</header>				
+	</div>
+	<div class="mobile-mask" style="display:none" q-show="isShow"></div>
 </nav>
 
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
+      <div id="wrapper" class="body-wrap">
+        <div class="menu-l">
+          <div class="canvas-wrap">
+            <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
+          </div>
+          <div id="js-content" class="content-ll">
             
-  <section id="posts" class="posts-expand">
+  
+    <article id="post-44-js-puzzles-part1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      
-
+      <header class="article-header">
+        
   
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/06/44-js-puzzles-part1/">44个 Javascript 变态题解析 (上)</a>
+    </h1>
   
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
 
         
+        <a href="/2016/06/06/44-js-puzzles-part1/" class="archive-article-date">
+  	<time datetime="2016-06-05T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-06</time>
+</a>
         
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/06/44-js-puzzles-part1/" itemprop="url">
-                  44个 Javascript 变态题解析 (上)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-06T00:00:00+08:00" content="2016-06-06">
-              2016-06-06
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/06/44-js-puzzles-part1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/06/44-js-puzzles-part1/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/06/06/44-js-puzzles-part1/" class="leancloud_visitors" data-flag-title="44个 Javascript 变态题解析 (上)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
       </header>
     
-
-
-    <div class="post-body" itemprop="articleBody">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>原题来自: <a href="http://javascript-puzzlers.herokuapp.com/" target="_blank" rel="external">javascript-puzzlers</a></p>
+<p>读者可以先去做一下感受感受. 当初笔者的成绩是 21/44…</p>
+<p>当初笔者做这套题的时候不仅怀疑智商, 连人生都开始怀疑了….</p>
+<p>不过, 对于基础知识的理解是深入编程的前提. 让我们一起来看看这些变态题到底变态不变态吧!</p>
+<h2 id="第1题"><a href="#第1题" class="headerlink" title="第1题"></a>第1题</h2><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>].<span class="built_in">map</span>(<span class="built_in">parseInt</span>)</span><br></pre></td></tr></table></figure>
+<p>知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="external">Array/map</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt" target="_blank" rel="external">Number/parseInt</a></li>
+</ul>
+<p>首先, map接受两个参数, 一个回调函数 callback, 一个回调函数的this值</p>
+<p>其中回调函数接受三个参数 currentValue, index, arrary;</p>
+<p>而题目中, map只传入了回调函数–parseInt.</p>
+<p>其次, parseInt 只接受两个两个参数 string, radix(基数). radix的合法区间是2-36. 默认是10.</p>
+<p>所以本题即问</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">'1'</span>, <span class="number">0</span>);</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'2'</span>, <span class="number">1</span>);</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'3'</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>首先后两者参数不合法. 第一个笔者猜测0和不传一样被认为是10.</p>
+<p>所以答案是 <code>[1, NaN, NaN]</code></p>
+<h2 id="第2题"><a href="#第2题" class="headerlink" title="第2题"></a>第2题</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">typeof</span> <span class="literal">null</span>, <span class="literal">null</span> <span class="keyword">instanceof</span> <span class="built_in">Object</span>]</span><br></pre></td></tr></table></figure>
+<p>两个知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank" rel="external">Operators/typeof</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof" target="_blank" rel="external">Operators/instanceof</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/instanceof" target="_blank" rel="external">Operators/instanceof(中)</a></li>
+</ul>
+<p>typeof 返回一个表示类型的字符串.</p>
+<p>instanceof 运算符用来检测 constructor.prototype 是否存在于参数 object 的原型链上.</p>
+<p>这个题可以直接看链接… 因为 <code>typeof null === &#39;object&#39;</code> 自语言之初就是这样….</p>
+<p>typeof 的结果请看下表:</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span>         <span class="literal">result</span></span><br><span class="line"><span class="type">Undefined</span>   <span class="string">"undefined"</span></span><br><span class="line"><span class="type">Null</span>        <span class="string">"object"</span></span><br><span class="line"><span class="type">Boolean</span>     <span class="string">"boolean"</span></span><br><span class="line"><span class="type">Number</span>      <span class="string">"number"</span></span><br><span class="line"><span class="type">String</span>      <span class="string">"string"</span></span><br><span class="line"><span class="type">Symbol</span>      <span class="string">"symbol"</span></span><br><span class="line"><span class="type">Host</span> <span class="keyword">object</span> <span class="type">Implementation</span>-dependent</span><br><span class="line"><span class="type">Function</span>    <span class="string">"function"</span></span><br><span class="line"><span class="type">Object</span>      <span class="string">"object"</span></span><br></pre></td></tr></table></figure>
+<p>所以答案 <code>[object, false]</code></p>
+<h2 id="第3题"><a href="#第3题" class="headerlink" title="第3题"></a>第3题</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>].reduce(Math.pow), [].reduce(Math.pow) ]</span><br></pre></td></tr></table></figure>
+<p>知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="external">Array/Reduce</a></li>
+</ul>
+<p><code>arr.reduce(callback[, initialValue])</code></p>
+<p>reduce接受两个参数, 一个回调, 一个初始值.</p>
+<p>回调函数接受四个参数 <code>previousValue, currentValue, currentIndex, array</code></p>
+<p>需要注意的是 <code>If the array is empty and no initialValue was provided, TypeError would be thrown.</code></p>
+<p>所以第二个表达式会报异常. 第一个表达式等价于 <code>Math.pow(3, 2) =&gt; 9; Math.pow(9, 1) =&gt;9</code></p>
+<p>答案 <code>an error</code></p>
+<h2 id="第4题"><a href="#第4题" class="headerlink" title="第4题"></a>第4题</h2><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">val</span> = <span class="symbol">'smt</span>g';</span><br><span class="line">console.log(<span class="symbol">'Value</span> is ' + (<span class="keyword">val</span> === <span class="symbol">'smt</span>g') ? <span class="symbol">'Somethin</span>g' : <span class="symbol">'Nothin</span>g');</span><br></pre></td></tr></table></figure>
+<p>两个知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank" rel="external">Operators/Operator_Precedence</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank" rel="external">Operators/Conditional_Operator</a></li>
+</ul>
+<p>简而言之 <code>+</code> 的优先级 大于 <code>?</code></p>
+<p>所以原题等价于 <code>&#39;Value is true&#39; ? &#39;Somthing&#39; : &#39;Nonthing&#39;</code> 而不是 <code>&#39;Value is&#39; + (true ? &#39;Something&#39; : &#39;Nonthing&#39;)</code></p>
+<p>答案 <code>&#39;Value is Something&#39;</code></p>
+<h2 id="第5题"><a href="#第5题" class="headerlink" title="第5题"></a>第5题</h2><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> name = <span class="string">'World!'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        <span class="built_in">var</span> name = <span class="string">'Jack'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbye '</span> + name);</span><br><span class="line">    &#125; <span class="decorator"><span class="keyword">else</span></span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>这个相对简单, 一个知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Hoisting" target="_blank" rel="external">Hoisting</a></li>
+</ul>
+<p>在 JavaScript中， functions 和 variables 会被提升。变量提升是JavaScript将声明移至作用域 scope (全局域或者当前函数作用域) 顶部的行为。</p>
+<p>这个题目相当于</p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> name = <span class="string">'World!'</span>;</span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">var</span> name;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> name === <span class="string">'undefined'</span>) &#123;</span><br><span class="line">        name = <span class="string">'Jack'</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Goodbye '</span> + name);</span><br><span class="line">    &#125; <span class="decorator"><span class="keyword">else</span></span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello '</span> + name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>所以答案是 <code>&#39;Goodbye Jack&#39;</code></p>
+<h2 id="第6题"><a href="#第6题" class="headerlink" title="第6题"></a>第6题</h2><figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">END</span> = Math.pow(<span class="number">2</span>, <span class="number">53</span>)<span class="comment">;</span></span><br><span class="line">var START = <span class="keyword">END</span> - <span class="number">100</span><span class="comment">;</span></span><br><span class="line">var count = <span class="number">0</span><span class="comment">;</span></span><br><span class="line"><span class="keyword">for</span> (var i = START<span class="comment">; i &lt;= END; i++) &#123;</span></span><br><span class="line">    count++<span class="comment">;</span></span><br><span class="line">&#125;</span><br><span class="line">console.log(count)<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>一个知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity" target="_blank" rel="external">Infinity</a></li>
+</ul>
+<p>在 JS 里, Math.pow(2, 53) == 9007199254740992 是可以表示的最大值. 最大值加一还是最大值. 所以循环不会停.</p>
+<h2 id="第7题"><a href="#第7题" class="headerlink" title="第7题"></a>第7题</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line">ary[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">ary.filter(<span class="function"><span class="keyword">function</span><span class="params">(x)</span> </span>&#123; <span class="keyword">return</span> x === <span class="literal">undefined</span>;&#125;);</span><br></pre></td></tr></table></figure>
+<p>答案是 <code>[]</code></p>
+<p>看一篇文章理解稀疏数组</p>
+<ul>
+<li><a href="http://www.cnblogs.com/ziyunfei/archive/2012/09/16/2687165.html" target="_blank" rel="external">译 JavaScript中的稀疏数组与密集数组</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank" rel="external">Array/filter</a></li>
+</ul>
+<p>我们来看一下 Array.prototype.filter 的 polyfill:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (!<span class="built_in">Array</span>.prototype.filter) &#123;</span><br><span class="line">  <span class="built_in">Array</span>.prototype.filter = <span class="function"><span class="keyword">function</span>(<span class="params">fun<span class="comment">/*, thisArg*/</span></span>) </span>&#123;</span><br><span class="line"><span class="meta">    'use strict'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> === <span class="keyword">void</span> <span class="number">0</span> || <span class="keyword">this</span> === <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> t = <span class="built_in">Object</span>(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">var</span> len = t.length &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> fun !== <span class="string">'function'</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="keyword">var</span> thisArg = <span class="built_in">arguments</span>.length &gt;= <span class="number">2</span> ? <span class="built_in">arguments</span>[<span class="number">1</span>] : <span class="keyword">void</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">      <span class="keyword">if</span> (i <span class="keyword">in</span> t) &#123; <span class="comment">// 注意这里!!!</span></span><br><span class="line">        <span class="keyword">var</span> val = t[i];</span><br><span class="line">        <span class="keyword">if</span> (fun.call(thisArg, val, i, t)) &#123;</span><br><span class="line">          res.push(val);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们看到在迭代这个数组的时候, 首先检查了这个索引值是不是数组的一个属性, 那么我们测试一下.</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">0 </span>in ary; =&gt; true</span><br><span class="line"><span class="symbol">3 </span>in ary; =&gt; false</span><br><span class="line"><span class="symbol">10 </span>in ary; =&gt; true</span><br></pre></td></tr></table></figure>
+<p>也就是说 从 3 - 9 都是没有初始化的’坑’!, 这些索引并不存在与数组中. 在 array 的函数调用的时候是会跳过这些’坑’的.</p>
+<h2 id="第8题"><a href="#第8题" class="headerlink" title="第8题"></a>第8题</h2><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">two</span>   = 0.2</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">one</span>   = 0.1</span><br><span class="line"><span class="keyword">var</span> eight = 0.8</span><br><span class="line"><span class="keyword">var</span> six   = 0.6</span><br><span class="line">[<span class="keyword">two</span> - <span class="keyword">one</span> == <span class="keyword">one</span>, eight - six == <span class="keyword">two</span>]</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="http://ourjs.com/detail/54695381bc3f9b154e000046" target="_blank" rel="external">JavaScript的设计缺陷?浮点运算：0.1 + 0.2 != 0.3</a></li>
+</ul>
+<p>IEEE 754标准中的浮点数并不能精确地表达小数</p>
+<p>那什么时候精准, 什么时候不经准呢? 笔者也不知道…</p>
+<p>答案 <code>[true, false]</code></p>
+<h2 id="第9题"><a href="#第9题" class="headerlink" title="第9题"></a>第9题</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showCase</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(value) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case A'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'B'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case B'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="literal">undefined</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Do not know!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">showCase(<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'A'</span>));</span><br></pre></td></tr></table></figure>
+<p>两个知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch" target="_blank" rel="external">Statements/switch</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" rel="external">String</a></li>
+</ul>
+<p>switch 是严格比较, String 实例和 字符串不一样.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s_prim = <span class="string">'foo'</span>;</span><br><span class="line"><span class="keyword">var</span> s_obj = <span class="keyword">new</span> <span class="built_in">String</span>(s_prim);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> s_prim); <span class="comment">// "string"</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> s_obj);  <span class="comment">// "object"</span></span><br><span class="line"><span class="built_in">console</span>.log(s_prim === s_obj); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>答案是 <code>&#39;Do not know!&#39;</code></p>
+<h2 id="第10题"><a href="#第10题" class="headerlink" title="第10题"></a>第10题</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showCase2</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(value) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case A'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'B'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case B'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="literal">undefined</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Do not know!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">showCase2(<span class="built_in">String</span>(<span class="string">'A'</span>));</span><br></pre></td></tr></table></figure>
+<p>解释:<br><code>String(x) does not create an object but does return a string, i.e. typeof String(1) === &quot;string&quot;</code></p>
+<p>还是刚才的知识点, 只不过 String 不仅是个构造函数 直接调用返回一个字符串哦.</p>
+<p>答案 <code>&#39;Case A&#39;</code></p>
+<h2 id="第11题"><a href="#第11题" class="headerlink" title="第11题"></a>第11题</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOdd</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isSane</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> isEven(num) || isOdd(num);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> values = [<span class="number">7</span>, <span class="number">4</span>, <span class="string">'13'</span>, <span class="number">-9</span>, <span class="literal">Infinity</span>];</span><br><span class="line">values.map(isSane);</span><br></pre></td></tr></table></figure>
+<p>一个知识点</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Remainder" target="_blank" rel="external">Arithmetic_Operators#Remainder</a></li>
+</ul>
+<p>此题等价于</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">7</span> % <span class="number">2</span> =&gt; <span class="number">1</span></span><br><span class="line"><span class="number">4</span> % <span class="number">2</span> =&gt; <span class="number">0</span></span><br><span class="line"><span class="string">'13'</span> % <span class="number">2</span> =&gt; <span class="number">1</span></span><br><span class="line"><span class="number">-9</span> % % <span class="number">2</span> =&gt; <span class="number">-1</span></span><br><span class="line">Infinity % <span class="number">2</span> =&gt; NaN</span><br></pre></td></tr></table></figure>
+<p>需要注意的是 余数的正负号随第一个操作数.</p>
+<p>答案 <code>[true, true, true, false, false]</code></p>
+<h2 id="第12题"><a href="#第12题" class="headerlink" title="第12题"></a>第12题</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="number">3</span>, <span class="number">8</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="number">3</span>, <span class="number">2</span>)</span></span></span><br><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="number">3</span>, <span class="number">0</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>第一个题讲过了, 答案 <code>3, NaN, 3</code></p>
+<h2 id="第13题"><a href="#第13题" class="headerlink" title="第13题"></a>第13题</h2><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.<span class="built_in">isArray</span>( <span class="built_in">Array</span>.prototype )</span><br></pre></td></tr></table></figure>
+<p>一个知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype" target="_blank" rel="external">Array/prototype</a></li>
+</ul>
+<p>一个鲜为人知的实事: <code>Array.prototype =&gt; []</code>;</p>
+<p>答案: <code>true</code></p>
+<h2 id="第14题"><a href="#第14题" class="headerlink" title="第14题"></a>第14题</h2><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> a = [<span class="number">0</span>];</span><br><span class="line"><span class="keyword">if</span> ([<span class="number">0</span>]) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a == <span class="literal">true</span>);</span><br><span class="line">&#125; <span class="decorator"><span class="keyword">else</span></span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"wut"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><a href="https://dorey.github.io/JavaScript-Equality-Table/" target="_blank" rel="external">JavaScript-Equality-Table</a></li>
+</ul>
+<p>一图胜千言</p>
+<p><img src="/img/js-puzzles/if.png" alt="js-puzzles/if.png"><br><img src="/img/js-puzzles/equality.png" alt="js-puzzles/equality.png"></p>
+<p>答案: <code>false</code></p>
+<h2 id="第15题"><a href="#第15题" class="headerlink" title="第15题"></a>第15题</h2><figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">[]</span>==<span class="string">[]</span></span><br></pre></td></tr></table></figure>
+<p><code>==</code> 是万恶之源, 看上图</p>
+<p>答案是 <code>false</code></p>
+<h2 id="第16题"><a href="#第16题" class="headerlink" title="第16题"></a>第16题</h2><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'5'</span> + <span class="number">3</span></span><br><span class="line"><span class="string">'5'</span> - <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>两个知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Addition" target="_blank" rel="external">Arithmetic_Operators#Addition</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Arithmetic_Operators#Subtraction" target="_blank" rel="external">Arithmetic_Operators#Subtraction</a></li>
+</ul>
+<p><code>+</code> 用来表示两个数的和或者字符串拼接, <code>-</code>表示两数之差.</p>
+<p>请看例子, 体会区别:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="string">'5'</span> + <span class="number">3</span></span><br><span class="line"><span class="string">'53'</span></span><br><span class="line">&gt; <span class="number">5</span> + <span class="string">'3'</span></span><br><span class="line"><span class="string">'53'</span></span><br><span class="line">&gt; <span class="number">5</span> - <span class="string">'3'</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line">&gt; <span class="string">'5'</span> - <span class="number">3</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line">&gt; <span class="string">'5'</span> - <span class="string">'3'</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>也就是说 <code>-</code> 会尽可能的将两个操作数变成数字, 而 <code>+</code> 如果两边不都是数字, 那么就是字符串拼接.</p>
+<p>答案是 <code>&#39;53&#39;, 2</code></p>
+<h2 id="第17题"><a href="#第17题" class="headerlink" title="第17题"></a>第17题</h2><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">1 </span>+ - + + + - + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>这里应该是(倒着看)<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> + (<span class="name">a</span>)	 =&gt; <span class="number">2</span></span><br><span class="line">a = - (<span class="name">b</span>) =&gt; <span class="number">1</span></span><br><span class="line">b = + (<span class="name">c</span>) =&gt; <span class="number">-1</span></span><br><span class="line">c = + (<span class="name">d</span>) =&gt; <span class="number">-1</span></span><br><span class="line">d = + (<span class="name">e</span>) =&gt; <span class="number">-1</span></span><br><span class="line">e = + (<span class="name">f</span>) =&gt; <span class="number">-1</span></span><br><span class="line">f = - (<span class="name">g</span>) =&gt; <span class="number">-1</span></span><br><span class="line">g = + <span class="number">1</span>   =&gt; <span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>所以答案 <code>2</code></p>
+<h2 id="第18题"><a href="#第18题" class="headerlink" title="第18题"></a>第18题</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = <span class="built_in">Array</span>(<span class="number">3</span>);</span><br><span class="line">ary[<span class="number">0</span>]=<span class="number">2</span></span><br><span class="line">ary.map(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>) </span>&#123; <span class="keyword">return</span> <span class="string">'1'</span>; &#125;);</span><br></pre></td></tr></table></figure>
+<p>稀疏数组. 同第7题.</p>
+<p>题目中的数组其实是一个长度为3, 但是没有内容的数组, array 上的操作会跳过这些未初始化的’坑’.</p>
+<p>所以答案是 <code>[&quot;1&quot;, undefined × 2]</code></p>
+<h2 id="第19题"><a href="#第19题" class="headerlink" title="第19题"></a>第19题</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sidEffecting</span>(<span class="params">ary</span>) </span>&#123;</span><br><span class="line">  ary[<span class="number">0</span>] = ary[<span class="number">2</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">a,b,c</span>) </span>&#123;</span><br><span class="line">  c = <span class="number">10</span></span><br><span class="line">  sidEffecting(<span class="built_in">arguments</span>);</span><br><span class="line">  <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;</span><br><span class="line">bar(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>这是一个大坑, 尤其是涉及到 ES6语法的时候</p>
+<p>知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments" target="_blank" rel="external">Functions/arguments</a></li>
+</ul>
+<p>首先 <code>The arguments object is an Array-like object corresponding to the arguments passed to a function.</code></p>
+<p>也就是说 <code>arguments</code> 是一个 <code>object</code>, c 就是 arguments[2], 所以对于 c 的修改就是对 arguments[2] 的修改.</p>
+<p>所以答案是 <code>21</code>.</p>
+<p>然而!!!!!!</p>
+<p>当函数参数涉及到 <code>any rest parameters, any default parameters or any destructured parameters</code> 的时候, 这个 arguments 就不在是一个 <code>mapped arguments object</code> 了…..</p>
+<p>请看:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sidEffecting</span>(<span class="params">ary</span>) </span>&#123;</span><br><span class="line">  ary[<span class="number">0</span>] = ary[<span class="number">2</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params">a,b,c=3</span>) </span>&#123;</span><br><span class="line">  c = <span class="number">10</span></span><br><span class="line">  sidEffecting(<span class="built_in">arguments</span>);</span><br><span class="line">  <span class="keyword">return</span> a + b + c;</span><br><span class="line">&#125;</span><br><span class="line">bar(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<p>答案是 <code>12</code> !!!!</p>
+<p>请读者细细体会!!</p>
+<h2 id="第20题"><a href="#第20题" class="headerlink" title="第20题"></a>第20题</h2><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var a = <span class="number">111111111111111110000</span>,</span><br><span class="line">    b = <span class="number">1111</span><span class="comment">;</span></span><br><span class="line">a + b<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>答案还是 <code>111111111111111110000</code>. 解释是 <code>Lack of precision for numbers in JavaScript affects both small and big numbers.</code> 但是笔者不是很明白……………. 请读者赐教!</p>
+<h2 id="第21题"><a href="#第21题" class="headerlink" title="第21题"></a>第21题</h2><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">x</span> = [].reverse<span class="comment">;</span></span><br><span class="line"><span class="keyword">x</span>()<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>这个题有意思!</p>
+<p>知识点:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse" target="_blank" rel="external">Array/reverse</a></li>
+</ul>
+<p><code>The reverse method transposes the elements of the calling array object in place, mutating the array, and returning a reference to the array.</code></p>
+<p>也就是说 最后会返回这个调用者(this), 可是 x 执行的时候是上下文是全局. 那么最后返回的是 <code>window</code>.</p>
+<p>答案是 <code>window</code></p>
+<h2 id="第22题"><a href="#第22题" class="headerlink" title="第22题"></a>第22题</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Number<span class="selector-class">.MIN_VALUE</span> &gt; <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p><code>true</code></p>
+<p>今天先到这里, 下次我们来看后22个题!</p>
 
       
-      
 
-      
-        
-          
-          原题来自: javascript-puzzlers
-读者可以先去做一下感受感受. 当初笔者的成绩是 21/44…
-当初笔者做这套题的时候不仅怀疑智商, 连人生都开始怀疑了….
-不过, 对于基础知识的理解是深入编程的前提. 让我们一起来看看这些变态题到底变态不变态吧!
-第1题1["1", "2", "3"].map(parseInt)
-知识点:
-
-Array/map
-Number/parseInt
-
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/06/44-js-puzzles-part1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
+    <div class="article-info article-info-index">
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/04/latern-open-internet-for-everyone/" itemprop="url">
-                  翻墙新姿态--lantern
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-04T00:00:00+08:00" content="2016-04-04">
-              2016-04-04
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/04/04/latern-open-internet-for-everyone/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/04/04/latern-open-internet-for-everyone/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/04/04/latern-open-internet-for-everyone/" class="leancloud_visitors" data-flag-title="翻墙新姿态--lantern">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          自由的接触信息应该是不可剥夺的基本人权!
-
-Lantern是一个互联网代理工具。它能帮助你访问被封锁的网站。
-亲测有效哦!
-点击下面的链接, 直接下载安装即可!
-https://github.com/getlantern/lantern
-
-          
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/04/latern-open-internet-for-everyone/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
       
 
       
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/31/gulp-watch-delete-files/" itemprop="url">
-                  Gulp 监听文件删除事件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-31T00:00:00+08:00" content="2016-03-31">
-              2016-03-31
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/31/gulp-watch-delete-files/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/31/gulp-watch-delete-files/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/03/31/gulp-watch-delete-files/" class="leancloud_visitors" data-flag-title="Gulp 监听文件删除事件">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/06/06/44-js-puzzles-part1/">展开全文 >></a>
+        </p>
       
 
       
-        
-          
-          Gulp是前端自动化的一个非常有用的工具, 如何使用Gulp甚至可以单开一个系列(一定会的!).
-在使用Gulp的过程中, 有一个非常讨厌的问题, 就是监听文件删除事件.
-设想这样一个场景, 我们在src/写ES6, 通过gulp-babel转化为ES5文件, 输出到build/下, 同时, 使用gulp-inject将build/下的js文件通过script标签的方式添加到index.html中
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/31/gulp-watch-delete-files/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/21/awesome-webpack/" itemprop="url">
-                  webpack 资料整理 (持续更新)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-21T00:00:00+08:00" content="2016-03-21">
-              2016-03-21
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/21/awesome-webpack/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/21/awesome-webpack/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/03/21/awesome-webpack/" class="leancloud_visitors" data-flag-title="webpack 资料整理 (持续更新)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-Webpack Fundamentals(视频系列教程)
-如何使用 Webpack - webpack-howto (翻译)(Instagram)
-配套视频, Instagram团队Peter-Hunt的分享
-视频: Advanced Webpack (Lonely Planet的前端) 很多实用的技巧
-Webpack 入门指迷
-Webpack 性能优化 （一）(使用别名做重定向)
-基于webp
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/21/awesome-webpack/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/16/google-mirror/" itemprop="url">
-                  Google 镜像站搜集(2016年7月23日更新)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-16T00:00:00+08:00" content="2016-03-16">
-              2016-03-16
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/16/google-mirror/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/16/google-mirror/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-             <span id="/2016/03/16/google-mirror/" class="leancloud_visitors" data-flag-title="Google 镜像站搜集(2016年7月23日更新)">
-               &nbsp; | &nbsp;
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               <span class="post-meta-item-text">阅读次数 </span>
-               <span class="leancloud-visitors-count"></span>
-              </span>
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          自由的接触信息应该是每个人不可剥夺的基本人权.
-持续更新! 敬请关注! google-mirror-check npm包已发布
-如果您是以下镜像的作者, 且不希望出现在以下列表中，可以联系我移除链接。
-
-http://gc.ihuan.me/ (1440ms)
-http://soguge.com/ (1476ms)
-http://s.8090st.com/ (1816ms)
-https://g.j
-          ...
-
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/16/google-mirror/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+      <div class="clearfix"></div>
     </div>
   </div>
-
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/uploads/avatar-xy2.jpg"
-               alt="xiaoyu2er" />
-          <p class="site-author-name" itemprop="name">xiaoyu2er</p>
-          <p class="site-description motion-element" itemprop="description">大丈夫当读万卷书, 行万里路, 乘风破浪, 以观沧海.</p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">日志</span>
-            </a>
-          </div>
-          
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">12</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
-              RSS
-            </a>
-          </div>
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/xiaoyu2er" target="_blank">
-                  
-                    <i class="fa fa-github"></i> GitHub
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.zhihu.com/people/xiaoyu2er" target="_blank">
-                  
-                    <i class="fa fa-globe"></i> ZhiHu
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/u/1047856932" target="_blank">
-                  
-                    <i class="fa fa-weibo"></i> Weibo
-                  
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://segmentfault.com/u/xiaoyu2er" target="_blank">
-                  
-                    <i class="fa fa-globe"></i> SF
-                  
-                </a>
-              </span>
-            
-          
-        </div>
-
-        
-        
-
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">Friends</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://yoncise.com" target="_blank">Yoncise</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://www.zhouhaibing.com/" target="_blank">江海城</a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://caohenghu.github.io" target="_blank">曹恒虎</a>
-              </span>
-            
-          
-        </div>
-
-      </section>
-
-      
-
-    </div>
-  </aside>
+</article>
 
 
-        
-      </div>
-    </main>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
+
+
+
+
+
   
-  &copy; 
-  <span itemprop="copyrightYear">2016</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">xiaoyu2er</span>
-</div>
+    <article id="post-gulp-watch-delete-files" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/31/gulp-watch-delete-files/">Gulp 监听文件删除事件</a>
+    </h1>
+  
 
-<div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
-</div>
+        
+        <a href="/2016/03/31/gulp-watch-delete-files/" class="archive-article-date">
+  	<time datetime="2016-03-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Gulp是前端自动化的一个非常有用的工具, 如何使用Gulp甚至可以单开一个系列(一定会的!).</p>
+<p>在使用Gulp的过程中, 有一个非常讨厌的问题, 就是监听文件删除事件.</p>
+<p>设想这样一个场景, 我们在<code>src/</code>写ES6, 通过<code>gulp-babel</code>转化为ES5文件, 输出到<code>build/</code>下, 同时, 使用<code>gulp-inject</code>将<code>build/</code>下的js文件通过<code>script</code>标签的方式添加到<code>index.html</code>中;</p>
+<p>增改文件都是极好的, 但是如果删除了<code>src/</code>下的某个文件, <code>build/</code> 下的文件并不会自动删除, 所以<code>index.html</code>还是会引用.</p>
+<p>怎么解决呢? Show Me the CODE!</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">gulp.task(<span class="string">'watch'</span>, [<span class="string">'clean'</span>, <span class="string">'build'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.watch(<span class="string">'src/index.html'</span>, [<span class="string">'inject'</span>]);</span><br><span class="line">    <span class="keyword">var</span> watcher = gulp.watch([<span class="string">'src/**/*'</span>, <span class="string">'!src/index.html'</span>], [<span class="string">'babel'</span>, <span class="string">'inject'</span>]);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    watcher.on(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (event.type === <span class="string">'deleted'</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> src = path.relative(path.resolve(<span class="string">'src'</span>), event.path);</span><br><span class="line">            src = src.replace(<span class="regexp">/.es6$/</span>, <span class="string">'.js'</span>);</span><br><span class="line">            <span class="keyword">var</span> dest = path.resolve(buildDir, src);</span><br><span class="line">            del.sync(dest);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span></span><br></pre></td></tr></table></figure>
+<p>最关键的还是这个 <code>var watcher = gulp.watch()</code> 啦, <code>watcher</code>这个句柄就可以监听文件变动的事件了, 其中, <code>event</code> 就有<code>type</code>的属性, 用于表示是新增文件, 还是修改文件, 亦或是删除文件, 然后<code>path</code>属性表示当前变动的文件地址, 知道了这些信息, 就可以干任何事情啦!</p>
+<ul>
+<li><p><a href="http://stackoverflow.com/questions/22391527/gulps-gulp-watch-not-triggered-for-new-or-deleted-files" target="_blank" rel="external">Gulps gulp.watch not triggered for new or deleted files?</a></p>
+</li>
+<li><p><a href="https://github.com/gulpjs/gulp/blob/master/docs/recipes/handling-the-delete-event-on-watch.md" target="_blank" rel="external">Handling the Delete Event on Watch</a></p>
+</li>
+</ul>
 
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Pisces
-  </a>
-</div>
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Gulp</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+      
 
-      </div>
-    </footer>
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/03/31/gulp-watch-delete-files/">展开全文 >></a>
+        </p>
+      
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
+      
+      <div class="clearfix"></div>
     </div>
   </div>
+</article>
 
+
+
+
+
+
+
+
+  
+    <article id="post-awesome-webpack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/21/awesome-webpack/">webpack 资料整理 (持续更新)</a>
+    </h1>
+  
+
+        
+        <a href="/2016/03/21/awesome-webpack/" class="archive-article-date">
+  	<time datetime="2016-03-20T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><a href="http://pan.baidu.com/s/1nug9U9j" target="_blank" rel="external">Webpack Fundamentals(视频系列教程)</a></li>
+<li><a href="http://gold.xitu.io/entry/5630280260b27cc2b9e85406" target="_blank" rel="external">如何使用 Webpack - webpack-howto (翻译)(Instagram)</a></li>
+<li><a href="https://www.youtube.com/watch?v=VkTCL6Nqm6Y&amp;feature=youtu.be" target="_blank" rel="external">配套视频, Instagram团队Peter-Hunt的分享</a></li>
+<li><a href="https://www.youtube.com/watch?v=MzVFrIAwwS8" target="_blank" rel="external">视频: Advanced Webpack (Lonely Planet的前端) 很多实用的技巧</a></li>
+<li><a href="https://segmentfault.com/a/1190000002551952" target="_blank" rel="external">Webpack 入门指迷</a></li>
+<li><a href="http://code.oneapm.com/javascript/2015/07/07/webpack_performance_1/" target="_blank" rel="external">Webpack 性能优化 （一）(使用别名做重定向)</a></li>
+<li><a href="https://github.com/chemdemo/chemdemo.github.io/issues/10" target="_blank" rel="external">基于webpack搭建前端工程解决方案探索 (评论更精彩)</a></li>
+<li><a href="https://github.com/chemdemo/webpack-seed" target="_blank" rel="external">webpack-seed (一个基于webpack搭建的工程例子 很有借鉴意义 可以做到同时支持SPA和多页面型的项目) </a></li>
+<li><a href="https://segmentfault.com/a/1190000003499526" target="_blank" rel="external">基于webpack搭建前端工程解决方案探索</a></li>
+<li><a href="https://segmentfault.com/a/1190000004577578" target="_blank" rel="external">【前端构建】WebPack实例与前端性能优化</a></li>
+<li><a href="https://segmentfault.com/a/1190000003969465" target="_blank" rel="external">gulp + webpack 构建多页面前端项目</a></li>
+</ul>
+<p>请关注 <a href="https://github.com/xiaoyu2er/awesome-webpack" target="_blank" rel="external">xiaoyu2er/awesome-webpack</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Webpack</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端工程化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/03/21/awesome-webpack/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-google-mirror" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/16/google-mirror/">Google 镜像站搜集(2016年7月23日更新)</a>
+    </h1>
+  
+
+        
+        <a href="/2016/03/16/google-mirror/" class="archive-article-date">
+  	<time datetime="2016-03-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自由的接触信息应该是每个人不可剥夺的基本人权.</p>
+<p>持续更新! 敬请关注! <a href="https://github.com/xiaoyu2er/google-mirror-check" target="_blank" rel="external">google-mirror-check npm包已发布</a></p>
+<p>如果您是以下镜像的作者, 且不希望出现在以下列表中，可以联系<a href="mailto:zongyanqi@foxmail.com" target="_blank" rel="external">我</a>移除链接。</p>
+<ul>
+<li><a href="http://gc.ihuan.me/" target="_blank" rel="external">http://gc.ihuan.me/</a> (1440ms)</li>
+<li><a href="http://soguge.com/" target="_blank" rel="external">http://soguge.com/</a> (1476ms)</li>
+<li><a href="http://s.8090st.com/" target="_blank" rel="external">http://s.8090st.com/</a> (1816ms)</li>
+<li><a href="https://g.jikewenku.cn/" target="_blank" rel="external">https://g.jikewenku.cn/</a> (2338ms)</li>
+<li><a href="http://www.bjgong.tk/" target="_blank" rel="external">http://www.bjgong.tk/</a> (2964ms)</li>
+<li><a href="https://g.alexyang.me/" target="_blank" rel="external">https://g.alexyang.me/</a> (3293ms)</li>
+<li><a href="https://g.libnull.com/" target="_blank" rel="external">https://g.libnull.com/</a> (3681ms)</li>
+<li><a href="https://g.zrj766.com/" target="_blank" rel="external">https://g.zrj766.com/</a> (3861ms)</li>
+<li><a href="https://ggss.cf/" target="_blank" rel="external">https://ggss.cf/</a> (4127ms)</li>
+<li><a href="https://ggso.in/" target="_blank" rel="external">https://ggso.in/</a> (4500ms)</li>
+<li><a href="https://www.onenew.net/" target="_blank" rel="external">https://www.onenew.net/</a> (4861ms)</li>
+<li><a href="http://hao.cytbj.com/" target="_blank" rel="external">http://hao.cytbj.com/</a> (5395ms)</li>
+<li><a href="http://www.zzq2.com/" target="_blank" rel="external">http://www.zzq2.com/</a> (5428ms)</li>
+<li><a href="http://ggss.cf/" target="_blank" rel="external">http://ggss.cf/</a> (5947ms)</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tools</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Google</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/03/16/google-mirror/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-mac-default-app-for-spec-file-type" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/31/mac-default-app-for-spec-file-type/">设置 Mac 下文件的默认打开程序 — duti 详解</a>
+    </h1>
+  
+
+        
+        <a href="/2016/01/31/mac-default-app-for-spec-file-type/" class="archive-article-date">
+  	<time datetime="2016-01-30T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在 mac 中打开一个文件会有一个默认的应用. 但是这个应用往往不是我们希望的那个. 比如我想打开一个 <code>.c</code>, Mac 会启动 XCode来打开这个文件, 这往往不是我希望的.<br>再比如我想打开一个 <code>.md</code> 文件, 这货居然没有默认打开方式, 这个时候我们可能会右击然后找到那个打开方式, 设置成为 sublime 或者 mou.</p>
+<p><img src="/img/duti/get-info.png" alt="Get Info"></p>
+<p>但是碰到一个 <code>.markdown</code>的文件, 系统又蒙圈了, 还是不知道用什么打开, 当然我们也可以按照刚才说的去修改.</p>
+<p>那么有没有一个快捷的方式, 可以批量的修改系统中所有文件的默认打开方式呢? 有! 就是我们今天要介绍的 <code>duti</code></p>
+<h2 id="Concepts"><a href="#Concepts" class="headerlink" title="Concepts"></a>Concepts</h2><p>duti是 Mac 下的一个命令行工具, 主要作用为不同文件类型设置默认的应用. <strong>duti</strong> 的意思其实就是 <strong>default for UTI</strong></p>
+<p>在介绍如何使用之前我们需要明确几个概念:</p>
+<h3 id="UTI"><a href="#UTI" class="headerlink" title="UTI"></a>UTI</h3><p>Mac 下的文件类型被定义为 Uniform Type Identifiers (UTI). 例如, HTML 文件的 UTI 是 <strong>public.html</strong>; Word 文档的 UTI 是 <strong>com.microsoft.word.doc</strong>.<br>那么改变文件类型的默认打开方式的第一步就是确认文件类型啦.</p>
+<p>第一个方式是去看苹果列出来的 UTI <a href="https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html" target="_blank" rel="external">Uniform Type Identifiers Reference</a></p>
+<p>第二个方式是使用 <code>mdls</code> 命令, 这哥们的作用就是: lists the metadata attributes for the specified file<br>那么如何使用呢, 很简单只要把你想要获得 UTI 的文件作为参数就好了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ mdls test.txt</span><br><span class="line"></span><br><span class="line">kMDItemContentType             = <span class="string">"public.plain-text"</span></span><br><span class="line">kMDItemContentTypeTree         = (</span><br><span class="line">    <span class="string">"public.plain-text"</span>,</span><br><span class="line">    <span class="string">"public.text"</span>,</span><br><span class="line">    <span class="string">"public.data"</span>,</span><br><span class="line">    <span class="string">"public.item"</span>,</span><br><span class="line">    <span class="string">"public.content"</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p>我们可以看到其中就有这样的输出(截取). 可以看到一个 <code>.txt</code> 文件的 UTI 就是 <code>public.plain-text</code>, 那么下面这一坨是干什么的呢?<br>因为文件类型也有一个具体和宽泛的划分嘛, 越往下约 general.<br>再来看一个</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ mdls test.css</span><br><span class="line"></span><br><span class="line">kMDItemContentType             = <span class="string">"public.css"</span></span><br><span class="line">kMDItemContentTypeTree         = (</span><br><span class="line">    <span class="string">"public.css"</span>,</span><br><span class="line">    <span class="string">"public.text"</span>,</span><br><span class="line">    <span class="string">"public.data"</span>,</span><br><span class="line">    <span class="string">"public.item"</span>,</span><br><span class="line">    <span class="string">"public.content"</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><code>public.css</code> 就是 <code>.css</code> 的 UTI.</p>
+<h3 id="Bundle-ID"><a href="#Bundle-ID" class="headerlink" title="Bundle ID"></a>Bundle ID</h3><p>Bundle ID (应用标识符)) 是 iOS 或者 Mac 应用的唯一标识. 也就是我们希望用什么软件打开我们的文件的那个软件的 ID 啦.</p>
+<p>可以用以下命令获得 Bundle ID:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ osascript <span class="_">-e</span> <span class="string">'id of app "Finder"'</span></span><br><span class="line">com.apple.finder</span><br><span class="line"></span><br><span class="line">$ osascript <span class="_">-e</span> <span class="string">'id of app "Atom"'</span></span><br><span class="line">com.github.atom</span><br><span class="line"></span><br><span class="line">$ osascript <span class="_">-e</span> <span class="string">'id of app "Sublime Text 2"'</span></span><br><span class="line">com.sublimetext.2</span><br></pre></td></tr></table></figure>
+<h3 id="Bundle-Id-amp-UTI"><a href="#Bundle-Id-amp-UTI" class="headerlink" title="Bundle Id &amp; UTI"></a>Bundle Id &amp; UTI</h3><p>那么知道了文件的类型UTI, 知道了软件的 Bundle ID, 距离设定文件的默认程序其实就差一步了.<br>还有一个概念, 就是这个软件对于这个文件是个什么角色. 其实我们这里大部分情况只需要关心 <code>editor</code> 这个角色. 就是编辑角色. 其他的没啥用.</p>
+<ul>
+<li>all: application handles all roles for the given UTI.</li>
+<li>viewer: application handles reading and displaying documents with the given UTI.</li>
+<li>editor: application can manipulate and save the item. Implies viewer.</li>
+<li>shell: application can execute the item.</li>
+<li>none: application  cannot  open  the item, but provides an icon for the given UTI.</li>
+</ul>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>好了, 介绍了这么多概念, 终于到了修改文件默认打开方式的时候了!</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">duti [ -hVv ] [ settings_path ]</span><br></pre></td></tr></table></figure>
+<p>如果上述语句没有给<code>settings_path</code>, duti 将会从标准输入读取配置. 如果<code>setting_path</code>是个文件夹的话, 那么 duti 将会从文件夹内的所有文件中读取配置.</p>
+<p>那么这个 setting_path 文件的每一行其实需要三个字段:</p>
+<ul>
+<li>应用的标识符 Bundle ID (比如: com.apple.Safari)</li>
+<li>文件类型的 UTI (比如: public.html), 扩展名或者 MIME 类型</li>
+<li>应用对于 UTI 的角色是什么 (比如, editor 编辑器)</li>
+</ul>
+<h3 id="options"><a href="#options" class="headerlink" title="options"></a>options</h3><ul>
+<li><strong>-s</strong>: 选项会让 duti 从命令行读参数.</li>
+<li><strong>-x ext</strong>: 选项会让 duti 输出参数中扩展名对应的默认应用</li>
+<li><strong>-d uti</strong>: 打印 UTI 的默认应用.</li>
+<li><strong>-l uti</strong>: 打印 UTI 的所有可用应用.</li>
+<li>-V: 打印版本.</li>
+<li>-v: 详细输出.</li>
+<li>-h: 帮助.</li>
+</ul>
+<h3 id="examples"><a href="#examples" class="headerlink" title="examples"></a>examples</h3><p>使用 -s 选项, 从命令行读取参数:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">duti <span class="_">-s</span> com.apple.Safari public.html all</span><br><span class="line">duti <span class="_">-s</span> com.apple.Finder ftp</span><br></pre></td></tr></table></figure>
+<p>但是我比较喜欢把这个设定放到一个文件里, 比如 <code>duti-sublime</code>,<br>我希望用 Sublime 打开 <code>.md</code>, <code>.css</code>, <code>.js</code>, 以及富文本文件, 纯文本文件, 以及一些 shell 脚本.<br>那么我的文件内容如下:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    net<span class="selector-class">.daringfireball</span><span class="selector-class">.markdown</span>  editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.css</span>	editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.script</span>	editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.source-code</span>  editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.rtf</span>  editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.plain-text</span>   editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.unix-executable</span>   editor</span><br></pre></td></tr></table></figure>
+<p>运行命令:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">duti</span> duti-sublime</span><br></pre></td></tr></table></figure>
+<p>然后我们在使用 -x 选项, 打印 UTI 的默认应用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ duti -x css</span><br><span class="line">Sublime Text 2.app</span><br><span class="line">/opt/homebrew-cask/Caskroom/sublime-text/2.0.2/Sublime Text 2.app</span><br><span class="line">com.sublimetext.2</span><br></pre></td></tr></table></figure>
+<p>双击<code>test.css</code>就是Sublime打开啦~</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html" target="_blank" rel="external">https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html</a></li>
+<li><a href="http://superuser.com/questions/209145/how-to-get-a-files-uti-from-the-command-line-in-mac-os-x" target="_blank" rel="external">http://superuser.com/questions/209145/how-to-get-a-files-uti-from-the-command-line-in-mac-os-x</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Tools</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mac</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/01/31/mac-default-app-for-spec-file-type/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
-  
-
-
-
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+          </div>
+        </div>
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 xiaoyu2er
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <script>
+	var yiliaConfig = {
+		mathjax: false,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: "/",
+		innerArchive: true,
+		showTags: false
+	}
 </script>
 
-
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+<script>!function(t){function n(r){if(e[r])return e[r].exports;var o=e[r]={exports:{},id:r,loaded:!1};return t[r].call(o.exports,o,o.exports,n),o.loaded=!0,o.exports}var e={};n.m=t,n.c=e,n.p="./",n(0)}([function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}function o(t,n){var e=/\/|index.html/g;return t.replace(e,"")===n.replace(e,"")}function i(){for(var t=document.querySelectorAll(".js-header-menu li a"),n=window.location.pathname,e=0,r=t.length;e<r;e++){var i=t[e];o(n,i.getAttribute("href"))&&(0,p.default)(i,"active")}}function u(t){for(var n=t.offsetLeft,e=t.offsetParent;null!==e;)n+=e.offsetLeft,e=e.offsetParent;return n}function c(t){for(var n=t.offsetTop,e=t.offsetParent;null!==e;)n+=e.offsetTop,e=e.offsetParent;return n}function f(t,n,e,r,o){var i=u(t),f=c(t)-n;if(f-e<=o){var a=t.$newDom;a||(a=t.cloneNode(!0),(0,y.default)(t,a),t.$newDom=a,a.style.position="fixed",a.style.top=(e||f)+"px",a.style.left=i+"px",a.style.zIndex=r||2,a.style.width="100%",a.style.color="#fff"),a.style.visibility="visible",t.style.visibility="hidden"}else{t.style.visibility="visible";var s=t.$newDom;s&&(s.style.visibility="hidden")}}function a(){var t=document.querySelector(".js-overlay"),n=document.querySelector(".js-header-menu");f(t,document.body.scrollTop,-63,2,0),f(n,document.body.scrollTop,1,3,0)}function s(){document.querySelector("#container").addEventListener("scroll",function(t){a()}),window.addEventListener("scroll",function(t){a()}),a()}var l=e(71),p=r(l),d=e(72),v=(r(d),e(84)),y=r(v),h=e(69),b=r(h),x=e(75),m=r(x),g=e(70);(function(){b.default.versions.mobile&&window.screen.width<800&&(i(),s())})(),(0,g.addLoadEvent)(function(){m.default.init()}),t.exports={}},function(t,n){var e=t.exports="undefined"!=typeof window&&window.Math==Math?window:"undefined"!=typeof self&&self.Math==Math?self:Function("return this")();"number"==typeof __g&&(__g=e)},function(t,n){var e={}.hasOwnProperty;t.exports=function(t,n){return e.call(t,n)}},function(t,n,e){var r=e(49),o=e(15);t.exports=function(t){return r(o(t))}},function(t,n,e){t.exports=!e(8)(function(){return 7!=Object.defineProperty({},"a",{get:function(){return 7}}).a})},function(t,n,e){var r=e(6),o=e(12);t.exports=e(4)?function(t,n,e){return r.f(t,n,o(1,e))}:function(t,n,e){return t[n]=e,t}},function(t,n,e){var r=e(10),o=e(30),i=e(24),u=Object.defineProperty;n.f=e(4)?Object.defineProperty:function(t,n,e){if(r(t),n=i(n,!0),r(e),o)try{return u(t,n,e)}catch(t){}if("get"in e||"set"in e)throw TypeError("Accessors not supported!");return"value"in e&&(t[n]=e.value),t}},function(t,n,e){var r=e(22)("wks"),o=e(13),i=e(1).Symbol,u="function"==typeof i;(t.exports=function(t){return r[t]||(r[t]=u&&i[t]||(u?i:o)("Symbol."+t))}).store=r},function(t,n){t.exports=function(t){try{return!!t()}catch(t){return!0}}},function(t,n,e){var r=e(35),o=e(16);t.exports=Object.keys||function(t){return r(t,o)}},function(t,n,e){var r=e(11);t.exports=function(t){if(!r(t))throw TypeError(t+" is not an object!");return t}},function(t,n){t.exports=function(t){return"object"==typeof t?null!==t:"function"==typeof t}},function(t,n){t.exports=function(t,n){return{enumerable:!(1&t),configurable:!(2&t),writable:!(4&t),value:n}}},function(t,n){var e=0,r=Math.random();t.exports=function(t){return"Symbol(".concat(void 0===t?"":t,")_",(++e+r).toString(36))}},function(t,n){var e=t.exports={version:"2.4.0"};"number"==typeof __e&&(__e=e)},function(t,n){t.exports=function(t){if(void 0==t)throw TypeError("Can't call method on  "+t);return t}},function(t,n){t.exports="constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf".split(",")},function(t,n){t.exports={}},function(t,n){t.exports=!0},function(t,n){n.f={}.propertyIsEnumerable},function(t,n,e){var r=e(6).f,o=e(2),i=e(7)("toStringTag");t.exports=function(t,n,e){t&&!o(t=e?t:t.prototype,i)&&r(t,i,{configurable:!0,value:n})}},function(t,n,e){var r=e(22)("keys"),o=e(13);t.exports=function(t){return r[t]||(r[t]=o(t))}},function(t,n,e){var r=e(1),o="__core-js_shared__",i=r[o]||(r[o]={});t.exports=function(t){return i[t]||(i[t]={})}},function(t,n){var e=Math.ceil,r=Math.floor;t.exports=function(t){return isNaN(t=+t)?0:(t>0?r:e)(t)}},function(t,n,e){var r=e(11);t.exports=function(t,n){if(!r(t))return t;var e,o;if(n&&"function"==typeof(e=t.toString)&&!r(o=e.call(t)))return o;if("function"==typeof(e=t.valueOf)&&!r(o=e.call(t)))return o;if(!n&&"function"==typeof(e=t.toString)&&!r(o=e.call(t)))return o;throw TypeError("Can't convert object to primitive value")}},function(t,n,e){var r=e(1),o=e(14),i=e(18),u=e(26),c=e(6).f;t.exports=function(t){var n=o.Symbol||(o.Symbol=i?{}:r.Symbol||{});"_"==t.charAt(0)||t in n||c(n,t,{value:u.f(t)})}},function(t,n,e){n.f=e(7)},function(t,n,e){var r=e(1),o=e(14),i=e(46),u=e(5),c="prototype",f=function(t,n,e){var a,s,l,p=t&f.F,d=t&f.G,v=t&f.S,y=t&f.P,h=t&f.B,b=t&f.W,x=d?o:o[n]||(o[n]={}),m=x[c],g=d?r:v?r[n]:(r[n]||{})[c];d&&(e=n);for(a in e)(s=!p&&g&&void 0!==g[a])&&a in x||(l=s?g[a]:e[a],x[a]=d&&"function"!=typeof g[a]?e[a]:h&&s?i(l,r):b&&g[a]==l?function(t){var n=function(n,e,r){if(this instanceof t){switch(arguments.length){case 0:return new t;case 1:return new t(n);case 2:return new t(n,e)}return new t(n,e,r)}return t.apply(this,arguments)};return n[c]=t[c],n}(l):y&&"function"==typeof l?i(Function.call,l):l,y&&((x.virtual||(x.virtual={}))[a]=l,t&f.R&&m&&!m[a]&&u(m,a,l)))};f.F=1,f.G=2,f.S=4,f.P=8,f.B=16,f.W=32,f.U=64,f.R=128,t.exports=f},function(t,n){var e={}.toString;t.exports=function(t){return e.call(t).slice(8,-1)}},function(t,n,e){var r=e(11),o=e(1).document,i=r(o)&&r(o.createElement);t.exports=function(t){return i?o.createElement(t):{}}},function(t,n,e){t.exports=!e(4)&&!e(8)(function(){return 7!=Object.defineProperty(e(29)("div"),"a",{get:function(){return 7}}).a})},function(t,n,e){"use strict";var r=e(18),o=e(27),i=e(36),u=e(5),c=e(2),f=e(17),a=e(51),s=e(20),l=e(58),p=e(7)("iterator"),d=!([].keys&&"next"in[].keys()),v="keys",y="values",h=function(){return this};t.exports=function(t,n,e,b,x,m,g){a(e,n,b);var w,O,S,_=function(t){if(!d&&t in M)return M[t];switch(t){case v:return function(){return new e(this,t)};case y:return function(){return new e(this,t)}}return function(){return new e(this,t)}},j=n+" Iterator",P=x==y,E=!1,M=t.prototype,A=M[p]||M["@@iterator"]||x&&M[x],T=A||_(x),L=x?P?_("entries"):T:void 0,N="Array"==n?M.entries||A:A;if(N&&(S=l(N.call(new t)))!==Object.prototype&&(s(S,j,!0),r||c(S,p)||u(S,p,h)),P&&A&&A.name!==y&&(E=!0,T=function(){return A.call(this)}),r&&!g||!d&&!E&&M[p]||u(M,p,T),f[n]=T,f[j]=h,x)if(w={values:P?T:_(y),keys:m?T:_(v),entries:L},g)for(O in w)O in M||i(M,O,w[O]);else o(o.P+o.F*(d||E),n,w);return w}},function(t,n,e){var r=e(10),o=e(55),i=e(16),u=e(21)("IE_PROTO"),c=function(){},f="prototype",a=function(){var t,n=e(29)("iframe"),r=i.length;for(n.style.display="none",e(48).appendChild(n),n.src="javascript:",t=n.contentWindow.document,t.open(),t.write("<script>document.F=Object<\/script>"),t.close(),a=t.F;r--;)delete a[f][i[r]];return a()};t.exports=Object.create||function(t,n){var e;return null!==t?(c[f]=r(t),e=new c,c[f]=null,e[u]=t):e=a(),void 0===n?e:o(e,n)}},function(t,n,e){var r=e(35),o=e(16).concat("length","prototype");n.f=Object.getOwnPropertyNames||function(t){return r(t,o)}},function(t,n){n.f=Object.getOwnPropertySymbols},function(t,n,e){var r=e(2),o=e(3),i=e(45)(!1),u=e(21)("IE_PROTO");t.exports=function(t,n){var e,c=o(t),f=0,a=[];for(e in c)e!=u&&r(c,e)&&a.push(e);for(;n.length>f;)r(c,e=n[f++])&&(~i(a,e)||a.push(e));return a}},function(t,n,e){t.exports=e(5)},function(t,n,e){var r=e(15);t.exports=function(t){return Object(r(t))}},function(t,n,e){t.exports={default:e(41),__esModule:!0}},function(t,n,e){t.exports={default:e(42),__esModule:!0}},function(t,n,e){"use strict";function r(t){return t&&t.__esModule?t:{default:t}}n.__esModule=!0;var o=e(39),i=r(o),u=e(38),c=r(u),f="function"==typeof c.default&&"symbol"==typeof i.default?function(t){return typeof t}:function(t){return t&&"function"==typeof c.default&&t.constructor===c.default&&t!==c.default.prototype?"symbol":typeof t};n.default="function"==typeof c.default&&"symbol"===f(i.default)?function(t){return void 0===t?"undefined":f(t)}:function(t){return t&&"function"==typeof c.default&&t.constructor===c.default&&t!==c.default.prototype?"symbol":void 0===t?"undefined":f(t)}},function(t,n,e){e(65),e(63),e(66),e(67),t.exports=e(14).Symbol},function(t,n,e){e(64),e(68),t.exports=e(26).f("iterator")},function(t,n){t.exports=function(t){if("function"!=typeof t)throw TypeError(t+" is not a function!");return t}},function(t,n){t.exports=function(){}},function(t,n,e){var r=e(3),o=e(61),i=e(60);t.exports=function(t){return function(n,e,u){var c,f=r(n),a=o(f.length),s=i(u,a);if(t&&e!=e){for(;a>s;)if((c=f[s++])!=c)return!0}else for(;a>s;s++)if((t||s in f)&&f[s]===e)return t||s||0;return!t&&-1}}},function(t,n,e){var r=e(43);t.exports=function(t,n,e){if(r(t),void 0===n)return t;switch(e){case 1:return function(e){return t.call(n,e)};case 2:return function(e,r){return t.call(n,e,r)};case 3:return function(e,r,o){return t.call(n,e,r,o)}}return function(){return t.apply(n,arguments)}}},function(t,n,e){var r=e(9),o=e(34),i=e(19);t.exports=function(t){var n=r(t),e=o.f;if(e)for(var u,c=e(t),f=i.f,a=0;c.length>a;)f.call(t,u=c[a++])&&n.push(u);return n}},function(t,n,e){t.exports=e(1).document&&document.documentElement},function(t,n,e){var r=e(28);t.exports=Object("z").propertyIsEnumerable(0)?Object:function(t){return"String"==r(t)?t.split(""):Object(t)}},function(t,n,e){var r=e(28);t.exports=Array.isArray||function(t){return"Array"==r(t)}},function(t,n,e){"use strict";var r=e(32),o=e(12),i=e(20),u={};e(5)(u,e(7)("iterator"),function(){return this}),t.exports=function(t,n,e){t.prototype=r(u,{next:o(1,e)}),i(t,n+" Iterator")}},function(t,n){t.exports=function(t,n){return{value:n,done:!!t}}},function(t,n,e){var r=e(9),o=e(3);t.exports=function(t,n){for(var e,i=o(t),u=r(i),c=u.length,f=0;c>f;)if(i[e=u[f++]]===n)return e}},function(t,n,e){var r=e(13)("meta"),o=e(11),i=e(2),u=e(6).f,c=0,f=Object.isExtensible||function(){return!0},a=!e(8)(function(){return f(Object.preventExtensions({}))}),s=function(t){u(t,r,{value:{i:"O"+ ++c,w:{}}})},l=function(t,n){if(!o(t))return"symbol"==typeof t?t:("string"==typeof t?"S":"P")+t;if(!i(t,r)){if(!f(t))return"F";if(!n)return"E";s(t)}return t[r].i},p=function(t,n){if(!i(t,r)){if(!f(t))return!0;if(!n)return!1;s(t)}return t[r].w},d=function(t){return a&&v.NEED&&f(t)&&!i(t,r)&&s(t),t},v=t.exports={KEY:r,NEED:!1,fastKey:l,getWeak:p,onFreeze:d}},function(t,n,e){var r=e(6),o=e(10),i=e(9);t.exports=e(4)?Object.defineProperties:function(t,n){o(t);for(var e,u=i(n),c=u.length,f=0;c>f;)r.f(t,e=u[f++],n[e]);return t}},function(t,n,e){var r=e(19),o=e(12),i=e(3),u=e(24),c=e(2),f=e(30),a=Object.getOwnPropertyDescriptor;n.f=e(4)?a:function(t,n){if(t=i(t),n=u(n,!0),f)try{return a(t,n)}catch(t){}if(c(t,n))return o(!r.f.call(t,n),t[n])}},function(t,n,e){var r=e(3),o=e(33).f,i={}.toString,u="object"==typeof window&&window&&Object.getOwnPropertyNames?Object.getOwnPropertyNames(window):[],c=function(t){try{return o(t)}catch(t){return u.slice()}};t.exports.f=function(t){return u&&"[object Window]"==i.call(t)?c(t):o(r(t))}},function(t,n,e){var r=e(2),o=e(37),i=e(21)("IE_PROTO"),u=Object.prototype;t.exports=Object.getPrototypeOf||function(t){return t=o(t),r(t,i)?t[i]:"function"==typeof t.constructor&&t instanceof t.constructor?t.constructor.prototype:t instanceof Object?u:null}},function(t,n,e){var r=e(23),o=e(15);t.exports=function(t){return function(n,e){var i,u,c=String(o(n)),f=r(e),a=c.length;return f<0||f>=a?t?"":void 0:(i=c.charCodeAt(f),i<55296||i>56319||f+1===a||(u=c.charCodeAt(f+1))<56320||u>57343?t?c.charAt(f):i:t?c.slice(f,f+2):u-56320+(i-55296<<10)+65536)}}},function(t,n,e){var r=e(23),o=Math.max,i=Math.min;t.exports=function(t,n){return t=r(t),t<0?o(t+n,0):i(t,n)}},function(t,n,e){var r=e(23),o=Math.min;t.exports=function(t){return t>0?o(r(t),9007199254740991):0}},function(t,n,e){"use strict";var r=e(44),o=e(52),i=e(17),u=e(3);t.exports=e(31)(Array,"Array",function(t,n){this._t=u(t),this._i=0,this._k=n},function(){var t=this._t,n=this._k,e=this._i++;return!t||e>=t.length?(this._t=void 0,o(1)):"keys"==n?o(0,e):"values"==n?o(0,t[e]):o(0,[e,t[e]])},"values"),i.Arguments=i.Array,r("keys"),r("values"),r("entries")},function(t,n){},function(t,n,e){"use strict";var r=e(59)(!0);e(31)(String,"String",function(t){this._t=String(t),this._i=0},function(){var t,n=this._t,e=this._i;return e>=n.length?{value:void 0,done:!0}:(t=r(n,e),this._i+=t.length,{value:t,done:!1})})},function(t,n,e){"use strict";var r=e(1),o=e(2),i=e(4),u=e(27),c=e(36),f=e(54).KEY,a=e(8),s=e(22),l=e(20),p=e(13),d=e(7),v=e(26),y=e(25),h=e(53),b=e(47),x=e(50),m=e(10),g=e(3),w=e(24),O=e(12),S=e(32),_=e(57),j=e(56),P=e(6),E=e(9),M=j.f,A=P.f,T=_.f,L=r.Symbol,N=r.JSON,C=N&&N.stringify,k="prototype",F=d("_hidden"),q=d("toPrimitive"),I={}.propertyIsEnumerable,B=s("symbol-registry"),D=s("symbols"),W=s("op-symbols"),H=Object[k],K="function"==typeof L,R=r.QObject,J=!R||!R[k]||!R[k].findChild,U=i&&a(function(){return 7!=S(A({},"a",{get:function(){return A(this,"a",{value:7}).a}})).a})?function(t,n,e){var r=M(H,n);r&&delete H[n],A(t,n,e),r&&t!==H&&A(H,n,r)}:A,G=function(t){var n=D[t]=S(L[k]);return n._k=t,n},$=K&&"symbol"==typeof L.iterator?function(t){return"symbol"==typeof t}:function(t){return t instanceof L},z=function(t,n,e){return t===H&&z(W,n,e),m(t),n=w(n,!0),m(e),o(D,n)?(e.enumerable?(o(t,F)&&t[F][n]&&(t[F][n]=!1),e=S(e,{enumerable:O(0,!1)})):(o(t,F)||A(t,F,O(1,{})),t[F][n]=!0),U(t,n,e)):A(t,n,e)},Y=function(t,n){m(t);for(var e,r=b(n=g(n)),o=0,i=r.length;i>o;)z(t,e=r[o++],n[e]);return t},Q=function(t,n){return void 0===n?S(t):Y(S(t),n)},X=function(t){var n=I.call(this,t=w(t,!0));return!(this===H&&o(D,t)&&!o(W,t))&&(!(n||!o(this,t)||!o(D,t)||o(this,F)&&this[F][t])||n)},V=function(t,n){if(t=g(t),n=w(n,!0),t!==H||!o(D,n)||o(W,n)){var e=M(t,n);return!e||!o(D,n)||o(t,F)&&t[F][n]||(e.enumerable=!0),e}},Z=function(t){for(var n,e=T(g(t)),r=[],i=0;e.length>i;)o(D,n=e[i++])||n==F||n==f||r.push(n);return r},tt=function(t){for(var n,e=t===H,r=T(e?W:g(t)),i=[],u=0;r.length>u;)!o(D,n=r[u++])||e&&!o(H,n)||i.push(D[n]);return i};K||(L=function(){if(this instanceof L)throw TypeError("Symbol is not a constructor!");var t=p(arguments.length>0?arguments[0]:void 0),n=function(e){this===H&&n.call(W,e),o(this,F)&&o(this[F],t)&&(this[F][t]=!1),U(this,t,O(1,e))};return i&&J&&U(H,t,{configurable:!0,set:n}),G(t)},c(L[k],"toString",function(){return this._k}),j.f=V,P.f=z,e(33).f=_.f=Z,e(19).f=X,e(34).f=tt,i&&!e(18)&&c(H,"propertyIsEnumerable",X,!0),v.f=function(t){return G(d(t))}),u(u.G+u.W+u.F*!K,{Symbol:L});for(var nt="hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables".split(","),et=0;nt.length>et;)d(nt[et++]);for(var nt=E(d.store),et=0;nt.length>et;)y(nt[et++]);u(u.S+u.F*!K,"Symbol",{for:function(t){return o(B,t+="")?B[t]:B[t]=L(t)},keyFor:function(t){if($(t))return h(B,t);throw TypeError(t+" is not a symbol!")},useSetter:function(){J=!0},useSimple:function(){J=!1}}),u(u.S+u.F*!K,"Object",{create:Q,defineProperty:z,defineProperties:Y,getOwnPropertyDescriptor:V,getOwnPropertyNames:Z,getOwnPropertySymbols:tt}),N&&u(u.S+u.F*(!K||a(function(){var t=L();return"[null]"!=C([t])||"{}"!=C({a:t})||"{}"!=C(Object(t))})),"JSON",{stringify:function(t){if(void 0!==t&&!$(t)){for(var n,e,r=[t],o=1;arguments.length>o;)r.push(arguments[o++]);return n=r[1],"function"==typeof n&&(e=n),!e&&x(n)||(n=function(t,n){if(e&&(n=e.call(this,t,n)),!$(n))return n}),r[1]=n,C.apply(N,r)}}}),L[k][q]||e(5)(L[k],q,L[k].valueOf),l(L,"Symbol"),l(Math,"Math",!0),l(r.JSON,"JSON",!0)},function(t,n,e){e(25)("asyncIterator")},function(t,n,e){e(25)("observable")},function(t,n,e){e(62);for(var r=e(1),o=e(5),i=e(17),u=e(7)("toStringTag"),c=["NodeList","DOMTokenList","MediaList","StyleSheetList","CSSRuleList"],f=0;f<5;f++){var a=c[f],s=r[a],l=s&&s.prototype;l&&!l[u]&&o(l,u,a),i[a]=i.Array}},function(t,n){"use strict";var e={versions:function(){var t=window.navigator.userAgent;return{trident:t.indexOf("Trident")>-1,presto:t.indexOf("Presto")>-1,webKit:t.indexOf("AppleWebKit")>-1,gecko:t.indexOf("Gecko")>-1&&t.indexOf("KHTML")==-1,mobile:!!t.match(/AppleWebKit.*Mobile.*/),ios:!!t.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),android:t.indexOf("Android")>-1||t.indexOf("Linux")>-1,iPhone:t.indexOf("iPhone")>-1||t.indexOf("Mac")>-1,iPad:t.indexOf("iPad")>-1,webApp:t.indexOf("Safari")==-1,weixin:t.indexOf("MicroMessenger")==-1}}()};t.exports=e},function(t,n,e){"use strict";var r=e(40),o=function(t){return t&&t.__esModule?t:{default:t}}(r),i=function(){function t(t,n,r){return n||r?String.fromCharCode(n||r):e[t]||t}function n(t){return r[t]}var e={"&quot;":'"',"&lt;":"<","&gt;":">","&amp;":"&","&nbsp;":" "},r={};for(var u in e)r[e[u]]=u;return e["&apos;"]="'",r["'"]="&#39;",{encode:function(t){return t?(""+t).replace(/['<> "&]/g,n).replace(/\r?\n/g,"<br/>").replace(/\s/g,"&nbsp;"):""},decode:function(n){return n?(""+n).replace(/<br\s*\/?>/gi,"\n").replace(/&quot;|&lt;|&gt;|&amp;|&nbsp;|&apos;|&#(\d+);|&#(\d+)/g,t).replace(/\u00a0/g," "):""},encodeBase16:function(t){if(!t)return t;t+="";for(var n=[],e=0,r=t.length;r>e;e++)n.push(t.charCodeAt(e).toString(16).toUpperCase());return n.join("")},encodeBase16forJSON:function(t){if(!t)return t;t=t.replace(/[\u4E00-\u9FBF]/gi,function(t){return escape(t).replace("%u","\\u")});for(var n=[],e=0,r=t.length;r>e;e++)n.push(t.charCodeAt(e).toString(16).toUpperCase());return n.join("")},decodeBase16:function(t){if(!t)return t;t+="";for(var n=[],e=0,r=t.length;r>e;e+=2)n.push(String.fromCharCode("0x"+t.slice(e,e+2)));return n.join("")},encodeObject:function(t){if(t instanceof Array)for(var n=0,e=t.length;e>n;n++)t[n]=i.encodeObject(t[n]);else if("object"==(void 0===t?"undefined":(0,o.default)(t)))for(var r in t)t[r]=i.encodeObject(t[r]);else if("string"==typeof t)return i.encode(t);return t},loadScript:function(t){var n=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(n),n.setAttribute("src",t)},addLoadEvent:function(t){var n=window.onload;"function"!=typeof window.onload?window.onload=t:window.onload=function(){n(),t()}}}}();t.exports=i},function(t,n){function e(t,n){t.classList?t.classList.add(n):t.className+=" "+n}t.exports=e},function(t,n){function e(t,n){if(t.classList)t.classList.remove(n);else{var e=new RegExp("(^|\\b)"+n.split(" ").join("|")+"(\\b|$)","gi");t.className=t.className.replace(e," ")}}t.exports=e},,,function(t,n){"use strict";function e(){var t=document.querySelector("#page-nav");if(t&&!document.querySelector("#page-nav .extend.prev")&&(t.innerHTML='<a class="extend prev disabled" rel="prev">&laquo; Prev</a>'+t.innerHTML),t&&!document.querySelector("#page-nav .extend.next")&&(t.innerHTML=t.innerHTML+'<a class="extend next disabled" rel="next">Next &raquo;</a>'),yiliaConfig&&yiliaConfig.open_in_new){document.querySelectorAll(".article-entry a:not(.article-more-a)").forEach(function(t){t.setAttribute("target","_blank")})}var n=document.querySelector("#js-aboutme");n&&0!==n.length&&(n.innerHTML=n.innerText)}t.exports={init:e}},,,,,,,,,function(t,n){function e(t,n){if("string"==typeof n)return t.insertAdjacentHTML("afterend",n);var e=t.nextSibling;return e?t.parentNode.insertBefore(n,e):t.parentNode.appendChild(n)}t.exports=e}])</script><script src="/./main.608e4a.js"></script><script>!function(){!function(e){var t=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)}("/slider.edd938.js")}()</script>
 
 
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=0.5.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=0.5.0"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
-
-
-
-  
-
-
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'xy2er';
-      var disqus_identifier = 'index.html';
-      var disqus_title = '';
-      var disqus_url = '';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
+    
+<div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
+  <div class="tools-nav header-menu">
+    
+    
       
-    </script>
+      
+      
+    
+      
+      
+      
+    
+      
+      
+      
+    
+    
+
+    <ul style="width: 70%">
+    
+    
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      
+        
+    </ul>
+  </div>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Blog</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Directive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Tools</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">SVG</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Google</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">前端工程化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gulp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Javascript</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            2、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: true
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://yoncise.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Yoncise</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://www.zhouhaibing.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>江海城</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me" q-show="aboutme">
+  	  	
+  	  		<div class="aboutme-wrap" id="js-aboutme">小鱼二, 南京大学2011级软件学院, 现就职于北京易企秀。</div>
+  	  	
+    	</section>
+    
+  </div>
   
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
 
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
 
-  
-  
-  
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
 
-  
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
 
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-  <script>AV.initialize("Wbc0HI1gU9zXOQKs1NEihskx-gzGzoHsz", "FBrzI628IRrYoM95BCzgtzWv");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
+            <div class="pswp__top-bar">
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
+                <!--  Controls are self-explanatory. Order can be changed. -->
 
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+                <div class="pswp__counter"></div>
 
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
 
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
 
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
 
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
 
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
 
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
 
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
 
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
 
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
 
+        </div>
+
+    </div>
+
+</div>
+  </div>
 </body>
 </html>

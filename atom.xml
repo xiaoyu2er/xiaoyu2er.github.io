@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>xiaoyu2er&#39;s blog</title>
-  <subtitle>2016, 成长</subtitle>
+  <subtitle>行万里路, 读万卷书</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://xiaoyu2er.github.io/"/>
@@ -206,36 +206,6 @@
     
     
       <category term="Javascript" scheme="http://xiaoyu2er.github.io/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>翻墙新姿态--lantern</title>
-    <link href="http://xiaoyu2er.github.io/2016/04/04/latern-open-internet-for-everyone/"/>
-    <id>http://xiaoyu2er.github.io/2016/04/04/latern-open-internet-for-everyone/</id>
-    <published>2016-04-03T16:00:00.000Z</published>
-    <updated>2016-04-04T12:40:22.000Z</updated>
-    
-    <content type="html">&lt;p&gt;自由的接触信息应该是不可剥夺的基本人权!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/img/latern/logo.png&quot; alt=&quot;latern&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Lantern是一个互联网代理工具。它能帮助你访问被封锁的网站。&lt;/p&gt;
-&lt;p&gt;亲测有效哦!&lt;/p&gt;
-&lt;p&gt;点击下面的链接, 直接下载安装即可!&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/getlantern/lantern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://github.com/getlantern/lantern&lt;/a&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;自由的接触信息应该是不可剥夺的基本人权!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/img/latern/logo.png&quot; alt=&quot;latern&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Lantern是一个互联网代理工具。它能帮助你访问被封锁的网站。&lt;/p&gt;
-&lt;p&gt;亲测有效哦!&lt;/p&gt;
-&lt;p&gt;点击
-    
-    </summary>
-    
-    
-      <category term="Tools" scheme="http://xiaoyu2er.github.io/tags/Tools/"/>
     
   </entry>
   
@@ -728,90 +698,6 @@
     
     
       <category term="Angular" scheme="http://xiaoyu2er.github.io/tags/Angular/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工欲善其事 必先利其器</title>
-    <link href="http://xiaoyu2er.github.io/2016/01/14/cool-software-collection/"/>
-    <id>http://xiaoyu2er.github.io/2016/01/14/cool-software-collection/</id>
-    <published>2016-01-13T16:00:00.000Z</published>
-    <updated>2016-03-24T14:16:51.000Z</updated>
-    
-    <content type="html">&lt;h2 id=&quot;Mac-软件&quot;&gt;&lt;a href=&quot;#Mac-软件&quot; class=&quot;headerlink&quot; title=&quot;Mac 软件&quot;&gt;&lt;/a&gt;Mac 软件&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://archiverapp.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Archiever: Mac下最好的解压缩工具&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://stclairsoft.com/DefaultFolderX/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Default Folder X: 玩转打开/保存窗口，提高文件操作效率&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://kapeli.com/dash&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dash: Mac下最好的 API 离线查询工具&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://flashlight.nateparrott.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Flashlight: Alfred 的替代品, 一键控制你的 Mac&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://justgetflux.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;F.lux: 护眼工具&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.iterm2.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iTerm2: Mac 下最好的 terminal&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;oh-my-zsh: Oh My Zsh is a way of life! &lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://manytricks.com/moom/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Moom: Mac 下最好的窗口控制器&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://noiz.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Noizio: 风声雨声键盘声&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://pasteapp.me/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Paste: Mac 下最好的剪贴板管理工具&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://happenapps.com/#quiver&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quiver: The Programmer’s Notebook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://panic.com/transmit/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Transmit: Mac 下最好的文件传输助手&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://code.visualstudio.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Visual Studio Code: 轻量级文本编辑器&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.tuxera.com/products/tuxera-ntfs-for-mac/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tuxera NTFS: Mac 下最好的 NTFS 格式读取工具&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://my.vmware.com/web/vmware/downloads&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;VMware Fusion: Mac 下最好的虚拟机&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.jetbrains.com/webstorm/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WebStorm: The smartest JavaScript IDE&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.wunderlist.com/zh/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wunderlist: TODO list&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.xmind.net/cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;XMind: 思维导图&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.trankynam.com/xtrafinder/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ExtraFinder: Better Mac Finder&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;VPN&quot;&gt;&lt;a href=&quot;#VPN&quot; class=&quot;headerlink&quot; title=&quot;VPN&quot;&gt;&lt;/a&gt;VPN&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://gjsq.me/r5162756&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我的 GreenVPN 邀请码&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/fivesheep/chnroutes&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;使用vpn作为默认网络网关的时候, 不使用vpn进行对中国国内ip的访问&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/using-ssh-over-the-https-port/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;解决使用 vpn 无法在 terminal 进行 git pull/push 等操作的问题&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Chrome-浏览器插件&quot;&gt;&lt;a href=&quot;#Chrome-浏览器插件&quot; class=&quot;headerlink&quot; title=&quot;Chrome 浏览器插件&quot;&gt;&lt;/a&gt;Chrome 浏览器插件&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb?hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Adblock Plus&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/angularjs-batarang-stable/niopocochgahfkiccpjmmpchncjoapek?hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;AngularJS Batarang&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/dream-afar-new-tab/henmfoppjjkcencpbjaigfahdjlgpegn?hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Dream Afar New Tab: An unexpected trip everyday by simply opening a new tab&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc?hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Evernote Web Clipper&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/buunguyen/octotree&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Octotree: Code tree for GitHub and GitLab&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/%E4%B8%80%E9%94%AE%E7%AE%A1%E7%90%86/kfjmkgngkgpgjdoealkmmajmmhpnffoj?hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;One key Manger: Onekey enable/disable all apps/themes/extensions&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/related&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Postman: 接口调试&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React Developer Tools: Adds React debugging tools to the Chrome Developer Tools&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/search-auto-focus/bnmapnomofehlbofbnfboncfpmgfnfpg?hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Search Auto-Focus: Auto-focuses search field on websites when you start to type&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tampermonkey: The most popular userscript manager for Blink-based browsers&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/web%E5%89%8D%E7%AB%AF%E5%8A%A9%E6%89%8Bfehelper/pkgccpejnmalmdinmhkkfafefagiiiad?hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;WEB前端助手(FeHelper)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/wikiwand-wikipedia-modern/emffkefkbkpkgpdeeooapgaicgmcbolj?hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wikiwand: 最美 Wiki&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;网站&quot;&gt;&lt;a href=&quot;#网站&quot; class=&quot;headerlink&quot; title=&quot;网站&quot;&gt;&lt;/a&gt;网站&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://devdocs.io/offline&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DevDocs API 查询&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://guge.suanfazu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;谷歌镜像, 自动切换至可用&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/sxyx2008/DevArticles/issues/99&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google 镜像站搜集, 定期更新&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://smallpdf.com/cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;轻松玩转PDF&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://kat.cr/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;各种视频资料, 国外的技术培训&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;福利&quot;&gt;&lt;a href=&quot;#福利&quot; class=&quot;headerlink&quot; title=&quot;福利&quot;&gt;&lt;/a&gt;福利&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.dytt.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;电影淘淘&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&quot;参考&quot;&gt;&lt;a href=&quot;#参考&quot; class=&quot;headerlink&quot; title=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.52mac.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我爱 Mac, 软件下载&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://xclient.info/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;精品 Mac 应用分享&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/19550256&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OS X 平台上有哪些值得推荐的常用软件？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/20036899&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;程序员用 Mac 都有哪些必备的 app？&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/35050387&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Mac（OS X）有哪些冷门但是一但发现就无法自拔的软件？&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      提升工作效率的超酷工具集合, 持续更新 (Mac, Chrome, Websites)
-    
-    </summary>
-    
-    
-      <category term="Tools" scheme="http://xiaoyu2er.github.io/tags/Tools/"/>
-    
-      <category term="Mac" scheme="http://xiaoyu2er.github.io/tags/Mac/"/>
-    
-      <category term="Chrome" scheme="http://xiaoyu2er.github.io/tags/Chrome/"/>
     
   </entry>
   
