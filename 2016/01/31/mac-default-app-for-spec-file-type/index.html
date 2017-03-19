@@ -211,13 +211,13 @@ var _hmt = _hmt || [];
 <h3 id="UTI"><a href="#UTI" class="headerlink" title="UTI"></a>UTI</h3><p>Mac 下的文件类型被定义为 Uniform Type Identifiers (UTI). 例如, HTML 文件的 UTI 是 <strong>public.html</strong>; Word 文档的 UTI 是 <strong>com.microsoft.word.doc</strong>.<br>那么改变文件类型的默认打开方式的第一步就是确认文件类型啦.</p>
 <p>第一个方式是去看苹果列出来的 UTI <a href="https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html" target="_blank" rel="external">Uniform Type Identifiers Reference</a></p>
 <p>第二个方式是使用 <code>mdls</code> 命令, 这哥们的作用就是: lists the metadata attributes for the specified file<br>那么如何使用呢, 很简单只要把你想要获得 UTI 的文件作为参数就好了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ mdls test.txt</span><br><span class="line"></span><br><span class="line">kMDItemContentType             = <span class="string">"public.plain-text"</span></span><br><span class="line">kMDItemContentTypeTree         = (</span><br><span class="line">    <span class="string">"public.plain-text"</span>,</span><br><span class="line">    <span class="string">"public.text"</span>,</span><br><span class="line">    <span class="string">"public.data"</span>,</span><br><span class="line">    <span class="string">"public.item"</span>,</span><br><span class="line">    <span class="string">"public.content"</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ mdls test.txt</div><div class="line"></div><div class="line">kMDItemContentType             = <span class="string">"public.plain-text"</span></div><div class="line">kMDItemContentTypeTree         = (</div><div class="line">    <span class="string">"public.plain-text"</span>,</div><div class="line">    <span class="string">"public.text"</span>,</div><div class="line">    <span class="string">"public.data"</span>,</div><div class="line">    <span class="string">"public.item"</span>,</div><div class="line">    <span class="string">"public.content"</span></div><div class="line">)</div></pre></td></tr></table></figure>
 <p>我们可以看到其中就有这样的输出(截取). 可以看到一个 <code>.txt</code> 文件的 UTI 就是 <code>public.plain-text</code>, 那么下面这一坨是干什么的呢?<br>因为文件类型也有一个具体和宽泛的划分嘛, 越往下约 general.<br>再来看一个</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ mdls test.css</span><br><span class="line"></span><br><span class="line">kMDItemContentType             = <span class="string">"public.css"</span></span><br><span class="line">kMDItemContentTypeTree         = (</span><br><span class="line">    <span class="string">"public.css"</span>,</span><br><span class="line">    <span class="string">"public.text"</span>,</span><br><span class="line">    <span class="string">"public.data"</span>,</span><br><span class="line">    <span class="string">"public.item"</span>,</span><br><span class="line">    <span class="string">"public.content"</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">$ mdls test.css</div><div class="line"></div><div class="line">kMDItemContentType             = <span class="string">"public.css"</span></div><div class="line">kMDItemContentTypeTree         = (</div><div class="line">    <span class="string">"public.css"</span>,</div><div class="line">    <span class="string">"public.text"</span>,</div><div class="line">    <span class="string">"public.data"</span>,</div><div class="line">    <span class="string">"public.item"</span>,</div><div class="line">    <span class="string">"public.content"</span></div><div class="line">)</div></pre></td></tr></table></figure>
 <p><code>public.css</code> 就是 <code>.css</code> 的 UTI.</p>
 <h3 id="Bundle-ID"><a href="#Bundle-ID" class="headerlink" title="Bundle ID"></a>Bundle ID</h3><p>Bundle ID (应用标识符)) 是 iOS 或者 Mac 应用的唯一标识. 也就是我们希望用什么软件打开我们的文件的那个软件的 ID 啦.</p>
 <p>可以用以下命令获得 Bundle ID:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ osascript <span class="_">-e</span> <span class="string">'id of app "Finder"'</span></span><br><span class="line">com.apple.finder</span><br><span class="line"></span><br><span class="line">$ osascript <span class="_">-e</span> <span class="string">'id of app "Atom"'</span></span><br><span class="line">com.github.atom</span><br><span class="line"></span><br><span class="line">$ osascript <span class="_">-e</span> <span class="string">'id of app "Sublime Text 2"'</span></span><br><span class="line">com.sublimetext.2</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ osascript <span class="_">-e</span> <span class="string">'id of app "Finder"'</span></div><div class="line">com.apple.finder</div><div class="line"></div><div class="line">$ osascript <span class="_">-e</span> <span class="string">'id of app "Atom"'</span></div><div class="line">com.github.atom</div><div class="line"></div><div class="line">$ osascript <span class="_">-e</span> <span class="string">'id of app "Sublime Text 2"'</span></div><div class="line">com.sublimetext.2</div></pre></td></tr></table></figure>
 <h3 id="Bundle-Id-amp-UTI"><a href="#Bundle-Id-amp-UTI" class="headerlink" title="Bundle Id &amp; UTI"></a>Bundle Id &amp; UTI</h3><p>那么知道了文件的类型UTI, 知道了软件的 Bundle ID, 距离设定文件的默认程序其实就差一步了.<br>还有一个概念, 就是这个软件对于这个文件是个什么角色. 其实我们这里大部分情况只需要关心 <code>editor</code> 这个角色. 就是编辑角色. 其他的没啥用.</p>
 <ul>
 <li>all: application handles all roles for the given UTI.</li>
@@ -227,7 +227,7 @@ var _hmt = _hmt || [];
 <li>none: application  cannot  open  the item, but provides an icon for the given UTI.</li>
 </ul>
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p>好了, 介绍了这么多概念, 终于到了修改文件默认打开方式的时候了!</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">duti [ -hVv ] [ settings_path ]</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">duti [ -hVv ] [ settings_path ]</div></pre></td></tr></table></figure>
 <p>如果上述语句没有给<code>settings_path</code>, duti 将会从标准输入读取配置. 如果<code>setting_path</code>是个文件夹的话, 那么 duti 将会从文件夹内的所有文件中读取配置.</p>
 <p>那么这个 setting_path 文件的每一行其实需要三个字段:</p>
 <ul>
@@ -245,13 +245,13 @@ var _hmt = _hmt || [];
 <li>-h: 帮助.</li>
 </ul>
 <h3 id="examples"><a href="#examples" class="headerlink" title="examples"></a>examples</h3><p>使用 -s 选项, 从命令行读取参数:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">duti <span class="_">-s</span> com.apple.Safari public.html all</span><br><span class="line">duti <span class="_">-s</span> com.apple.Finder ftp</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">duti <span class="_">-s</span> com.apple.Safari public.html all</div><div class="line">duti <span class="_">-s</span> com.apple.Finder ftp</div></pre></td></tr></table></figure>
 <p>但是我比较喜欢把这个设定放到一个文件里, 比如 <code>duti-sublime</code>,<br>我希望用 Sublime 打开 <code>.md</code>, <code>.css</code>, <code>.js</code>, 以及富文本文件, 纯文本文件, 以及一些 shell 脚本.<br>那么我的文件内容如下:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    net<span class="selector-class">.daringfireball</span><span class="selector-class">.markdown</span>  editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.css</span>	editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.script</span>	editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.source-code</span>  editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.rtf</span>  editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.plain-text</span>   editor</span><br><span class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.unix-executable</span>   editor</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    net<span class="selector-class">.daringfireball</span><span class="selector-class">.markdown</span>  editor</div><div class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.css</span>	editor</div><div class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.script</span>	editor</div><div class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.source-code</span>  editor</div><div class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.rtf</span>  editor</div><div class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.plain-text</span>   editor</div><div class="line">com<span class="selector-class">.sublimetext</span>.<span class="number">2</span>    public<span class="selector-class">.unix-executable</span>   editor</div></pre></td></tr></table></figure>
 <p>运行命令:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">duti</span> duti-sublime</span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">duti duti-sublime</span></div></pre></td></tr></table></figure>
 <p>然后我们在使用 -x 选项, 打印 UTI 的默认应用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ duti -x css</span><br><span class="line">Sublime Text 2.app</span><br><span class="line">/opt/homebrew-cask/Caskroom/sublime-text/2.0.2/Sublime Text 2.app</span><br><span class="line">com.sublimetext.2</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ duti -x css</div><div class="line">Sublime Text 2.app</div><div class="line">/opt/homebrew-cask/Caskroom/sublime-text/2.0.2/Sublime Text 2.app</div><div class="line">com.sublimetext.2</div></pre></td></tr></table></figure>
 <p>双击<code>test.css</code>就是Sublime打开啦~</p>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li><a href="https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html" target="_blank" rel="external">https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/UTIRef/Articles/System-DeclaredUniformTypeIdentifiers.html</a></li>
@@ -514,10 +514,6 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Directive</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Tools</a>
               </li>
              
@@ -530,6 +526,10 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Directive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
@@ -538,15 +538,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gulp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">前端工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Gulp</a>
               </li>
              
               <li class="article-tag-list-item">

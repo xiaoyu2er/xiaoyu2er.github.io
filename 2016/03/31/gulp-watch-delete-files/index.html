@@ -205,7 +205,7 @@ var _hmt = _hmt || [];
 <p>设想这样一个场景, 我们在<code>src/</code>写ES6, 通过<code>gulp-babel</code>转化为ES5文件, 输出到<code>build/</code>下, 同时, 使用<code>gulp-inject</code>将<code>build/</code>下的js文件通过<code>script</code>标签的方式添加到<code>index.html</code>中;</p>
 <p>增改文件都是极好的, 但是如果删除了<code>src/</code>下的某个文件, <code>build/</code> 下的文件并不会自动删除, 所以<code>index.html</code>还是会引用.</p>
 <p>怎么解决呢? Show Me the CODE!</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="javascript">gulp.task(<span class="string">'watch'</span>, [<span class="string">'clean'</span>, <span class="string">'build'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.watch(<span class="string">'src/index.html'</span>, [<span class="string">'inject'</span>]);</span><br><span class="line">    <span class="keyword">var</span> watcher = gulp.watch([<span class="string">'src/**/*'</span>, <span class="string">'!src/index.html'</span>], [<span class="string">'babel'</span>, <span class="string">'inject'</span>]);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    watcher.on(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (event.type === <span class="string">'deleted'</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> src = path.relative(path.resolve(<span class="string">'src'</span>), event.path);</span><br><span class="line">            src = src.replace(<span class="regexp">/.es6$/</span>, <span class="string">'.js'</span>);</span><br><span class="line">            <span class="keyword">var</span> dest = path.resolve(buildDir, src);</span><br><span class="line">            del.sync(dest);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"><span class="javascript">gulp.task(<span class="string">'watch'</span>, [<span class="string">'clean'</span>, <span class="string">'build'</span>], <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></div><div class="line">    gulp.watch(<span class="string">'src/index.html'</span>, [<span class="string">'inject'</span>]);</div><div class="line">    <span class="keyword">var</span> watcher = gulp.watch([<span class="string">'src/**/*'</span>, <span class="string">'!src/index.html'</span>], [<span class="string">'babel'</span>, <span class="string">'inject'</span>]);</div><div class="line"></div><div class="line"></div><div class="line">    watcher.on(<span class="string">'change'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (event.type === <span class="string">'deleted'</span>) &#123;</div><div class="line">            <span class="keyword">var</span> src = path.relative(path.resolve(<span class="string">'src'</span>), event.path);</div><div class="line">            src = src.replace(<span class="regexp">/.es6$/</span>, <span class="string">'.js'</span>);</div><div class="line">            <span class="keyword">var</span> dest = path.resolve(buildDir, src);</div><div class="line">            del.sync(dest);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>最关键的还是这个 <code>var watcher = gulp.watch()</code> 啦, <code>watcher</code>这个句柄就可以监听文件变动的事件了, 其中, <code>event</code> 就有<code>type</code>的属性, 用于表示是新增文件, 还是修改文件, 亦或是删除文件, 然后<code>path</code>属性表示当前变动的文件地址, 知道了这些信息, 就可以干任何事情啦!</p>
 <ul>
 <li><p><a href="http://stackoverflow.com/questions/22391527/gulps-gulp-watch-not-triggered-for-new-or-deleted-files" target="_blank" rel="external">Gulps gulp.watch not triggered for new or deleted files?</a></p>
@@ -466,10 +466,6 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Directive</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Tools</a>
               </li>
              
@@ -482,6 +478,10 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Directive</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SVG</a>
               </li>
              
@@ -490,15 +490,15 @@ var _hmt = _hmt || [];
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Gulp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Webpack</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">前端工程化</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Gulp</a>
               </li>
              
               <li class="article-tag-list-item">
