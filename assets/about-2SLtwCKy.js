@@ -1,0 +1,1 @@
+import{t as e}from"./site-shell-BnrjKdy0.js";import{i as t,t as n}from"./site-XVtlFVHF.js";var r=t();function i(){return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(e,{children:`cat about.md`}),(0,r.jsx)(`h1`,{className:`mt-2 text-(--term-heading) text-xl`,children:`关于`}),(0,r.jsx)(`p`,{className:`mt-4`,children:n.description})]})}export{i as component};

@@ -1,0 +1,1 @@
+import{i as e}from"./seo-BtMGkurH.js";import{i as t,t as n}from"./site-XVtlFVHF.js";import{o as r}from"./index-Dz58KzgU.js";var i=t();function a(){return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(`h1`,{className:`sr-only`,children:n.title}),(0,i.jsx)(e,{posts:r.useLoaderData()})]})}export{a as component};
