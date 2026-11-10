@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+<title>xiaoyu2er&apos;s blog</title>
+<subtitle>行万里路, 读万卷书</subtitle>
+<link href="https://xiaoyu2er.github.io/atom.xml" rel="self" type="application/atom+xml"/>
+<link href="https://xiaoyu2er.github.io/"/>
+<id>http://xiaoyu2er.github.io/</id>
+<updated>2016-07-23T02:15:37.000Z</updated>
+<author><name>xiaoyu2er</name></author>
+<entry>
+<title>44个 Javascript 变态题解析 (上)</title>
+<link href="http://xiaoyu2er.github.io/2016/06/06/44-js-puzzles-part1/"/>
+<id>http://xiaoyu2er.github.io/2016/06/06/44-js-puzzles-part1/</id>
+<published>2016-06-05T16:00:00.000Z</published>
+<updated>2016-06-09T10:18:16.000Z</updated>
+<summary>原题来自: javascript-puzzlers</summary>
+</entry>
+<entry>
+<title>Gulp 监听文件删除事件</title>
+<link href="http://xiaoyu2er.github.io/2016/03/31/gulp-watch-delete-files/"/>
+<id>http://xiaoyu2er.github.io/2016/03/31/gulp-watch-delete-files/</id>
+<published>2016-03-30T16:00:00.000Z</published>
+<updated>2016-04-01T07:28:28.000Z</updated>
+<summary>Gulp是前端自动化的一个非常有用的工具, 如何使用Gulp甚至可以单开一个系列(一定会的!).</summary>
+</entry>
+<entry>
+<title>webpack 资料整理 (持续更新)</title>
+<link href="http://xiaoyu2er.github.io/2016/03/21/awesome-webpack/"/>
+<id>http://xiaoyu2er.github.io/2016/03/21/awesome-webpack/</id>
+<published>2016-03-20T16:00:00.000Z</published>
+<updated>2016-03-21T02:42:42.000Z</updated>
+<summary>请关注 xiaoyu2er/awesome-webpack</summary>
+</entry>
+<entry>
+<title>Google 镜像站搜集(2016年7月23日更新)</title>
+<link href="http://xiaoyu2er.github.io/2016/03/16/google-mirror/"/>
+<id>http://xiaoyu2er.github.io/2016/03/16/google-mirror/</id>
+<published>2016-03-15T16:00:00.000Z</published>
+<updated>2016-07-23T02:15:37.000Z</updated>
+<summary>自由的接触信息应该是每个人不可剥夺的基本人权.</summary>
+</entry>
+<entry>
+<title>设置 Mac 下文件的默认打开程序 — duti 详解</title>
+<link href="http://xiaoyu2er.github.io/2016/01/31/mac-default-app-for-spec-file-type/"/>
+<id>http://xiaoyu2er.github.io/2016/01/31/mac-default-app-for-spec-file-type/</id>
+<published>2016-01-30T16:00:00.000Z</published>
+<updated>2016-03-13T09:16:09.000Z</updated>
+<summary>在 mac 中打开一个文件会有一个默认的应用. 但是这个应用往往不是我们希望的那个. 比如我想打开一个 .c, Mac 会启动 XCode来打开这个文件, 这往往不是我希望的.再比如我想打开一个 .md 文件, 这货居然没有默认打开方式…</summary>
+</entry>
+<entry>
+<title>SVG (一) 基础知识总结</title>
+<link href="http://xiaoyu2er.github.io/2016/01/30/svg-1-basics/"/>
+<id>http://xiaoyu2er.github.io/2016/01/30/svg-1-basics/</id>
+<published>2016-01-29T16:00:00.000Z</published>
+<updated>2016-03-24T14:26:38.000Z</updated>
+<summary>近期工作中要处理很多 SVG 图片, 所以从零开始学习了 SVG 的相关内容.我看的是这本书 SVG Essentials, 2nd Edition,以及它的中译版 SVG精髓（第2版）.这本书深入浅出, 例子很多, 非常不错. 因为 …</summary>
+</entry>
+<entry>
+<title>深入理解 Angular Scope 的继承关系</title>
+<link href="http://xiaoyu2er.github.io/2016/01/23/angular-scope-in-depth/"/>
+<id>http://xiaoyu2er.github.io/2016/01/23/angular-scope-in-depth/</id>
+<published>2016-01-22T16:00:00.000Z</published>
+<updated>2016-03-13T09:26:36.000Z</updated>
+<summary>首先我们先来回顾以下 javascript 中出现的原型继承:</summary>
+</entry>
+<entry>
+<title>Angular $q 完全指南</title>
+<link href="http://xiaoyu2er.github.io/2016/01/08/angular-q-complete-guide/"/>
+<id>http://xiaoyu2er.github.io/2016/01/08/angular-q-complete-guide/</id>
+<published>2016-01-07T16:00:00.000Z</published>
+<updated>2016-03-24T14:16:51.000Z</updated>
+<summary>如果想使用 $http 或者其他异步操作, 那 $q 是必须要掌握的概念啦. Let’s get started!</summary>
+</entry>
+</feed>

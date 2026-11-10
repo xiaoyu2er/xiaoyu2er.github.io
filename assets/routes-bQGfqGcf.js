@@ -1,0 +1,1 @@
+import{t as e}from"./post-list-Bae73o31.js";import{o as t,r as n}from"./site-pages-cFCSRMnU.js";import{s as r}from"./index-D84Eskm-.js";var i=t();function a(){return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsx)(`h1`,{className:`sr-only`,children:n.title}),(0,i.jsx)(e,{emptyMessage:`暂无已发布文章`,posts:r.useLoaderData()})]})}export{a as component};

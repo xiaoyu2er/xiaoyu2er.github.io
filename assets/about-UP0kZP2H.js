@@ -1,0 +1,1 @@
+import{f as e}from"./index-D84Eskm-.js";import{o as t,r as n}from"./site-pages-cFCSRMnU.js";var r=t();function i(){return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsx)(e,{children:`cat about.md`}),(0,r.jsx)(`h1`,{className:`mt-2 text-(--term-heading) text-xl`,children:`关于`}),(0,r.jsx)(`p`,{className:`mt-4`,children:n.description})]})}export{i as component};
